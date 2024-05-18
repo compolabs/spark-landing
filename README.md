@@ -5,7 +5,7 @@
 ### Technology Stack
 
 - React
-- Mobx
+- Next.js
 - Typescript
 
 ### Getting Started
