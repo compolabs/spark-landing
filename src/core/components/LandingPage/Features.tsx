@@ -4,7 +4,7 @@ const Features = () => {
     <div>
       <div>Features</div>
       <Image
-        src="/images/feature_mall_1.svg"
+        src="/images/svg/feature_small_1.svg"
         alt="feature one"
         width={120}
         height={120}
