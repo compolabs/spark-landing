@@ -1,44 +1,47 @@
 const landingTheme = {
   spacing: {
-    unit: 0.4,
+    unit: 0.25,
     get(size: number) {
       return `${(size * this.unit).toFixed(1)}rem`;
     },
     get small() {
-      return this.get(1);
+      return this.get(1); // 4px
     },
     get default() {
-      return this.get(2);
+      return this.get(2); // 8px
     },
     get normal() {
-      return this.get(3);
+      return this.get(3); // 12px
     },
     get medium() {
-      return this.get(4);
+      return this.get(4); // 16px
     },
     get large() {
-      return this.get(6);
+      return this.get(6); // 24px
     },
     get huge() {
-      return this.get(8);
+      return this.get(8); // 32px
     },
     get extra() {
-      return this.get(11);
+      return this.get(11); // 44px
     },
     get extraHuge() {
-      return this.get(16);
+      return this.get(16); // 64px
     },
     get section() {
-      return this.get(25);
+      return this.get(25); // 100px
     },
   },
 
   colors: {
     white: {
       default: "#ffffff",
-      100: "#2A2A2A",
-      75: "#FEFFF05E",
-      50: "##A2A2A2",
+      100: "#FEFFF0",
+      37: "#FEFFF05E",
+    },
+    grey: {
+      light: "#A2A2A2",
+      dark: "#2A2A2A"
     },
     black: {
       default: "#000",
