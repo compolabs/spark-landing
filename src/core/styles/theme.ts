@@ -93,6 +93,7 @@ const landingTheme = {
       mobile: 360,
       tabletBreakPoint: 640,
       tablet: 1280,
+      desktop: 1920,
     },
     get mobile() {
       return `@media (max-width: ${this.breakpoints.mobile}px)`;
@@ -104,7 +105,7 @@ const landingTheme = {
       return `@media (min-width: ${this.breakpoints.tablet}px)`;
     },
     get desktop() {
-      return `@media (min-width: ${this.breakpoints.tablet}px)`;
+      return `@media (min-width: ${this.breakpoints.desktop}px)`;
     },
   },
 };
