@@ -20,7 +20,7 @@ export default function SVGIcon({
 }: IconProps) {
   const width = typeof size === "number" ? size : size[0];
   const height = typeof size === "number" ? size : size[1];
-  const viewBoxParams = viewBox && `0 0 ${width} ${height}`;
+  const viewBoxParams = !!viewBox ? viewBox :  `0 0 ${width} ${height}`;
   return (
     <svg
       width={`${width}px`}
