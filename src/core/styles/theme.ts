@@ -36,12 +36,15 @@ const landingTheme = {
   colors: {
     white: {
       default: "#ffffff",
+      title: "#EBF1E6",
+      text: "#F8FCFC",
       100: "#FEFFF0",
       37: "#FEFFF05E",
     },
     grey: {
       light: "#A2A2A2",
-      dark: "#2A2A2A"
+      dark: "#2A2A2A",
+      bgDark: "#232322",
     },
     black: {
       default: "#000",
@@ -95,6 +98,7 @@ const landingTheme = {
     breakpoints: {
       mobile: 360,
       tabletBreakPoint: 640,
+      tabletLandscape: 1024,
       tablet: 1280,
       desktop: 1920,
     },
@@ -103,6 +107,9 @@ const landingTheme = {
     },
     get tabletBreakPoint() {
       return `@media (min-width: ${this.breakpoints.tabletBreakPoint}px)`;
+    },
+    get tabletLandscape() {
+      return `@media (min-width: ${this.breakpoints.tabletLandscape}px)`;
     },
     get tablet() {
       return `@media (min-width: ${this.breakpoints.tablet}px)`;
