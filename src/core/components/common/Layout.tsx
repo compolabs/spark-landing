@@ -1,6 +1,8 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { ChildrenType } from "core/types";
+
+import { Footer } from '@/core/components/common/Footer';
+
+import { Header } from "./Header";
 
 type PropsTypes = {
   children?: ChildrenType;
