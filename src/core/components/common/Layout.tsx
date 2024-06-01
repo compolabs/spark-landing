@@ -1,12 +1,14 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { ChildrenType } from "core/types";
 
-type PropsTypes = {
+import { Footer } from '@/core/components/common/Footer';
+
+import { Header } from "./Header";
+
+type PropTypes = {
   children?: ChildrenType;
 };
 
-export default function Layout({ children }: PropsTypes) {
+export default function Layout({ children }: PropTypes) {
   return (
     <>
       <Header />

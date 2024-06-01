@@ -1,14 +1,16 @@
-import theme from "@/core/styles/theme";
-import { scrollToHash } from "@/core/utils/scrollToHash";
 import { css } from "@emotion/react";
+
 import { CommonEntity } from "core/types";
 
-interface PropsT extends CommonEntity {
+import theme from "@/core/styles/theme";
+import { scrollToHash } from "@/core/utils/scrollToHash";
+
+interface PropTypes extends CommonEntity {
   hash: string;
   label?: string;
 }
 
-const AnchorLinkButton = ({ hash, children, styles, label }: PropsT) => {
+const AnchorLinkButton = ({ hash, children, styles, label }: PropTypes) => {
   return (
     <button css={[styles, cssStyles.button]} onClick={() => scrollToHash(hash)}>
       {children ?? label}

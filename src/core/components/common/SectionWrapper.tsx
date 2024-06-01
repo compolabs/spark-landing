@@ -1,12 +1,13 @@
-import { ChildrenType, Styles } from "core/types";
 import { css } from "@emotion/react";
 
-interface PropsT {
+import { ChildrenType, Styles } from "core/types";
+
+interface PropTypes {
   children: ChildrenType;
   styles?: Styles;
 }
 
-const SectionWrapper = ({ children, styles }: PropsT) => {
+const SectionWrapper = ({ children, styles }: PropTypes) => {
   return <div css={[cssStyles.wrapper, styles]}>{children}</div>;
 };
 const cssStyles = {

@@ -1,6 +1,6 @@
 import { CommonEntity } from "core/types";
 
-interface PropsT extends CommonEntity {
+interface PropTypes extends CommonEntity {
   href: string;
   tooltipLabel?: string;
   label?: string;
@@ -12,7 +12,7 @@ const ExternalLinkButton = ({
   styles,
   tooltipLabel,
   label,
-}: PropsT) => {
+}: PropTypes) => {
   return (
     <a href={href} target="_blank" css={styles} title={tooltipLabel}>
       {children ?? label}
