@@ -1,38 +1,16 @@
 import { Syne } from "next/font/google";
 import { css } from "@emotion/react";
 
-import SectionWrapper from '@/core/components/common/SectionWrapper';
-import theme from '@/core/styles/theme';
-import { LinksList } from '@/core/components/common/Footer/LinksList';
-import { externalLinks } from '@/core/constants/externalLinks';
-import SVGIcon from '@/core/components/common/SVGIcon';
-import ExternalLinkButton from '@/core/components/common/ExternalLinkWrapper';
+import SectionWrapper from "@/core/components/common/SectionWrapper";
+import theme from "@/core/styles/theme";
+import { LinksList } from "@/core/components/common/Footer/LinksList";
+import { externalLinks } from "@/core/constants/externalLinks";
+import SVGIcon from "@/core/components/common/SVGIcon";
+import ExternalLinkButton from "@/core/components/common/ExternalLinkWrapper";
+
+import { developersLinks, socialMediaLinks, technologyLinks } from "./constants";
 
 const syne = Syne({ subsets: ["latin"] });
-
-const technologyLinks = [
-  { label: "Bridge", href: externalLinks.bridgeTechnology },
-  { label: "Liquidity Mining program", href: externalLinks.liquidityMiningProgramTechnology },
-];
-const developersLinks = [
-  { label: "Docs", href: externalLinks.docsDevelopers },
-  { label: "Github", href: externalLinks.githubDevelopers },
-  { label: "Faucet", href: externalLinks.faucetDevelopers },
-];
-const socialMediaLinks = [
-  {
-    icon: <SVGIcon iconName="Twitter" />,
-    href: externalLinks.twitter,
-  },
-  {
-    icon: <SVGIcon iconName="Discord" />,
-    href: externalLinks.discord,
-  },
-  {
-    icon: <SVGIcon iconName="Medium" />,
-    href: externalLinks.medium,
-  },
-];
 
 const Footer = () => {
   return (

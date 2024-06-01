@@ -4,11 +4,11 @@ import { Footer } from '@/core/components/common/Footer';
 
 import { Header } from "./Header";
 
-type PropsTypes = {
+type PropTypes = {
   children?: ChildrenType;
 };
 
-export default function Layout({ children }: PropsTypes) {
+export default function Layout({ children }: PropTypes) {
   return (
     <>
       <Header />

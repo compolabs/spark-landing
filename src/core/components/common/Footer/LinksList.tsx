@@ -6,7 +6,7 @@ import { Styles } from 'core/types';
 import theme from "@/core/styles/theme";
 import LinkButton from "@/core/components/common/LinkButton";
 
-interface PropsT {
+interface PropTypes {
   links: {
     href: string,
     label?: string,
@@ -17,7 +17,7 @@ interface PropsT {
   listStyles?: Styles,
 }
 
-export const LinksList = ({ links, listHeader = "", type = "vertical", listStyles }: PropsT) => {
+export const LinksList = ({ links, listHeader = "", type = "vertical", listStyles }: PropTypes) => {
   const isVerticalList = type === "vertical";
 
   return (
