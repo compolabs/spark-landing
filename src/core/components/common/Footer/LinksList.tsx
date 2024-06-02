@@ -57,7 +57,7 @@ const cssStyles = {
     color: ${theme.colors.white[100]};
     margin-bottom: ${marginBottom};
     margin-right: ${marginRight};
-    max-height: 32px;
+    max-height: 2rem;
     
     &:last-child {
       margin-bottom: 0;

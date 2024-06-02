@@ -6,9 +6,9 @@ import { externalLinks } from "@/core/constants/externalLinks";
 
 import LinkButton from "../../common/LinkButton";
 
-type PropsType = { title: string };
+type PropTypes = { title: string };
 
-const SimpleTradeButton = ({ title }: PropsType) => {
+const SimpleTradeButton = ({ title }: PropTypes) => {
   return (
     <LinkButton
       type="external"
@@ -23,8 +23,8 @@ const SimpleTradeButton = ({ title }: PropsType) => {
 const cssStyles = {
   tradeButton: css`
     cursor: pointer;
-    width: 100px;
-    height: 36px;
+    width: 6.25rem;
+    height: 2.25rem;
     border: none;
     padding: ${theme.spacing.default};
     margin-right: ${theme.spacing.medium};
@@ -47,8 +47,8 @@ const cssStyles = {
     }
 
     ${theme.media.tabletBreakPoint} {
-      height: 40px;
-      width: 120px;
+      height: 2.5rem;
+      width: 7.5rem;
       margin-right: 0;
     }
   `,

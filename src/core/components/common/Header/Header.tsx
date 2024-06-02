@@ -54,7 +54,7 @@ const cssStyles = {
   ) => css`
     z-index: 1;
     width: 100%;
-    min-height: 60px;
+    min-height: 3.75rem;
     position: fixed;
     top: 0;
     padding: ${theme.spacing.normal} 0;

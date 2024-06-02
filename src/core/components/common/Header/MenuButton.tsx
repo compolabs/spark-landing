@@ -5,14 +5,14 @@ import theme from "@/core/styles/theme";
 
 import SVGIcon from "../SVGIcon";
 
-type PropsType = {
+type PropTypes = {
   setOpenMenu: () => void;
   isOpenMenu: boolean;
 };
 
-export default function MenuButton({ setOpenMenu, isOpenMenu }: PropsType) {
+export default function MenuButton({ setOpenMenu, isOpenMenu }: PropTypes) {
   return (
-    <button css={cssStyle.menuButton} onClick={() => setOpenMenu()}>
+    <button css={cssStyle.menuButton} onClick={setOpenMenu}>
       <SVGIcon iconName={isOpenMenu ? "Close" : "Menu"} />
     </button>
   );

@@ -38,7 +38,7 @@ const GetStartedSection = () => {
 const cssStyles = {
   container: css`
     position: relative;
-    margin: 10px 0 20px;
+    margin: ${theme.spacing.custom[10]} 0  ${theme.spacing.custom[20]};
     border-radius: ${theme.borderRadius.default};
     width: 100%;
 
@@ -56,7 +56,7 @@ const cssStyles = {
     padding: ${theme.spacing.medium};
     
     ${theme.media.tabletBreakPoint} {
-      padding: 40px;
+      padding:  ${theme.spacing.custom[40]};
     }
     
     ${theme.media.desktop} {

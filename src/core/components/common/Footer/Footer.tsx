@@ -77,7 +77,7 @@ const cssStyles = {
     }
   `,
   listDevs: css`
-    margin-bottom: 70px;
+    margin-bottom: 4.3rem;
     ${theme.media.tablet} {
       width: 50%;
     }
@@ -97,7 +97,7 @@ const cssStyles = {
   `,
   termsOfUse: css`
     position: absolute;
-    bottom: 38px;
+    bottom: 2.4rem;
     left: 0;
     font-size: ${theme.text.size.extraTiny};
 

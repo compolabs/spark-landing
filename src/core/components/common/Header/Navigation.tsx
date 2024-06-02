@@ -32,8 +32,8 @@ const Navigation = ({ disableOnMobile = false, styles }: PropTypes) => {
   );
 };
 const cssStyles = {
-  nav: (isMobileOnly: string) => css`
-    display: ${isMobileOnly};
+  nav: (mobileOnly: string) => css`
+    display: ${mobileOnly};
 
     ${theme.media.tabletBreakPoint} {
       display: flex;
