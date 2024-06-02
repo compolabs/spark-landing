@@ -43,7 +43,6 @@ const cssStyles = {
   `,
   navLink: css`
     font-weight: ${theme.text.weight.regular};
-    background: ${theme.colors.black.default};
   `,
 };
 

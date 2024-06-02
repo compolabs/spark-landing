@@ -14,7 +14,7 @@ import SectionWrapper from "../SectionWrapper";
 import MenuButton from "./MenuButton";
 import Container from "../Container";
 
-export const Header = () => {
+function Header() {
   const syne = useMainFont();
   const isMobile = useMobileWindowWidth();
   const [isOpenMenu, setOpenMenu] = useState<boolean>(!isMobile);
@@ -44,7 +44,7 @@ export const Header = () => {
       {isOpenMenu && <Navigation styles={cssStyles.mobileNav} />}
     </header>
   );
-};
+}
 
 const cssStyles = {
   header: (
@@ -52,6 +52,7 @@ const cssStyles = {
     scrollPosition: boolean,
     scrollDirection: boolean | null
   ) => css`
+    z-index: 1;
     width: 100%;
     min-height: 60px;
     position: fixed;
@@ -107,7 +108,7 @@ const cssStyles = {
       font-size: ${theme.text.size.body};
       border: none;
       cursor: pointer;
-      margin-bottom: ${theme.spacing.custom[10]};
+      margin-bottom: ${theme.spacing.custom[20]};
     }
   `,
 
@@ -117,3 +118,5 @@ const cssStyles = {
     margin-bottom: ${isOpenMenu ? theme.spacing.custom[40] : null};
   `,
 };
+
+export default Header;

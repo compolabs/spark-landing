@@ -25,7 +25,6 @@ const Logo = ({ mini = false, isMobile }: PropTypes) => {
 const cssStyles = {
   navLink: css`
     font-weight: ${theme.text.weight.regular};
-    background: ${theme.colors.black.default};
   `,
 };
 export default Logo;
