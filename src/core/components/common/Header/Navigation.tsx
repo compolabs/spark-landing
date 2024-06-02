@@ -1,4 +1,7 @@
 import { css } from "@emotion/react";
+
+import { Styles } from "core/types";
+
 import theme from "@/core/styles/theme";
 import LinkButton from "@/core/components/common/LinkButton";
 import {
@@ -7,9 +10,14 @@ import {
   sourceLabelAnchorArray,
 } from "@/core/utils/pageSources";
 
-const Navigation = () => {
+type PropTypes = {
+  disableOnMobile?: boolean;
+  styles?: Styles;
+};
+
+const Navigation = ({ disableOnMobile = false, styles }: PropTypes) => {
   return (
-    <nav css={cssStyles.nav}>
+    <nav css={[cssStyles.nav(disableOnMobile ? "none" : "flex"), styles]}>
       {sourceLabelAnchorArray
         .slice(1)
         .map((data: SelectOption<SourceNames>) => (
@@ -24,8 +32,8 @@ const Navigation = () => {
   );
 };
 const cssStyles = {
-  nav: css`
-    display: none;
+  nav: (isMobileOnly: string) => css`
+    display: ${isMobileOnly};
 
     ${theme.media.tabletBreakPoint} {
       display: flex;
@@ -34,10 +42,8 @@ const cssStyles = {
     }
   `,
   navLink: css`
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    background: #000;
+    font-weight: ${theme.text.weight.regular};
+    background: ${theme.colors.black.default};
   `,
 };
 

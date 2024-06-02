@@ -1,10 +1,14 @@
 import React from "react";
-import LinkButton from "../../common/LinkButton";
-import theme from "@/core/styles/theme";
 import { css } from "@emotion/react";
+
+import theme from "@/core/styles/theme";
 import { externalLinks } from "@/core/constants/externalLinks";
 
-const SimpleTradeButton = ({ title = "Trade" }: { title?: string }) => {
+import LinkButton from "../../common/LinkButton";
+
+type PropsType = { title: string };
+
+const SimpleTradeButton = ({ title }: PropsType) => {
   return (
     <LinkButton
       type="external"
@@ -17,65 +21,42 @@ const SimpleTradeButton = ({ title = "Trade" }: { title?: string }) => {
 };
 
 const cssStyles = {
-  header: css`
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    transition: top 0.25s linear;
-  `,
-  headerWrapper: css`
-    display: flex;
-    justify-content: space-between;
-    // position: absolute;
-    // top:20px;
-    // transition: top .25s linear;
-    padding: 0 40px 0;
-  `,
-  nav: css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `,
-  navLink: css`
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    background: #000;
-  `,
   tradeButton: css`
     cursor: pointer;
-      width: 107px;
-      height: 38px;
-      border: none;
-      padding: 8px;
-      border-radius: 12px;
-      background: #ffffff12;
-      color: white;
-      font-size: 16px;
-      backdrop-filter: blur(1px);
-  
-      &:hover{
-        background: #ffffff24;
-      },
-      &:active{
-        background: #ffffff36;
-      },
-      &:focus{
-        border: .1rem solid ${theme.colors.white.default}18;
-      },
-    `,
+    width: 100px;
+    height: 36px;
+    border: none;
+    padding: ${theme.spacing.default};
+    margin-right: ${theme.spacing.medium};
+    border-radius: ${theme.borderRadius.default};
+    background: ${theme.colors.white.default}12;
+    color: ${theme.colors.white.default};
+    font-size: ${theme.spacing.medium};
+    backdrop-filter: blur(${theme.spacing.small});
+
+    &:hover {
+      background: ${theme.colors.white.default}24;
+    }
+
+    &:active {
+      background: ${theme.colors.white.default}36;
+    }
+
+    &:focus {
+      border: 0.1rem solid ${theme.colors.white.default}18;
+    }
+
+    ${theme.media.tabletBreakPoint} {
+      height: 40px;
+      width: 120px;
+      margin-right: 0;
+    }
+  `,
   tradeButtonLink: css`
     cursor: pointer;
     font-size: ${theme.text.size.tiny};
     font-weight: ${theme.text.weight.bold};
     line-height: ${theme.text.size.tiny};
-
-    ${theme.media.desktop} {
-    }
-    ${theme.media.tablet} {
-    }
-    ${theme.media.mobile} {
-    }
   `,
 };
 export default SimpleTradeButton;

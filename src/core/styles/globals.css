@@ -14,6 +14,10 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   color: white;
   background: var(--main-background);

@@ -1,34 +1,31 @@
 import { css } from "@emotion/react";
+
 import SVGIcon from "@/core/components/common/SVGIcon";
 import theme from "@/core/styles/theme";
 import LinkButton from "@/core/components/common/LinkButton";
 import { sourceLabelAnchorArray } from "@/core/utils/pageSources";
 
-const Logo = () => {
+type PropTypes = { mini?: boolean; isMobile: boolean };
+
+const Logo = ({ mini = false, isMobile }: PropTypes) => {
   return (
     <LinkButton
       type="anchor"
       styles={cssStyles.navLink}
       data={sourceLabelAnchorArray[0]}
     >
-      <SVGIcon size={[120, 35]} iconName="Logo" />
+      <SVGIcon
+        size={isMobile ? [82, 24] : [120, 35]}
+        iconName={mini || isMobile ? "LogoMini" : "Logo"}
+      />
     </LinkButton>
   );
 };
 
 const cssStyles = {
   navLink: css`
-    font-size: ${theme.spacing.small};;
     font-weight: ${theme.text.weight.regular};
-    line-height:${theme.text.size.medium}
-    background:${theme.colors.black.default};
-
-    ${theme.media.desktop} {
-    }
-    ${theme.media.tablet} {
-    }
-    ${theme.media.mobile} {
-    }
+    background: ${theme.colors.black.default};
   `,
 };
 export default Logo;

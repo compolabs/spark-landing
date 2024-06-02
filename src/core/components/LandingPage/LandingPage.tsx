@@ -1,16 +1,18 @@
-import React, { Fragment } from "react";
+import React from "react";
+
+import useMainFont from "@/core/hooks/useMainFont";
+
 import HeroSection from "./HeroSection";
 import Features from "./Features";
 import InterfaceSection from "./InterfaceSection";
 import TradingPlatformSection from "./TradingPlatformSection";
 import ResourcesSection from "./ResourcesSection";
 import GetStartedSection from "./GetStartedSection";
-import { Syne } from "next/font/google";
-const syne = Syne({ subsets: ["latin"] });
 
 const LandingPage = () => {
+  const syne = useMainFont();
   return (
-    <main className={`${syne.className}`}>
+    <main className={syne}>
       <HeroSection />
       <InterfaceSection />
       <Features />
