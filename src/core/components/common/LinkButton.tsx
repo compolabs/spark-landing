@@ -1,9 +1,12 @@
 
+import {  CommonEntity } from "core/types";
+
+import { SelectOption, SourceNames } from "@/core/utils/pageSources";
+
 import InternalLinkButton from "./InternalLinkButton";
 import ExternalLinkButton from "./ExternalLinkWrapper";
-import {  CommonEntity } from "core/types";
 import AnchorLinkButton from "./AnchorLinkButton";
-import { SelectOption, SourceNames } from "@/core/utils/pageSources";
+
 
 interface LinkButtonInterface extends CommonEntity{
   type: "internal" | "external" | "anchor";
@@ -19,7 +22,7 @@ const LinkButton = ({
   data,
 }: LinkButtonInterface) => {
   return (
-    <div>
+    <>
       {type === "internal" && (
         <InternalLinkButton
           href={data.href ?? ""}
@@ -48,7 +51,7 @@ const LinkButton = ({
           {children}
         </AnchorLinkButton>
       )}
-    </div>
+    </>
   );
 };
 

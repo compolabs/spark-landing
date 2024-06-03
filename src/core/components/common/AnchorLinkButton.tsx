@@ -12,7 +12,7 @@ interface PropTypes extends CommonEntity {
 
 const AnchorLinkButton = ({ hash, children, styles, label }: PropTypes) => {
   return (
-    <button css={[styles, cssStyles.button]} onClick={() => scrollToHash(hash)}>
+    <button css={[cssStyles.button, styles]} onClick={() => scrollToHash(hash)}>
       {children ?? label}
     </button>
   );
@@ -20,13 +20,10 @@ const AnchorLinkButton = ({ hash, children, styles, label }: PropTypes) => {
 
 const cssStyles = {
   button: css`
-    background: none;
-    color: ${theme.colors.white.default};
-    padding: ${theme.spacing.small};
-    margin-right: ${theme.spacing.small};
-    font-size: ${theme.text.size.tiny};
     border: none;
     cursor: pointer;
+    background: none;
+    color: ${theme.colors.white.default};
   `,
 };
 
