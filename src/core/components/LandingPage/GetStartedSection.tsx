@@ -25,7 +25,7 @@ const GetStartedSection = () => {
 
         <div css={cssStyles.imageContainer}>
           <Image
-            src="/images/rocket.png"
+            src="./images/rocket.png"
             alt="rocket"
             css={cssStyles.image}
             fill
