@@ -84,7 +84,7 @@ const cssStyles = {
   `,
   nav: css`
     & > button {
-      transform: translateY(4px);
+      transform: translateY(${theme.spacing.small});
       margin-right: calc(${theme.spacing.large} + ${theme.spacing.small});
       font-size: ${theme.text.size.tiny};
 
