@@ -51,9 +51,13 @@ const Footer = () => {
 
 const cssStyles = {
   footer: css`
-    padding: ${theme.spacing.huge} 0;
+    margin: ${theme.spacing.huge} 0;
     position: relative;
     width: 100%;
+
+    ${theme.media.tablet} {
+      margin: ${theme.spacing.custom[40]} 0;
+    }
   `,
   footerContent: css`
     display: flex;
@@ -97,7 +101,7 @@ const cssStyles = {
   `,
   termsOfUse: css`
     position: absolute;
-    bottom: 2.4rem;
+    bottom: ${theme.spacing.default};
     left: 0;
     font-size: ${theme.text.size.extraTiny};
 
