@@ -84,12 +84,32 @@ const cssStyles = {
   `,
   nav: css`
     & > button {
+      transform: translateY(${theme.spacing.small});
       margin-right: calc(${theme.spacing.large} + ${theme.spacing.small});
       font-size: ${theme.text.size.tiny};
 
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    &> button: after  {
+      content: "";
+      background: ${theme.colors.green[50]};
+      display: block;
+      width: ${theme.spacing.custom[10]};
+      height: ${theme.spacing.custom[10]};
+      white-space: nowrap;
+      transition: opacity 0.2s ease-out;
+      opacity: 0;
+      margin: 0 auto;
+      transform: translateY(${theme.spacing.default});
+      border-radius: ${theme.borderRadius.default};
+      box-shadow: 0px 0px 8px ${theme.colors.green[50]};
+    }
+
+    &> button: hover: after  {
+      opacity: 1;
     }
   `,
   mobileNav: css`

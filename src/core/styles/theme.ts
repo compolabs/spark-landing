@@ -63,6 +63,7 @@ const landingTheme = {
     green: {
       100: "#149667",
       75: "#55BB94",
+      50: "#00E388",
     },
     pink: "#E395FF",
   },
