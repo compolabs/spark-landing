@@ -5,7 +5,7 @@ const DocumentHead = () => {
       <title>Spark Landing</title>
       <meta name="description" content="Spark landing for spark app" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/spark.ico" />
+      <link rel="icon" href="./spark.ico" />
     </Head>
   );
 };
