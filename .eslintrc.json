@@ -1,7 +1,6 @@
-// {
-//   "extends": "next/core-web-vitals"
-// }
+
 {
+  "ignorePatterns": ["next.config.mjs"],
   "extends": "next/core-web-vitals",
   "plugins": [
     "react",

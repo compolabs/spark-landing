@@ -1,5 +1,10 @@
 const landingTheme = {
   spacing: {
+    custom: {
+      40: "2.5rem",
+      20: "1.25rem",
+      10: "0.6rem",
+    },
     unit: 0.25,
     get(size: number) {
       return `${(size * this.unit).toFixed(1)}rem`;
@@ -59,6 +64,7 @@ const landingTheme = {
     green: {
       100: "#149667",
       75: "#55BB94",
+      50: "#00E388",
     },
     pink: "#E395FF",
   },
@@ -94,9 +100,8 @@ const landingTheme = {
     },
   },
 
-  breakpoints: { breakpoints: "1" },
-
   media: {
+    section: { maxWidth: "1520px" },
     breakpoints: {
       mobile: 360,
       tabletBreakPoint: 640,

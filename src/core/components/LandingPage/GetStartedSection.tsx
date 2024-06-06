@@ -1,10 +1,10 @@
-import { css } from '@emotion/react';
-import Image from 'next/image';
+import { css } from "@emotion/react";
+import Image from "next/image";
 
-import SectionWrapper from '@/core/components/common/SectionWrapper';
-import theme from '@/core/styles/theme';
-import ExternalLinkButton from '@/core/components/common/ExternalLinkWrapper';
-import { externalLinks } from '@/core/constants/externalLinks';
+import SectionWrapper from "@/core/components/common/SectionWrapper";
+import theme from "@/core/styles/theme";
+import ExternalLinkButton from "@/core/components/common/ExternalLinkWrapper";
+import { externalLinks } from "@/core/constants/externalLinks";
 
 const GetStartedSection = () => {
   return (
@@ -13,7 +13,8 @@ const GetStartedSection = () => {
         <main css={cssStyles.content}>
           <h2 css={cssStyles.header}>Get Started</h2>
           <p css={cssStyles.paragraph}>
-            Begin with a bespoke onboarding session to align our platform capabilities with your trading methodologies.
+            Begin with a bespoke onboarding session to align our platform
+            capabilities with your trading methodologies.
           </p>
           <ExternalLinkButton
             href={externalLinks.tradeApp}
@@ -24,7 +25,7 @@ const GetStartedSection = () => {
 
         <div css={cssStyles.imageContainer}>
           <Image
-            src="/images/rocket.png"
+            src="./images/rocket.png"
             alt="rocket"
             css={cssStyles.image}
             fill
@@ -38,27 +39,29 @@ const GetStartedSection = () => {
 const cssStyles = {
   container: css`
     position: relative;
-    margin: 10px 0 20px;
+    margin: ${theme.spacing.custom[10]} 0 ${theme.spacing.custom[20]};
     border-radius: ${theme.borderRadius.default};
     width: 100%;
 
     ${theme.media.tablet} {
       display: flex;
       justify-content: space-between;
+      margin: ${theme.spacing.custom[10]} 0 ${theme.spacing.custom[40]};
     }
-    
+
     ${theme.media.desktop} {
-      padding: ${theme.spacing.extra};
+      padding: calc(${theme.spacing.extra} + ${theme.spacing.small});
+      margin: ${theme.spacing.custom[10]} 0 ${theme.spacing.custom[40]};
     }
   `,
 
   content: css`
     padding: ${theme.spacing.medium};
-    
+
     ${theme.media.tabletBreakPoint} {
-      padding: 40px;
+      padding: ${theme.spacing.custom[40]};
     }
-    
+
     ${theme.media.desktop} {
       display: flex;
       flex-direction: column;
@@ -74,11 +77,11 @@ const cssStyles = {
     font-weight: ${theme.text.weight.regular};
     line-height: 1;
     max-width: 18rem;
-    
+
     ${theme.media.tabletBreakPoint} {
       font-size: ${theme.text.size.huge};
     }
-    
+
     ${theme.media.desktop} {
       max-width: 100%;
       padding-bottom: ${theme.spacing.large};
@@ -90,18 +93,18 @@ const cssStyles = {
     color: ${theme.colors.white.default};
     margin-bottom: ${theme.spacing.huge};
     max-width: 18rem;
-    
+
     ${theme.media.tabletBreakPoint} {
       max-width: 27.5rem;
       font-size: ${theme.text.size.medium};
       padding-bottom: ${theme.spacing.extra};
       margin-bottom: ${theme.spacing.default};
     }
-    
+
     ${theme.media.tabletLandscape} {
       color: ${theme.colors.grey.light};
     }
-    
+
     ${theme.media.desktop} {
       max-width: 37.5rem;
       color: ${theme.colors.white.text};
@@ -138,20 +141,21 @@ const cssStyles = {
   image: css`
     opacity: 0.4;
     border-radius: ${theme.borderRadius.default};
-    
+    object-fit: cover;
+
     ${theme.media.tabletBreakPoint} {
       left: auto !important;
       max-width: 39rem;
     }
-    
+
     ${theme.media.tabletLandscape} {
       opacity: 1;
     }
-    
+
     ${theme.media.desktop} {
       max-width: 48rem;
     }
-  `
+  `,
 };
 
-export default GetStartedSection
+export default GetStartedSection;
