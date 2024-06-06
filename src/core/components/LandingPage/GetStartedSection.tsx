@@ -3,8 +3,7 @@ import Image from "next/image";
 
 import SectionWrapper from "@/core/components/common/SectionWrapper";
 import theme from "@/core/styles/theme";
-import ExternalLinkButton from "@/core/components/common/ExternalLinkWrapper";
-import { externalLinks } from "@/core/constants/externalLinks";
+import RegularTradeButton from "@/core/components/LandingPage/components/RegularTradeButton";
 
 const GetStartedSection = () => {
   return (
@@ -16,11 +15,7 @@ const GetStartedSection = () => {
             Begin with a bespoke onboarding session to align our platform
             capabilities with your trading methodologies.
           </p>
-          <ExternalLinkButton
-            href={externalLinks.tradeApp}
-            label="Launch trading"
-            styles={cssStyles.linkButton}
-          />
+          <RegularTradeButton styles={cssStyles.linkButton} label="Launch trading" />
         </main>
 
         <div css={cssStyles.imageContainer}>
@@ -112,15 +107,6 @@ const cssStyles = {
   `,
 
   linkButton: css`
-    display: flex;
-    justify-content: center;
-    padding: ${theme.spacing.normal};
-    background: ${theme.colors.gradients.buttonCTA};
-    font-size: ${theme.text.size.body};
-    border-radius: ${theme.borderRadius.default};
-    width: 100%;
-    box-shadow: ${theme.shadow.inset};
-
     ${theme.media.tabletBreakPoint} {
       max-width: 13.75rem;
     }
