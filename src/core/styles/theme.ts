@@ -48,6 +48,7 @@ const landingTheme = {
     },
     black: {
       default: "#000",
+      22: "#07070838"
     },
     orange: "#FD9C59",
     gradients: {
@@ -87,6 +88,7 @@ const landingTheme = {
       body: "1.25rem", // 20px
       medium: "1.5rem", // 24px
       subtitle: "2rem", // 32px
+      headline: "2.5rem", // 40px
       large: "4rem", // 64px
       huge: "6.25rem", // 100px
     },

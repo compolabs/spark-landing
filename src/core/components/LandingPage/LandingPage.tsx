@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import HeroSection from "./HeroSection";
-import Features from "./Features";
+import Features from "./Features/Features";
 import InterfaceSection from "./InterfaceSection";
 import TradingPlatformSection from "./TradingPlatformSection";
 import ResourcesSection from "./ResourcesSection";
