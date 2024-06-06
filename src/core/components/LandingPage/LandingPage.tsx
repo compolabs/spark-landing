@@ -8,11 +8,13 @@ import InterfaceSection from "./InterfaceSection";
 import TradingPlatformSection from "./TradingPlatformSection";
 import ResourcesSection from "./ResourcesSection";
 import GetStartedSection from "./GetStartedSection";
+import Background from "./Background";
 
 const LandingPage = () => {
   const syne = useMainFont();
   return (
     <main className={syne}>
+      <Background />
       <HeroSection />
       <InterfaceSection />
       <Features />

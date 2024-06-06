@@ -32,7 +32,7 @@ const cssStyles = {
     background: ${theme.colors.white.default}12;
     color: ${theme.colors.white.default};
     font-size: ${theme.spacing.medium};
-    backdrop-filter: blur(${theme.spacing.small});
+    backdrop-filter: blur(${theme.spacing.medium});
 
     &:hover {
       background: ${theme.colors.white.default}24;
