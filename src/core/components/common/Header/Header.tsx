@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <header
-      css={cssStyles.header(isOpenMenu, scrollPosition !== 0, scrollDirection)}
+      css={cssStyles.header(isOpenMenu, scrollPosition > 0, scrollDirection)}
       className={syne}
     >
       <SectionWrapper disableMaxWidth styles={cssStyles.wrapper(isOpenMenu)}>
@@ -58,12 +58,9 @@ const cssStyles = {
     position: fixed;
     top: 0;
     padding: ${theme.spacing.normal} 0;
-    -webkit-transition:
-      background 0.3s ease,
-      transform 0.15s ease;
     transition:
-      background 0.3s ease,
-      transform 0.15s ease;
+      background 0.15s linear 0.1s,
+      transform 0.15s linear 0.1s;
 
     ${isOpenMenu
       ? `border-radius: 0 0 ${theme.borderRadius.default} ${theme.borderRadius.default};`
@@ -71,11 +68,11 @@ const cssStyles = {
 
     ${(scrollPosition && scrollDirection) || isOpenMenu
       ? `background:${theme.colors.white.default}15; 
-         backdrop-filter: blur(${theme.spacing.default});`
+         backdrop-filter: blur(${theme.spacing.medium});`
       : null};
 
     transform: translateY(
-      ${scrollPosition && !scrollDirection ? "-80px" : "0"}
+      ${scrollPosition && !scrollDirection ? "-130px" : "0"}
     );
 
     ${theme.media.tabletBreakPoint} {
