@@ -59,8 +59,9 @@ const cssStyles = {
     top: 0;
     padding: ${theme.spacing.normal} 0;
     transition:
-      background 0.15s linear 0.1s,
-      transform 0.15s linear 0.1s;
+      transform 0.05s linear,
+      background 0.15s linear,
+      backdrop-filter 0.15s linear;
 
     ${isOpenMenu
       ? `border-radius: 0 0 ${theme.borderRadius.default} ${theme.borderRadius.default};`

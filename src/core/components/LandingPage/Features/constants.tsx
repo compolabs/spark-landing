@@ -1,134 +1,81 @@
-import { css } from "@emotion/react";
-import Image from "next/image";
+import { FeatureCardShapeTypes } from "./enums";
+import { FeatureCardType } from "./types";
 
-import { FeatureCardTypes } from "@/core/enums/featureCardTypes";
-import theme from "@/core/styles/theme";
-
-const cssStyles = {
-  highlightedText: css`
-    color: ${theme.colors.white.default}
-  `,
-
-  imageContainer: css`
-    position: relative;
-    width: 100%;
-  `,
-
-  medium: css`
-    height: 7rem;
-    width: 7.5rem;
-  `,
-
-  top: css`
-    height: 5.75rem;
-    width: 16.75rem;
-    
-    ${theme.media.tabletBreakPoint} {
-      height: 7.5rem;
-      width: 25rem;
-    }
-  `,
-
-  image: css`
-    position: static !important;
-    height: auto!important;
-    width: 100%;
-  `,
-
-  extraBadgeContainer: css`
-    position: absolute;
-    right: -1.5rem;
-    top: -1rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    
-    ${theme.media.tabletBreakPoint} {
-      width: 5rem;
-      height: 5rem;
-      top: -1.5rem;
-      right: 1rem;
-    }
-  `
+export const isFeature = {
+  [FeatureCardShapeTypes.Card]: ({ type }: FeatureCardType) =>
+    type === FeatureCardShapeTypes.Card,
+  [FeatureCardShapeTypes.SubCard]: ({ type }: FeatureCardType) =>
+    type === FeatureCardShapeTypes.SubCard,
 };
 
 export const featureCards = [
   {
-    title: "Leverage & Margin:",
-    paragraph: (
-      <>
-        Our on-chain CLOB provides unmatched speed and accuracy, ensuring
-        <span css={cssStyles.highlightedText}> high-volume trade execution without compromise.</span>
-      </>
-    ),
-    type: FeatureCardTypes.Top,
-    badgeText: "Familiar tools",
-    image: (
-      <div css={[cssStyles.imageContainer, cssStyles.top]}>
-        <Image css={cssStyles.image} src="/images/feature_big_1.png" alt="familiar_tools" fill />
-        <div css={cssStyles.extraBadgeContainer}>
-          <Image src="/images/svg/up_to_50x.svg" alt="up to 50x" fill />
-        </div>
-      </div>
-    ),
+    type: FeatureCardShapeTypes.Card,
+    badge: "Top feature",
+    imageSrc: "./images/img_feature_big_2.png",
+    imageLabel: null,
+    article: {
+      header: "On-chain Orderbook:",
+      title: {
+        highlightedText:
+          "Our on-chain CLOB provides unmatched speed and accuracy, ensuring",
+        text: "Our on-chain CLOB provides unmatched speed and accuracy, ensuring high-volume trade execution without compromise.",
+      },
+    },
   },
   {
-    title: "On-chain Orderbook:",
-    paragraph: (
-      <>
-        Access dynamic leverage options and sophisticated risk management tools
-        <span css={cssStyles.highlightedText}> designed for strategic trade optimization.</span>
-      </>
-    ),
-    type: FeatureCardTypes.Top,
-    badgeText: "Top feature",
-    image: (
-      <div
-        css={[cssStyles.imageContainer, cssStyles.top]}
-      >
-        <Image css={cssStyles.image} src="/images/feature_big_2.png" alt="familiar_tools" fill />
-      </div>
-    ),
+    type: FeatureCardShapeTypes.Card,
+    badge: "Familiar tools",
+    imageSrc: "./images/img_feature_big_1.png",
+    imageLabel: "./images/svg/up_to_50x.svg",
+    article: {
+      header: "Leverage & Margin:",
+      title: {
+        highlightedText:
+          "Access dynamic leverage options and sophisticated risk management tools",
+        text: "Access dynamic leverage options and sophisticated risk management tools designed for strategic trade optimization.",
+      },
+    },
   },
   {
-    title: "Fast data: 2500tps",
-    paragraph: (
-      <>
-        <span css={cssStyles.highlightedText}>Trade fast</span> quick settlements and minimal fees.
-      </>
-    ),
-    type: FeatureCardTypes.Medium,
-    image: (
-      <div css={[cssStyles.imageContainer, cssStyles.medium]}>
-        <Image src="/images/svg/feature_small_1.svg" alt="fast data" fill />
-      </div>
-    ),
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_1.svg",
+    imageLabel: null,
+    article: {
+      header: "Fast data: 2500tps",
+      title: {
+        highlightedText: "with quick settlements and minimal fees.",
+        text: "Trade fast with quick settlements and minimal fees.",
+      },
+    },
   },
   {
-    title: "Low fees: $0.00000001.",
-    paragraph: (
-      <>
-        <span css={cssStyles.highlightedText}>Instant order execution.</span> No lag, no downtime.
-      </>
-    ),
-    type: FeatureCardTypes.Medium,
-    image: (
-      <div css={[cssStyles.imageContainer, cssStyles.medium]}>
-        <Image src="/images/svg/feature_small_2.svg" alt="low fees" fill />
-      </div>
-    )
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_2.svg",
+    imageLabel: null,
+    article: {
+      header: "Low fees: $0.00000001.",
+      title: {
+        highlightedText: "No lag, no downtime.",
+        text: "Instant order execution. No lag, no downtime.",
+      },
+    },
   },
   {
-    title: "RISC engine",
-    paragraph: (
-      <>
-        A robust system that keeps your <span css={cssStyles.highlightedText}>trades safer, smarter.</span>
-      </>
-    ),
-    type: FeatureCardTypes.Medium,
-    image: (
-      <div css={[cssStyles.imageContainer, cssStyles.medium]}>
-        <Image src="/images/svg/feature_small_3.svg" alt="engine" fill />
-      </div>
-    )
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_3.svg",
+    imageLabel: null,
+    article: {
+      header: "Low fees: $0.00000001.",
+      title: {
+        highlightedText:
+          "A robust system that keeps your trades safer, smarter.",
+        text: "A robust system that keeps your trades safer, smarter.",
+      },
+    },
   },
 ];
+

@@ -50,10 +50,11 @@ const landingTheme = {
       light: "#A2A2A2",
       dark: "#2A2A2A",
       bgDark: "#232322",
+      lightDark: "#3d3d3d",
     },
     black: {
       default: "#000",
-      22: "#07070838"
+      22: "#07070838",
     },
     orange: "#FD9C59",
     gradients: {

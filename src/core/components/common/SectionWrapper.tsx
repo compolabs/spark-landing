@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 
 import { ChildrenType, Styles } from "core/types";
-import theme from "@/core/styles/theme";
 
 import theme from "@/core/styles/theme";
 
@@ -17,7 +16,7 @@ const SectionWrapper = ({
   disableMaxWidth = false,
 }: PropTypes) => {
   return (
-    <div
+    <section
       css={[
         cssStyles.wrapper(
           disableMaxWidth ? "none" : theme.media.section.maxWidth
@@ -26,7 +25,7 @@ const SectionWrapper = ({
       ]}
     >
       {children}
-    </div>
+    </section>
   );
 };
 
