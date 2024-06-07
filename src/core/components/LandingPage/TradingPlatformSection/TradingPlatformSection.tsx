@@ -43,6 +43,7 @@ const TradingPlatformSection = () => {
             src="./images/trade-platform.png"
             alt="trade-platform"
             fill
+            priority
           />
         </div>
 

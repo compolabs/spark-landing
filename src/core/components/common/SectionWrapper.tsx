@@ -35,6 +35,7 @@ const cssStyles = {
     margin: 0 auto;
     padding: 0 ${theme.spacing.medium} 0;
     max-width: ${maxWidth};
+    box-sizing: initial;
 
     ${theme.media.tabletBreakPoint} {
       padding: 0 ${theme.spacing.custom[40]} 0;

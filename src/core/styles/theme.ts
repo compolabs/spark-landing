@@ -1,6 +1,8 @@
 const landingTheme = {
   spacing: {
     custom: {
+      80: "5rem",
+      60: "3.75rem",
       40: "2.5rem",
       20: "1.25rem",
       10: "0.6rem",
@@ -45,12 +47,16 @@ const landingTheme = {
       text: "#F8FCFC",
       100: "#FEFFF0",
       37: "#FEFFF05E",
+      13: "#FFFFFF21",
     },
     grey: {
       light: "#A2A2A2",
       dark: "#2A2A2A",
       bgDark: "#232322",
       lightDark: "#3d3d3d",
+      textLight: "#8E8E8E",
+      45: "#A3A3A373",
+
     },
     black: {
       default: "#000",
@@ -68,6 +74,7 @@ const landingTheme = {
       50: "#00E388",
     },
     pink: "#E395FF",
+    purpleShadow: "#1D1927",
   },
 
   borderRadius: {

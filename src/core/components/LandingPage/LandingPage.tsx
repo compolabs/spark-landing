@@ -2,7 +2,7 @@ import React from "react";
 
 import useMainFont from "@/core/hooks/useMainFont";
 
-import HeroSection from "./HeroSection";
+import { WhySparkSection } from "./WhySparkSection";
 import Features from "./Features/Features";
 import InterfaceSection from "./InterfaceSection";
 import { TradingPlatformSection } from "./TradingPlatformSection";
@@ -15,7 +15,7 @@ const LandingPage = () => {
   return (
     <main className={syne}>
       <Background />
-      <HeroSection />
+      <WhySparkSection />
       <InterfaceSection />
       <Features />
       <TradingPlatformSection />
