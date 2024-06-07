@@ -15,7 +15,6 @@ const LandingPage = () => {
   return (
     <main className={syne}>
       <Background />
-      <div style={{ paddingTop: "300px"}}></div>
       <WhySparkSection />
       <InterfaceSection />
       <Features />
