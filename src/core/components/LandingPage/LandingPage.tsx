@@ -2,7 +2,7 @@ import React from "react";
 
 import useMainFont from "@/core/hooks/useMainFont";
 
-import WhySparkSection from "./WhySparkSection/WhySparkSection";
+import { WhySparkSection } from "./WhySparkSection";
 import Features from "./Features/Features";
 import InterfaceSection from "./InterfaceSection";
 import { TradingPlatformSection } from "./TradingPlatformSection";
