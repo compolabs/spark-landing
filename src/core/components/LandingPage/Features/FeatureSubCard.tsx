@@ -25,7 +25,7 @@ const FeatureSubCard = ({ card }: { card: FeatureCardType }) => {
     </div>
   );
 };
-
+//TODO: Technical Debt - rewrite styles for FeatureSubCard and FeatureCard to exclude style duplicates for
 const cssStyles = {
   card: css`
     position: relative;
