@@ -59,8 +59,8 @@ const landingTheme = {
     orange: "#FD9C59",
     gradients: {
       text: "linear-gradient(90deg, #FFFFFF 4.15%, #FF9B57 13.73%, #54BB94 76.04%)",
-      buttonCTA: " linear-gradient(148deg, #7A56FF 23.16%, #6743EE 63.65%)",
-      buttonTrading: "linear-gradient(to right, #3f5efb, #fc466b)",
+      buttonCTA: "linear-gradient(148deg, #7A56FF 23.16%, #6743EE 63.65%)",
+      buttonTrading: "linear-gradient(190.8deg, #149566 56.59%, #6642ee 76.58%)",
     },
     green: {
       100: "#149667",
@@ -78,6 +78,7 @@ const landingTheme = {
   shadow: {
     inset: `0 0.06rem 0.06rem 0 #FFFFFF54 inset`, // button inner shadow
     default: "0 1rem 0.9rem -0.37rem #15141540, 0 0.12rem 0.3rem 0 #00000038)", // button outer shadow
+    green: "0px -2px 20px #149667b8", // green button shadow
   },
 
   text: {

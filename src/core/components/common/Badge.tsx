@@ -1,30 +1,42 @@
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
-import { Styles } from "core/types";
+import { StyledProps, Styles } from "core/types";
 
 import theme from "@/core/styles/theme";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
-interface PropTypes {
-  text: string;
-  styles?: Styles;
+type PropTypes = StyledProps & {
+  content: string;
+  bgColor?: string;
+  borderStyles?: Styles;
 }
 
-const Badge = ({ text, styles }: PropTypes) => {
+const Badge = ({ content, bgColor = theme.colors.grey.dark, borderStyles , styles }: PropTypes) => {
   return (
-    <span css={[cssStyles.badge, styles]}>{text}</span>
+    <span css={[cssStyles.borderWrap, borderStyles]}>
+      <span css={[cssStyles.wrapper(bgColor), styles]}>
+        {content}
+      </span>
+    </span>
   );
 };
 
 const cssStyles = {
-  badge: css`
+  borderWrap: css`
     display: inline-block;
-    padding: ${theme.spacing.small} ${theme.spacing.medium};
-    color: ${theme.colors.white.default};
-    font-size: ${theme.text.size.tiny};
-    line-height: 1.5;
+    position: relative;
+    background: transparent;
     border-radius: ${theme.borderRadius.large};
-    border: 1px solid transparent;
-    background: ${theme.colors.black[22]};
+    padding: ${convertPxToRem(1)};
+  `,
+  wrapper: (bgColor: string) => css`
+    border-radius: ${theme.borderRadius.large};
+    display: inline-block;
+    padding: ${theme.spacing.default} ${theme.spacing.medium};
+    text-align: center;
+    color: ${theme.colors.white.default};
+    background: ${bgColor};
+    line-height: 1.5;
   `,
 };
 

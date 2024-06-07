@@ -7,7 +7,6 @@ import InternalLinkButton from "./InternalLinkButton";
 import ExternalLinkButton from "./ExternalLinkWrapper";
 import AnchorLinkButton from "./AnchorLinkButton";
 
-
 interface LinkButtonInterface extends CommonEntity{
   type: "internal" | "external" | "anchor";
   tooltipLabel?: string;

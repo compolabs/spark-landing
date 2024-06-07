@@ -5,7 +5,7 @@ import useMainFont from "@/core/hooks/useMainFont";
 import HeroSection from "./HeroSection";
 import Features from "./Features/Features";
 import InterfaceSection from "./InterfaceSection";
-import TradingPlatformSection from "./TradingPlatformSection";
+import { TradingPlatformSection } from "./TradingPlatformSection";
 import ResourcesSection from "./ResourcesSection";
 import GetStartedSection from "./GetStartedSection";
 import Background from "./Background";

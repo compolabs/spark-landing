@@ -2,8 +2,9 @@ import React from "react";
 
 import useWindowWidth from "@/core/hooks/useWindowWidth";
 
-import bg from "./../../../../public/images/frameBackground.png";
+import bg from "./../../../../public/images/FrameBackground.png";
 
+// TODO: try to refactor using Next Image
 export default function Background() {
   const width = useWindowWidth();
   return (
