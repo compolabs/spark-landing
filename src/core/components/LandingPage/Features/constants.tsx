@@ -72,7 +72,7 @@ export const featureCards = [
       header: "Low fees: $0.00000001.",
       title: {
         highlightedText:
-          "A robust system that keeps your trades safer, smarter.",
+          "A robust system that keeps your",
         text: "A robust system that keeps your trades safer, smarter.",
       },
     },

@@ -7,6 +7,7 @@ import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 import { FeatureCardType } from "./types";
 import { DecorationPlus } from "../../common/DecorationPlus";
+import TextHighlighter from "../../common/TextHighlighter";
 
 const FeatureCard = ({ card }: { card: FeatureCardType }) => {
   const {
@@ -42,7 +43,13 @@ const FeatureCard = ({ card }: { card: FeatureCardType }) => {
         </div>
         <div css={cssStyles.content}>
           <h3 css={cssStyles.h3}>{header}</h3>
-          <p css={cssStyles.paragraph}>{title.text}</p>
+
+          <TextHighlighter
+            color={theme.colors.grey.light}
+            text={title.text}
+            highlight={title.highlightedText}
+            styles={cssStyles.paragraph}
+          />
         </div>
       </DecorationPlus>
     </div>
@@ -143,7 +150,7 @@ const cssStyles = {
   `,
   paragraph: css`
     word-wrap: break-word;
-    color: ${theme.colors.grey.light};
+    color: ${theme.colors.white.default};
     font-size: ${theme.text.size.extraTiny};
     margin-bottom: ${theme.spacing.medium};
     width: 90%;
