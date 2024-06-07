@@ -20,7 +20,7 @@ const FeatureCard = ({ card }: { card: FeatureCardType }) => {
   return (
     <div css={cssStyles.card}>
       <DecorationPlus>
-        {badge && <Badge text={badge} styles={cssStyles.badge} />}
+        {badge && <Badge content={badge} styles={cssStyles.badge} bgColor={theme.colors.black[22]} />}
         <div css={cssStyles.imageContainer}>
           {imageLabel && (
             <div css={cssStyles.labelContainer}>
@@ -81,6 +81,7 @@ const cssStyles = {
   badge: css`
     margin-top: ${theme.spacing.custom[20]};
     margin-bottom: ${theme.spacing.large};
+    font-size: ${theme.text.size.tiny};
 
     ${theme.media.tabletBreakPoint} {
       margin-top: ${theme.spacing.huge};
