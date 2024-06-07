@@ -19,7 +19,7 @@ const Badge = ({ content, bgColor = theme.colors.grey.dark, borderStyles , style
     </span>
   );
 };
-
+    
 const cssStyles = {
   borderWrap: css`
     display: inline-block;
@@ -35,6 +35,7 @@ const cssStyles = {
     text-align: center;
     color: ${theme.colors.white.default};
     background: ${bgColor};
+    line-height: 1.5;
   `,
 };
 

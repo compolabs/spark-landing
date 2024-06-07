@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+
+import { getIdAnchor } from "@/core/utils/getidAnchor";
+import { SourceNames } from "@/core/utils/pageSources";
 
 const ResourcesSection = () => {
-  return (
-    <div>ResourcesSection</div>
-  )
-}
+  return <div id={getIdAnchor(SourceNames.Resources)}>ResourcesSection</div>;
+};
 
-export default ResourcesSection
+export default ResourcesSection;

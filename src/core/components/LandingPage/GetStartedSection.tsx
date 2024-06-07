@@ -24,6 +24,7 @@ const GetStartedSection = () => {
             alt="rocket"
             css={cssStyles.image}
             fill
+            priority
           />
         </div>
       </section>
