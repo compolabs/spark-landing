@@ -16,7 +16,7 @@ const SectionWrapper = ({
   disableMaxWidth = false,
 }: PropTypes) => {
   return (
-    <div
+    <section
       css={[
         cssStyles.wrapper(
           disableMaxWidth ? "none" : theme.media.section.maxWidth
@@ -25,7 +25,7 @@ const SectionWrapper = ({
       ]}
     >
       {children}
-    </div>
+    </section>
   );
 };
 

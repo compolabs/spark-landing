@@ -26,7 +26,7 @@ export const LinksList = ({ links, listHeader = "", type = "vertical", listStyle
 
       {links.map(({ label, href = "", icon }) => (
         <li
-          key={href}
+          key={href + label}
           css={cssStyles.listItem(isVerticalList
             ? { marginBottom: theme.spacing.large }
             : { marginRight: theme.spacing.medium }

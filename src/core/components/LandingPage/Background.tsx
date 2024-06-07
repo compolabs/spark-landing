@@ -1,7 +1,8 @@
 import React from "react";
 
 import useWindowWidth from "@/core/hooks/useWindowWidth";
-import bg from "@/../../public/images/FrameBackground.png";
+
+import bg from "./../../../../public/images/frameBackground.png";
 
 export default function Background() {
   const width = useWindowWidth();
