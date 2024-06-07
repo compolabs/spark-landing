@@ -21,7 +21,7 @@ const TradingPlatformSection = () => {
 
   return (
     <SectionWrapper>
-      <section
+      <div
         id={getIdAnchor(SourceNames.TradeSmart)}
         css={cssStyles.section(isMobile)}
       >
@@ -49,7 +49,7 @@ const TradingPlatformSection = () => {
         <TradingFeatures />
 
         <RegularTradeButton label= "Try it" styles={cssStyles.tryBtn} />
-      </section>
+      </div>
     </SectionWrapper>
   );
 };

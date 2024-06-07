@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { StyledProps, Styles } from "core/types";
 
 import theme from "@/core/styles/theme";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 type PropTypes = StyledProps & {
   content: string;
@@ -19,14 +20,14 @@ const Badge = ({ content, bgColor = theme.colors.grey.dark, borderStyles , style
     </span>
   );
 };
-    
+
 const cssStyles = {
   borderWrap: css`
     display: inline-block;
     position: relative;
     background: transparent;
     border-radius: ${theme.borderRadius.large};
-    padding: 1px;
+    padding: ${convertPxToRem(1)};
   `,
   wrapper: (bgColor: string) => css`
     border-radius: ${theme.borderRadius.large};
