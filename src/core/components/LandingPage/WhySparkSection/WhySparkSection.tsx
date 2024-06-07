@@ -17,7 +17,7 @@ const WhySparkSection = () => {
         css={cssStyle.container}
       >
         <Image
-          src="/images/bg.png"
+          src="./images/bg.png"
           alt="bg"
           css={cssStyle.bgImage}
           fill
