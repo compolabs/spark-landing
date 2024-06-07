@@ -61,20 +61,19 @@ const cssStyles = {
   imageContainer: css`
     position: relative;
     margin-bottom: ${theme.spacing.large};
-    width: auto;
-    height: ${convertPxToRem(120)};
 
     ${theme.media.tabletBreakPoint} {
       margin-bottom: ${theme.spacing.huge};
       margin-right: ${theme.spacing.huge};
     }
+
     ${theme.media.tabletLandscape} {
       margin-bottom: ${theme.spacing.huge};
       margin-right: 0;
     }
 
-    & > img {
-      width: 100%;
+    &  img {
+      width: auto;
       height: 100%;
       object-fit: cover;
     }
