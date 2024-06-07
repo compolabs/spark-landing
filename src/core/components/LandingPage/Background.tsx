@@ -1,18 +1,13 @@
 import React from "react";
-import Image from "next/image";
 
 import useWindowWidth from "@/core/hooks/useWindowWidth";
 
 export default function Background() {
   const width = useWindowWidth();
   return (
-    <Image
-      src={"./images/FrameBackground.png"}
-      alt="rocket"
-      width={100}
-      height={100}
-      priority
-      css={{
+    <div
+      style={{
+        backgroundImage: `url(./images/FrameBackground.png)`,
         position: "absolute",
         top: 0,
         zIndex: -1,
