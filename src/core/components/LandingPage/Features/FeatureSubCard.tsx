@@ -21,7 +21,6 @@ const FeatureSubCard = ({ card }: { card: FeatureCardType }) => {
       </div>
       <div css={cssStyles.content}>
         <h3 css={cssStyles.h3}>{header}</h3>
-        {/* <p css={cssStyles.paragraph}>{title.text}</p> */}
         <TextHighlighter
           color={theme.colors.grey.light}
           text={title.text}
@@ -32,6 +31,7 @@ const FeatureSubCard = ({ card }: { card: FeatureCardType }) => {
     </div>
   );
 };
+
 //TODO: Technical Debt - rewrite styles for FeatureSubCard and FeatureCard to exclude style duplicates for
 const cssStyles = {
   card: css`
