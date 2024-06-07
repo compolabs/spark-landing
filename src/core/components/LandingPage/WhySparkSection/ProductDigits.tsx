@@ -71,7 +71,7 @@ const cssStyle = {
     order: ${order};
 
     ${theme.media.tabletBreakPoint} {
-      border-left: ${order === 1 ? "none" : `1px solid ${theme.colors.white[13]}`};
+      border-left: ${order === 1 ? "none" : `${convertPxToRem(1)} solid ${theme.colors.white[13]}`};
       max-width: ${convertPxToRem(200)};
       padding-left: ${theme.spacing.normal};
     }
