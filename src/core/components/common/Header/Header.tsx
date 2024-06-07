@@ -26,7 +26,7 @@ function Header() {
 
   useEffect(() => {
     setOpenMenu(false);
-  }, [scrollDirection, isMobile]);
+  }, [scrollDirection, isMobile, scrollPosition]);
 
   return (
     <header
