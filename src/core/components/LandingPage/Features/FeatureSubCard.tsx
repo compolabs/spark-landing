@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import Image from "next/image";
 
 import theme from "@/core/styles/theme";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 import { FeatureCardType } from "./types";
 
@@ -54,7 +55,7 @@ const cssStyles = {
     position: relative;
     margin-bottom: ${theme.spacing.large};
     width: auto;
-    height: 120px;
+    height: ${convertPxToRem(120)};
 
     ${theme.media.tabletBreakPoint} {
       margin-bottom: ${theme.spacing.huge};
@@ -73,15 +74,15 @@ const cssStyles = {
   `,
 
   labelContainer: css`
-    width: 56px;
-    height: 56px;
+    width: ${convertPxToRem(56)};
+    height: ${convertPxToRem(56)};
     position: absolute;
-    right: -22px;
-    top: -29px;
+    right: ${convertPxToRem(-22)};
+    top: ${convertPxToRem(-29)};
 
     ${theme.media.tabletBreakPoint} {
-      width: 82px;
-      height: 82px;
+      width: ${convertPxToRem(82)};
+      height: ${convertPxToRem(82)};
     }
 
     & > img {
