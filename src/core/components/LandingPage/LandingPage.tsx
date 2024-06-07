@@ -9,12 +9,14 @@ import { TradingPlatformSection } from "./TradingPlatformSection";
 import ResourcesSection from "./ResourcesSection";
 import GetStartedSection from "./GetStartedSection";
 import Background from "./Background";
+import GateSection from "./GateSection";
 
 const LandingPage = () => {
   const syne = useMainFont();
   return (
     <main className={syne}>
       <Background />
+      <GateSection />
       <WhySparkSection />
       <InterfaceSection />
       <Features />

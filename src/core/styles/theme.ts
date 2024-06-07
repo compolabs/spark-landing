@@ -56,10 +56,10 @@ const landingTheme = {
       lightDark: "#3d3d3d",
       textLight: "#8E8E8E",
       45: "#A3A3A373",
-
     },
     black: {
       default: "#000",
+      deepDark: "#101419",
       22: "#07070838",
     },
     orange: "#FD9C59",
@@ -72,6 +72,7 @@ const landingTheme = {
       100: "#149667",
       75: "#55BB94",
       50: "#00E388",
+      20: "#54BB9433",
     },
     pink: "#E395FF",
     purpleShadow: "#1D1927",

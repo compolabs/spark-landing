@@ -1,25 +1,33 @@
 import { css } from "@emotion/react";
 
-import { StyledProps } from "core/types";
+import { CommonEntity } from "core/types";
 
 import { externalLinks } from "@/core/constants/externalLinks";
 import LinkButton from "@/core/components/common/LinkButton";
 import theme from "@/core/styles/theme";
 
-type PropTypes = StyledProps & {
-  label: string;
-};
+interface PropTypes extends CommonEntity {
+  label?: string;
+  href?: string;
+}
 
-const RegularTradeButton = ({ label, styles }: PropTypes) => {
+const RegularTradeButton = ({
+  label = "",
+  href = externalLinks.tradeApp,
+  styles,
+  children,
+}: PropTypes) => {
   return (
     <LinkButton
       type="external"
       data={{
         label,
-        href: externalLinks.tradeApp,
+        href,
       }}
       styles={[cssStyles.tradeBtn, styles]}
-    />
+    >
+      {children}
+    </LinkButton>
   );
 };
 
