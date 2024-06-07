@@ -7,7 +7,7 @@ export default function Background() {
   return (
     <div
       style={{
-        backgroundImage: `url(./images/FrameBackground.png)`,
+        backgroundImage: `url(./images/frameBackground.png)`,
         position: "absolute",
         top: 0,
         zIndex: -1,
