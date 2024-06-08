@@ -75,7 +75,9 @@ const cssStyles = {
     }
     
     ${theme.media.tabletLandscape} {
-      margin-bottom: ${convertPxToRem(116)};
+      &:first-of-type {
+        margin-bottom: ${convertPxToRem(116)};
+      }
     }
   `,
 }
