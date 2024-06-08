@@ -55,7 +55,9 @@ const landingTheme = {
       bgDark: "#232322",
       lightDark: "#3d3d3d",
       textLight: "#8E8E8E",
+      medium: "#999393",
       45: "#A3A3A373",
+      33: "#99939347",
     },
     black: {
       default: "#000",
