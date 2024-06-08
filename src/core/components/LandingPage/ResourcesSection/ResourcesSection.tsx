@@ -10,17 +10,25 @@ import theme from "@/core/styles/theme";
 const ResourcesSection = () => {
   return (
     <SectionWrapper>
-      <DecorationPlus>
-        <div id={getIdAnchor(SourceNames.Resources)} css={cssStyles.container}>
+      <div id={getIdAnchor(SourceNames.Resources)} css={cssStyles.container}>
+        <DecorationPlus>
           <h2 css={cssStyles.title}>Knowledge & Insights:</h2>
-        </div>
-      </DecorationPlus>
+        </DecorationPlus>
+      </div>
     </SectionWrapper>
   );
 };
 
 const cssStyles = {
   container: css`
+    padding: ${theme.spacing.custom[20]} 0 ${theme.spacing.extraHuge};
+    margin-bottom: ${theme.spacing.custom[20]};
+    position: relative;
+    width: 100%;
+    
+    ${theme.media.tabletBreakPoint} {
+      padding: ${theme.spacing.custom[40]} 0;
+    }
   `,
   title: css`
     color: ${theme.colors.grey.light};
