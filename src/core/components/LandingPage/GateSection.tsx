@@ -22,12 +22,18 @@ const GateSection = () => {
         </h1>
 
         <p css={cssStyles.tagline}>
-          Earn, Yield, Trade spot, Perp, Lend and Borrow liquidity, build your strategies.
+          Earn, Yield, Trade spot, Perp, Lend and Borrow liquidity, build your
+          strategies.
         </p>
 
         <RegularTradeButton styles={cssStyles.appBtn}>
           <span css={cssStyles.appBtnText}>Launch app</span>
-          <Image src="./images/svg/fuel.svg" alt="fuel-logo" width={72} height={17} />
+          <Image
+            src="./images/svg/fuel.svg"
+            alt="fuel-logo"
+            width={72}
+            height={17}
+          />
         </RegularTradeButton>
       </div>
     </SectionWrapper>
@@ -42,11 +48,11 @@ const cssStyles = {
     margin: 0 auto;
     padding: ${theme.spacing.section} 0 ${theme.spacing.normal};
     text-align: center;
-    
+
     ${theme.media.tabletBreakPoint} {
       margin-bottom: 40px;
     }
-    
+
     ${theme.media.tabletLandscape} {
       padding: ${convertPxToRem(148)} 0 ${theme.spacing.extra};
     }
@@ -55,19 +61,14 @@ const cssStyles = {
     display: inline-block;
     margin-bottom: ${theme.spacing.large};
     border: ${convertPxToRem(1)} solid ${theme.colors.green[20]};
-    
 
     & > span {
       color: ${theme.colors.green[75]};
       padding: ${theme.spacing.small} ${theme.spacing.normal};
     }
-    
+
     ${theme.media.tabletLandscape} {
       background: ${theme.colors.black.deepDark};
-      
-      // & > span {
-      //   padding: ${theme.spacing.small} ${theme.spacing.normal};
-      // }
     }
   `,
   title: css`
@@ -96,7 +97,7 @@ const cssStyles = {
   appBtn: css`
     display: flex;
     align-items: center;
-    
+
     ${theme.media.tabletLandscape} {
       max-width: ${convertPxToRem(302)};
     }
@@ -104,6 +105,6 @@ const cssStyles = {
   appBtnText: css`
     margin-right: ${theme.spacing.custom[20]};
   `,
-}
+};
 
 export default GateSection;

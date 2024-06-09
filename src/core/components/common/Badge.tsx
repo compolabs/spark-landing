@@ -27,7 +27,6 @@ const cssStyles = {
     position: relative;
     background: transparent;
     border-radius: ${theme.borderRadius.large};
-    // padding: ${convertPxToRem(1)};
   `,
   wrapper: (bgColor: string) => css`
     border-radius: ${theme.borderRadius.large};
