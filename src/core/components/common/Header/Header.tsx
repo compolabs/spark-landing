@@ -6,6 +6,7 @@ import theme from "@/core/styles/theme";
 import { useMobileWindowWidth } from "@/core/hooks/useMobileWindowWidth";
 import useMainFont from "@/core/hooks/useMainFont";
 import useScrollDirection from "@/core/hooks/useScrollDirection";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 import Navigation from "./Navigation";
 import Logo from "../Logo";
@@ -52,14 +53,14 @@ const cssStyles = {
     scrollPosition: boolean,
     scrollDirection: boolean | null
   ) => css`
-    z-index: 1;
+    z-index: 100;
     width: 100%;
     min-height: 3.75rem;
     position: fixed;
     top: 0;
     padding: ${theme.spacing.normal} 0;
     transition:
-      transform 0.05s linear,
+      transform 0.15s linear,
       background 0.15s linear,
       backdrop-filter 0.15s linear;
 
@@ -73,7 +74,7 @@ const cssStyles = {
       : null};
 
     transform: translateY(
-      ${scrollPosition && !scrollDirection ? "-130px" : "0"}
+      ${scrollPosition && !scrollDirection ? convertPxToRem(-130) : "0"}
     );
 
     ${theme.media.tabletBreakPoint} {
