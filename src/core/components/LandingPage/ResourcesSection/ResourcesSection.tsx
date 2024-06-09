@@ -10,6 +10,8 @@ import { resourceCards } from "@/core/components/LandingPage/ResourcesSection/co
 import NumberedCard from "@/core/components/LandingPage/ResourcesSection/NumberedCard";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
+import { CarouselPosts } from "./CarouselPosts";
+
 const ResourcesSection = () => {
   return (
     <SectionWrapper>
@@ -25,7 +27,7 @@ const ResourcesSection = () => {
         <DecorationPlus>
           <h2 css={cssStyles.title}>Knowledge & Insights:</h2>
 
-          {resourceCards.map(({ title, paragraph, renderContent}, index) => (
+          {resourceCards.map(({ title, paragraph, renderContent }, index) => (
             <NumberedCard
               key={title}
               number={index + 1}
@@ -37,6 +39,7 @@ const ResourcesSection = () => {
             </NumberedCard>
           ))}
         </DecorationPlus>
+      <CarouselPosts />
       </div>
     </SectionWrapper>
   );
@@ -52,7 +55,7 @@ const cssStyles = {
     text-align: center;
     border-radius: ${theme.borderRadius.default};
     background-color: ${theme.colors.grey.dark};
-    
+
     ${theme.media.tabletBreakPoint} {
       padding: ${theme.spacing.custom[40]} 0;
     }
@@ -62,7 +65,7 @@ const cssStyles = {
     color: ${theme.colors.grey.light};
     font-weight: ${theme.text.weight.regular};
     font-size: ${theme.text.size.tiny};
-    
+
     ${theme.media.tabletLandscape} {
       margin-bottom: ${convertPxToRem(80)};
       font-weight: ${theme.text.weight.medium};
@@ -73,13 +76,13 @@ const cssStyles = {
     &:first-of-type {
       margin-bottom: ${theme.spacing.section};
     }
-    
+
     ${theme.media.tabletLandscape} {
       &:first-of-type {
         margin-bottom: ${convertPxToRem(116)};
       }
     }
   `,
-}
+};
 
 export default ResourcesSection;
