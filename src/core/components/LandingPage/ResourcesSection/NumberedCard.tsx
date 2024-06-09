@@ -70,7 +70,7 @@ const cssStyles = {
   `,
   paragraph: css`
     margin-bottom: ${theme.spacing.custom[40]};
-    max-width: ${convertPxToRem(500)};
+    max-width: ${convertPxToRem(300)};
 
     ${theme.media.tabletLandscape} {
       max-width: ${convertPxToRem(732)};
