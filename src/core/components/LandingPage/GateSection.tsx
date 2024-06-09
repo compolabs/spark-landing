@@ -58,14 +58,13 @@ const cssStyles = {
     
     & > span {
       color: ${theme.colors.green[75]};
+      padding: ${theme.spacing.small} ${theme.spacing.normal};
+      line-height: 1.1;
     }
     
     ${theme.media.tabletLandscape} {
       background: ${theme.colors.black.deepDark};
       
-      & > span {
-        padding: ${theme.spacing.custom[10]} ${theme.spacing.normal};
-      }
     }
   `,
   title: css`
