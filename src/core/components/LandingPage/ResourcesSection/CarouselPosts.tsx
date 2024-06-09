@@ -17,8 +17,6 @@ export const CarouselPosts = () => {
   const isMobile = useMobileWindowWidth();
   const currentWindowWidth = useWindowWidth();
 
-  
-
   return (
     <div
       css={{

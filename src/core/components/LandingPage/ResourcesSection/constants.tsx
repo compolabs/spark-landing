@@ -66,7 +66,7 @@ export const sliderCards = [
     title: "Modular smart Contract architecture",
     isSquare: false,
     href: externalLinks.modular,
-    label: "XXX",
+    label: "",
   },
 ];
 
