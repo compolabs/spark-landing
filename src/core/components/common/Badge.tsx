@@ -27,16 +27,15 @@ const cssStyles = {
     position: relative;
     background: transparent;
     border-radius: ${theme.borderRadius.large};
-    padding: ${convertPxToRem(1)};
   `,
   wrapper: (bgColor: string) => css`
     border-radius: ${theme.borderRadius.large};
     display: inline-block;
-    padding: ${theme.spacing.default} ${theme.spacing.medium};
+    padding: ${theme.spacing.small} ${theme.spacing.medium};
     text-align: center;
     color: ${theme.colors.white.default};
     background: ${bgColor};
-    line-height: 1.5;
+    line-height: 1.2;
   `,
 };
 
