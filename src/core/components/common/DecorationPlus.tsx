@@ -34,12 +34,8 @@ export const DecorationPlus = ({
     </>
   );
 };
+
 const cssStyles = {
-  decoration: css`
-    position: relative;
-    width: 100%;
-    height: 100%;
-  `,
   leftTop: css`
     position: absolute;
     left: ${convertPxToRem(8)};

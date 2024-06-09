@@ -7,15 +7,21 @@ import theme from "@/core/styles/theme";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 interface PropTypes extends CommonEntity {
-  number: number,
-  title: string,
+  number: number;
+  title: string;
   paragraph: {
-    text: string,
-    highlight: string,
-  },
+    text: string;
+    highlight: string;
+  };
 }
 
-const NumberedCard = ({ number, title, paragraph, children, styles }: PropTypes) => {
+const NumberedCard = ({
+  number,
+  title,
+  paragraph,
+  children,
+  styles,
+}: PropTypes) => {
   return (
     <article css={[cssStyles.card, styles]}>
       <span css={cssStyles.cardNumber}>{number}</span>
@@ -30,9 +36,9 @@ const NumberedCard = ({ number, title, paragraph, children, styles }: PropTypes)
         isGradient
       />
 
-      {children}
+      {children && children}
     </article>
-  )
+  );
 };
 
 const cssStyles = {
@@ -65,12 +71,12 @@ const cssStyles = {
   paragraph: css`
     margin-bottom: ${theme.spacing.custom[40]};
     max-width: ${convertPxToRem(500)};
-    
+
     ${theme.media.tabletLandscape} {
       max-width: ${convertPxToRem(732)};
       font-size: ${theme.text.size.subtitle};
     }
   `,
-}
+};
 
 export default NumberedCard;

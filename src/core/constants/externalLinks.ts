@@ -10,4 +10,8 @@ export const externalLinks = {
     docsDevelopers: '',
     faucetDevelopers: '',
     termsOfUse: '',
+    sequencers: '',
+    fuelVM: '',
+    defi: '',
+    modular: '',
 }
