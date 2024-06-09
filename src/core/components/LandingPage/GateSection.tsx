@@ -56,16 +56,18 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.large};
     border: ${convertPxToRem(1)} solid ${theme.colors.green[20]};
     
+
     & > span {
       color: ${theme.colors.green[75]};
+      padding: ${theme.spacing.small} ${theme.spacing.normal};
     }
     
     ${theme.media.tabletLandscape} {
       background: ${theme.colors.black.deepDark};
       
-      & > span {
-        padding: ${theme.spacing.custom[10]} ${theme.spacing.normal};
-      }
+      // & > span {
+      //   padding: ${theme.spacing.small} ${theme.spacing.normal};
+      // }
     }
   `,
   title: css`
