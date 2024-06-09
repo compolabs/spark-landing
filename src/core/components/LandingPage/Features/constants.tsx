@@ -69,7 +69,7 @@ export const featureCards = [
     imageSrc: "./images/svg/feature_small_3.svg",
     imageLabel: null,
     article: {
-      header: "Low fees: $0.00000001.",
+      header: "RISC engine",
       title: {
         highlightedText:
           "A robust system that keeps your",
