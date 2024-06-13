@@ -1,14 +1,13 @@
-export const tradingToolkitDescription =
-  `Empower the trading journey with our comprehensive toolkit for decentralized finance.`;
+export const tradingToolkitDescription = `Empower the trading journey with our comprehensive toolkit for decentralized finance.`;
 export const tradingDescriptionHighlight = "Empower the trading journey";
 
-export const optimisedExecutionText =
-  `Our intelligent routing system ensures optimal pricing by scanning multiple liquidity sources for the best trade execution.`;
-export const optimisedExecutionHighlight = "ensures optimal pricing";
+export const optimisedExecutionText = `We ensures efficient and reliable trade execution, minimizing slippage and providing the best market rates for your transactions.`;
+export const optimisedExecutionHighlight =
+  "providing the best market rates for your transactions.";
 
-export const algorithmsAndAutomationText =
-  `Deploy complex trading strategies with ease, utilizing our platform's advanced algorithmic trading capabilities.`;
-export const algorithmsAndAutomationHighlight = "advanced algorithmic trading capabilities.";
+export const algorithmsAndAutomationText = `Deploy complex trading strategies with ease, utilizing our platform's advanced algorithmic trading capabilities.`;
+export const algorithmsAndAutomationHighlight =
+  "advanced algorithmic trading capabilities.";
 
 export const tradingKeyAttributes = [
   "Rich API",
@@ -17,12 +16,11 @@ export const tradingKeyAttributes = [
   "Low / No fees",
   "Native Assets",
   "Native account abstraction",
-  "Trusted oracle - Pyth",
 ];
 
 export const tradingFeatures = [
   {
-    title: "Optimized Execution",
+    title: "Seamless Order Execution:",
     paragraph: optimisedExecutionText,
     highlight: optimisedExecutionHighlight,
   },
@@ -38,4 +36,3 @@ export const preActiveIndex = activeIndex - 1;
 export const postActiveIndex = activeIndex + 1;
 export const bottomLeftActiveIndex = activeIndex + 3;
 export const bottomRightActiveIndex = activeIndex + 4;
-

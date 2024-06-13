@@ -8,7 +8,7 @@ import { resourceLinks } from "@/core/components/LandingPage/ResourcesSection/co
 const ResourceLinks = () => {
   return (
     <div css={cssStyles.wrapper}>
-      {resourceLinks.map(({ label, href, svgIcon}) => (
+      {resourceLinks.map(({ label, href, svgIcon }) => (
         <ExternalLinkButton key={label} href={href} styles={cssStyles.link}>
           <span>{label}</span>
           {svgIcon}
@@ -43,15 +43,16 @@ const cssStyles = {
     border-radius: ${theme.borderRadius.default};
     max-width: ${convertPxToRem(320)};
     width: 100%;
-    
+    height: ${convertPxToRem(56)};
+
     & > img {
       padding: ${theme.spacing.small};
     }
-    
+
     ${theme.media.tabletBreakPoint} {
       max-width: ${convertPxToRem(230)};
     }
-  `
+  `,
 };
 
 export default ResourceLinks;

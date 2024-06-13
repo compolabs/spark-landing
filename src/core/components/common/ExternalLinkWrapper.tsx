@@ -15,7 +15,7 @@ const ExternalLinkButton = ({
 }: PropTypes) => {
   return (
     <a href={href} target="_blank" css={styles} title={tooltipLabel}>
-      {children ?? label}
+      {children ? children: label}
     </a>
   );
 };

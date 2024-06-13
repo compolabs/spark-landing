@@ -69,11 +69,11 @@ export const featureCards = [
     imageSrc: "./images/svg/feature_small_3.svg",
     imageLabel: null,
     article: {
-      header: "RISC engine",
+      header: "Best setup to trade crypto",
       title: {
         highlightedText:
-          "A robust system that keeps your",
-        text: "A robust system that keeps your trades safer, smarter.",
+          "Trade with solid tech in a user-friendly environment.",
+        text: "Trade with solid tech in a user-friendly environment.",
       },
     },
   },

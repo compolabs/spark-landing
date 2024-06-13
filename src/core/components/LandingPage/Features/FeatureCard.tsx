@@ -20,7 +20,16 @@ const FeatureCard = ({ card }: { card: FeatureCardType }) => {
   return (
     <div css={cssStyles.card}>
       <DecorationPlus>
-        {badge && <Badge content={badge} styles={cssStyles.badge} bgColor={theme.colors.black[22]} />}
+        {badge && (
+          <Badge
+            content={badge}
+            borderStyles={cssStyles.badge}
+            styles={{
+              padding: `${convertPxToRem(6.2)} ${theme.spacing.medium}`,
+            }}
+            bgColor={theme.colors.black[22]}
+          />
+        )}
         <div css={cssStyles.imageContainer}>
           {imageLabel && (
             <div css={cssStyles.labelContainer}>
@@ -79,12 +88,12 @@ const cssStyles = {
     }
   `,
   badge: css`
-    margin-top: ${theme.spacing.custom[20]};
+    margin-top: ${theme.spacing.custom[10]};
     margin-bottom: ${theme.spacing.large};
     font-size: ${theme.text.size.tiny};
 
     ${theme.media.tabletBreakPoint} {
-      margin-top: ${theme.spacing.huge};
+      // margin-top: ${theme.spacing.huge};
       margin-left: 0;
     }
   `,
@@ -144,6 +153,7 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.normal};
 
     ${theme.media.tabletLandscape} {
+      white-space: nowrap;
       font-size: ${theme.text.size.headline};
       font-weight: ${theme.text.weight.extraBold};
       margin-bottom: ${theme.spacing.medium};
@@ -155,11 +165,30 @@ const cssStyles = {
     font-size: ${theme.text.size.extraTiny};
     margin-bottom: ${theme.spacing.medium};
     width: 90%;
+    line-height: ${convertPxToRem(26)};
 
     ${theme.media.tabletBreakPoint} {
       font-size: ${theme.text.size.small};
       text-align: center;
-      width: 65%;
+      width: 60%;
+    }
+
+    ${theme.media.tabletLandscape} {
+      font-size: ${theme.text.size.small};
+      text-align: center;
+      width: 78%;
+    }
+
+    ${theme.media.tablet} {
+      font-size: ${theme.text.size.small};
+      text-align: center;
+      width: 70%;
+    }
+
+    ${theme.media.desktop} {
+      font-size: ${theme.text.size.small};
+      text-align: center;
+      width: 55%;
     }
   `,
 };

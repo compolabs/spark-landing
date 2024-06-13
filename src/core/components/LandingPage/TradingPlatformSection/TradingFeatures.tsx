@@ -4,11 +4,12 @@ import TextHighlighter from "@/core/components/common/TextHighlighter";
 import theme from "@/core/styles/theme";
 
 import { tradingFeatures } from "./constants";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 const TradingFeatures = () => {
   return (
     <div css={cssStyles.container}>
-      {tradingFeatures.map(({ title, paragraph, highlight}) => (
+      {tradingFeatures.map(({ title, paragraph, highlight }) => (
         <article key={title} css={cssStyles.article}>
           <h4 css={cssStyles.title}>{title}</h4>
           <p>
@@ -31,7 +32,7 @@ const cssStyles = {
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
-    
+
     ${theme.media.tablet} {
       max-width: 39rem;
       width: 100%;
@@ -46,14 +47,14 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.extraHuge};
     max-width: 20rem;
     text-align: center;
-    
+
     &:first-of-type {
       margin-bottom: ${theme.spacing.extra};
     }
-    
+
     ${theme.media.tablet} {
       max-width: 16.25rem;
-      
+
       &:first-of-type {
         max-width: 17.5rem;
       }
@@ -71,7 +72,7 @@ const cssStyles = {
     font-size: ${theme.text.size.small};
     color: ${theme.colors.white.default};
     font-weight: ${theme.text.weight.regular};
-    
+
     ${theme.media.tablet} {
       margin: 0 auto ${theme.spacing.large};
       font-weight: ${theme.text.weight.medium};
@@ -80,9 +81,11 @@ const cssStyles = {
     }
   `,
   content: css`
+    line-height: ${convertPxToRem(22)};
     font-size: ${theme.text.size.extraTiny};
 
     ${theme.media.tablet} {
+      line-height: ${convertPxToRem(26)};
       font-size: ${theme.text.size.small};
     }
   `,
