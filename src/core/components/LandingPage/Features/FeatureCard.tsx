@@ -93,7 +93,6 @@ const cssStyles = {
     font-size: ${theme.text.size.tiny};
 
     ${theme.media.tabletBreakPoint} {
-      // margin-top: ${theme.spacing.huge};
       margin-left: 0;
     }
   `,
