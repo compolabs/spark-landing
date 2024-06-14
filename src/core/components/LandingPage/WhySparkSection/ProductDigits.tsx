@@ -56,11 +56,7 @@ const cssStyle = {
     ${theme.media.tablet} {
       flex-wrap: nowrap;
       padding-top: 0;
-<<<<<<< HEAD
-      gap: ${theme.spacing.large} 10%;
-=======
       gap: ${theme.spacing.large} 0%;
->>>>>>> 4530fd7 (Feet/revert (#29))
     }
   `,
   desktopDigitsWrapper: css`
