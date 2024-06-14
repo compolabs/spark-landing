@@ -18,7 +18,7 @@ export const productDigits = [
     desktopOrder: 2,
   },
   {
-    title: "Open interest",
+    title: "Cumulative volume",
     numbers: "$8,129,500",
     mobileOrder: 1,
     desktopOrder: 4,

@@ -50,7 +50,7 @@ const cssStyles = {
     width: 100%;
   `,
   cardNumber: css`
-    margin-bottom: ${theme.spacing.huge};
+    margin-bottom: ${theme.spacing.custom[40]};
     font-size: ${theme.text.size.medium};
     color: ${theme.colors.grey.medium};
     border: ${convertPxToRem(1)} solid ${theme.colors.grey[33]};

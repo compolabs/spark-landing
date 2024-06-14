@@ -10,11 +10,13 @@ import SVGIcon from "./SVGIcon";
 
 type PropTypes = {
   children: ChildrenType;
+  color?: string;
   disableDecoration?: boolean;
 };
 
 export const DecorationPlus = ({
   children,
+  color,
   disableDecoration = false,
 }: PropTypes) => {
   const positions = [
@@ -28,7 +30,10 @@ export const DecorationPlus = ({
       {children}
       {positions.map((pos) => (
         <span key={pos.key} css={pos.style}>
-          <SVGIcon iconName="Plus" color={theme.colors.grey.lightDark} />
+          <SVGIcon
+            iconName="Plus"
+            color={color ?? theme.colors.grey.lightDark}
+          />
         </span>
       ))}
     </>
@@ -38,8 +43,8 @@ export const DecorationPlus = ({
 const cssStyles = {
   leftTop: css`
     position: absolute;
-    left: ${convertPxToRem(8)};
-    top: ${convertPxToRem(8)};
+    left: ${convertPxToRem(16)};
+    top: ${convertPxToRem(16)};
     display: none;
     ${theme.media.tabletBreakPoint} {
       display: block;
@@ -47,8 +52,8 @@ const cssStyles = {
   `,
   rightTop: css`
     position: absolute;
-    right: ${convertPxToRem(8)};
-    top: ${convertPxToRem(8)};
+    right: ${convertPxToRem(16)};
+    top: ${convertPxToRem(16)};
     display: none;
     ${theme.media.tabletBreakPoint} {
       display: block;
@@ -56,8 +61,8 @@ const cssStyles = {
   `,
   leftBottom: css`
     position: absolute;
-    left: ${convertPxToRem(8)};
-    bottom: ${convertPxToRem(4)};
+    left: ${convertPxToRem(16)};
+    bottom: ${convertPxToRem(8)};
     display: none;
     ${theme.media.tabletBreakPoint} {
       display: block;
@@ -65,8 +70,8 @@ const cssStyles = {
   `,
   rightBottom: css`
     position: absolute;
-    right: ${convertPxToRem(8)};
-    bottom: ${convertPxToRem(4)};
+    right: ${convertPxToRem(16)};
+    bottom: ${convertPxToRem(8)};
     display: none;
     ${theme.media.tabletBreakPoint} {
       display: block;

@@ -7,6 +7,7 @@ import { useMobileWindowWidth } from "@/core/hooks/useMobileWindowWidth";
 import useMainFont from "@/core/hooks/useMainFont";
 import useScrollDirection from "@/core/hooks/useScrollDirection";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
+import useWindowHeight from "@/core/hooks/useWindowHeight";
 
 import Navigation from "./Navigation";
 import Logo from "../Logo";
@@ -18,8 +19,14 @@ import Container from "../Container";
 function Header() {
   const syne = useMainFont();
   const isMobile = useMobileWindowWidth();
+  const windowHeight = useWindowHeight();
   const [isOpenMenu, setOpenMenu] = useState<boolean>(!isMobile);
   const { scrollDirection, scrollPosition } = useScrollDirection();
+  const isPreviewEnded =
+    (isMobile ? windowHeight / 2 : windowHeight / 1.4) < scrollPosition;
+  const isHeaderTransparent =
+    (isOpenMenu && !isPreviewEnded) || !!scrollPosition;
+  const isHeaderHidden = isPreviewEnded && !scrollDirection;
 
   const toggleMenu = () => {
     setOpenMenu((prev) => !prev);
@@ -31,7 +38,7 @@ function Header() {
 
   return (
     <header
-      css={cssStyles.header(isOpenMenu, scrollPosition > 0, scrollDirection)}
+      css={cssStyles.header(isOpenMenu, isHeaderTransparent, isHeaderHidden)}
       className={syne}
     >
       <SectionWrapper disableMaxWidth styles={cssStyles.wrapper(isOpenMenu)}>
@@ -50,8 +57,8 @@ function Header() {
 const cssStyles = {
   header: (
     isOpenMenu: boolean,
-    scrollPosition: boolean,
-    scrollDirection: boolean | null
+    isHeaderTransparent: boolean,
+    isHeaderHidden: boolean
   ) => css`
     z-index: 100;
     width: 100%;
@@ -68,14 +75,12 @@ const cssStyles = {
       ? `border-radius: 0 0 ${theme.borderRadius.default} ${theme.borderRadius.default};`
       : null}
 
-    ${(scrollPosition && scrollDirection) || isOpenMenu
+    ${isHeaderTransparent || isOpenMenu
       ? `background:${theme.colors.white.default}15; 
          backdrop-filter: blur(${theme.spacing.medium});`
       : null};
 
-    transform: translateY(
-      ${scrollPosition && !scrollDirection ? convertPxToRem(-130) : "0"}
-    );
+    transform: translateY(${isHeaderHidden ? convertPxToRem(-130) : "0"});
 
     ${theme.media.tabletBreakPoint} {
       padding: ${theme.spacing.huge} 0;

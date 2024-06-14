@@ -36,7 +36,7 @@ export const resourceLinks = [
     svgIcon: (
       <Image src="./images/svg/docs.svg" alt="doc" width={32} height={32} />
     ),
-    href: externalLinks.docsDevelopers,
+    href: externalLinks.githubDocs,
   },
 ];
 export const sliderCards = [
@@ -78,8 +78,11 @@ export const getSlideNumber = (width: number) => {
   if (width <= 800) {
     return 2;
   }
-  if (width <= theme.media.breakpoints.tablet) {
+  if (width <= 1090) {
     return 3;
+  }
+  if (width <= theme.media.breakpoints.tablet) {
+    return 4;
   }
 
   return 4;
