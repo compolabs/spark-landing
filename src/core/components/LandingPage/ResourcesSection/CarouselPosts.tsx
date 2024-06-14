@@ -18,12 +18,7 @@ export const CarouselPosts = () => {
   const currentWindowWidth = useWindowWidth();
 
   return (
-    <div
-      css={{
-        minWidth: convertPxToRem(330),
-        padding: `0 0 0 ${isMobile ? theme.spacing.medium : theme.spacing.custom[40]}`,
-      }}
-    >
+    <div css={cssStyles.swiperWrapper}>
       <Swiper
         spaceBetween={isMobile ? 10 : 20}
         slidesPerView={getSlideNumber(currentWindowWidth ?? 0)}
@@ -40,7 +35,13 @@ export const CarouselPosts = () => {
             >
               <div css={cssStyles.wrapper}>
                 <div css={card.isSquare ? cssStyles.imgSquare : cssStyles.img}>
-                  <Image src={card.imgSource} alt="bg" fill priority />
+                  <Image
+                    src={card.imgSource}
+                    alt="bg"
+                    fill
+                    priority
+                    style={{ borderRadius: theme.borderRadius.default }}
+                  />
                 </div>
                 <p css={cssStyles.title}>{card.title}</p>
               </div>
@@ -53,12 +54,33 @@ export const CarouselPosts = () => {
 };
 
 const cssStyles = {
+  swiperWrapper: css`
+    min-width: ${convertPxToRem(330)};
+    padding: 0 0 0 ${theme.spacing.medium};
+    margin: 0 auto;
+    max-width: ${convertPxToRem(930)};
+
+    ${theme.media.tabletBreakPoint} {
+      max-width: ${convertPxToRem(690)};
+    }
+
+    ${theme.media.tabletLandscape} {
+      max-width: 97%;
+    }
+    ${theme.media.tablet} {
+      max-width: ${convertPxToRem(1280)};
+    }
+    ${theme.media.desktop} {
+      max-width: ${convertPxToRem(1450)};
+    }
+  `,
   wrapper: css`
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    border-radius: ${theme.borderRadius.default};
   `,
   img: css`
     position: relative;
@@ -66,6 +88,11 @@ const cssStyles = {
     height: ${convertPxToRem(110)};
     margin-bottom: ${theme.spacing.normal};
 
+    ${theme.media.tabletLandscape} {
+      width: ${convertPxToRem(235)};
+      height: ${convertPxToRem(116)};
+      margin-bottom: ${theme.spacing.medium};
+    }
     ${theme.media.tablet} {
       width: ${convertPxToRem(265)};
       height: ${convertPxToRem(136)};
@@ -84,6 +111,11 @@ const cssStyles = {
     height: ${convertPxToRem(214)};
     margin-bottom: ${theme.spacing.normal};
 
+    ${theme.media.tabletLandscape} {
+      width: ${convertPxToRem(235)};
+      height: ${convertPxToRem(235)};
+      margin-bottom: ${theme.spacing.medium};
+    }
     ${theme.media.tablet} {
       width: ${convertPxToRem(265)};
       height: ${convertPxToRem(265)};

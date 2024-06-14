@@ -1,6 +1,8 @@
 import { css } from "@emotion/react";
 
 import SectionWrapper from "@/core/components/common/SectionWrapper";
+import { getIdAnchor } from "@/core/utils/getidAnchor";
+import { SourceNames } from "@/core/utils/pageSources";
 
 import { featureCards, isFeature } from "./constants";
 import { FeatureCardsContainer } from "./FeatureCardsContainer";
@@ -15,7 +17,10 @@ const Features = () => {
   } = isFeature;
 
   return (
-    <SectionWrapper styles={cssStyles.wrapper}>
+    <SectionWrapper
+      anchorId={getIdAnchor(SourceNames.WhySpark)}
+      styles={cssStyles.wrapper}
+    >
       <FeatureCardsContainer
         cardsList={featureCards.filter(Card)}
         ChildrenCard={FeatureCard}
