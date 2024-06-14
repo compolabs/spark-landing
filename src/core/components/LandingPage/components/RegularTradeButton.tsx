@@ -48,7 +48,7 @@ const cssStyles = {
     ${theme.media.tabletBreakPoint}{
       max
     }
-    
+
     &:hover {
       background: ${theme.colors.purple.hover};
     }
