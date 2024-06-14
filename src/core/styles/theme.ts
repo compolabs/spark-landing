@@ -54,10 +54,15 @@ const landingTheme = {
       dark: "#2A2A2A",
       bgDark: "#232322",
       lightDark: "#3d3d3d",
+      lightDarkSecond: "#5F5F5F",
       textLight: "#8E8E8E",
       medium: "#999393",
       45: "#A3A3A373",
       33: "#99939347",
+    },
+    purple: {
+      hover: "linear-gradient(148deg, #8160fc 23.16%, #704fea 63.65%)",
+      focus: "linear-gradient(148deg, #6d47fa 23.16%, #5f39ec 63.65%)",
     },
     black: {
       default: "#000",
@@ -68,7 +73,8 @@ const landingTheme = {
     gradients: {
       text: "linear-gradient(90deg, #FFFFFF 4.15%, #FF9B57 13.73%, #54BB94 76.04%)",
       buttonCTA: "linear-gradient(148deg, #7A56FF 23.16%, #6743EE 63.65%)",
-      buttonTrading: "linear-gradient(190.8deg, #149566 56.59%, #6642ee 76.58%)",
+      buttonTrading:
+        "linear-gradient(190.8deg, #149566 56.59%, #6642ee 76.58%)",
     },
     green: {
       100: "#149667",
@@ -89,6 +95,12 @@ const landingTheme = {
     inset: `0 0.06rem 0.06rem 0 #FFFFFF54 inset`, // button inner shadow
     default: "0 1rem 0.9rem -0.37rem #15141540, 0 0.12rem 0.3rem 0 #00000038)", // button outer shadow
     green: "0px -2px 20px #149667b8", // green button shadow
+    app: `0px 1.85px 1.66px 0px #00000015,
+    0px 4.46px 3.99px 0px #0000001e,
+    0px 8.39px 7.51px 0px #00000025,
+    0px 14.97px 13.4px 0px #0000002c,
+    0px 27.99px 25.07px 0px #00000035,
+    0px 67px 60px 0px #0000004a`,
   },
 
   text: {
@@ -100,7 +112,7 @@ const landingTheme = {
     },
 
     size: {
-      extraTiny: "0.9rem", // 14px
+      extraTiny: "0.875rem", // 14px
       tiny: "1rem", // 16px
       small: "1.1rem", // 18px
       body: "1.25rem", // 20px

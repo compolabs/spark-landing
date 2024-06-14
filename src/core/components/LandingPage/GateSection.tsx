@@ -22,8 +22,10 @@ const GateSection = () => {
         </h1>
 
         <p css={cssStyles.tagline}>
-          Earn, Yield, Trade spot, Perp, Lend and Borrow liquidity, build your
-          strategies.
+          {`Trade spot crypto with low fees & fast `}
+          <br />
+          {`transactions. Build your
+          strategies.`}
         </p>
 
         <RegularTradeButton styles={cssStyles.appBtn}>
@@ -46,14 +48,17 @@ const cssStyles = {
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    padding: ${theme.spacing.section} 0 ${theme.spacing.normal};
+    width: 100%;
+    padding: ${theme.spacing.section} 0 ${theme.spacing.custom[20]};
     text-align: center;
 
     ${theme.media.tabletBreakPoint} {
+      width: auto;
       margin-bottom: 40px;
     }
 
     ${theme.media.tabletLandscape} {
+      width: auto;
       padding: ${convertPxToRem(148)} 0 ${theme.spacing.extra};
     }
   `,

@@ -21,10 +21,11 @@ const ResourcesSection = () => {
         style={{
           backgroundImage: "url(./images/bg2.png)",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
+          width: "100%",
         }}
       >
-        <DecorationPlus>
+        <DecorationPlus color={theme.colors.grey.lightDarkSecond}>
           <h2 css={cssStyles.title}>Knowledge & Insights:</h2>
 
           {resourceCards.map(({ title, paragraph, renderContent }, index) => (
@@ -39,7 +40,7 @@ const ResourcesSection = () => {
             </NumberedCard>
           ))}
         </DecorationPlus>
-      <CarouselPosts />
+        <CarouselPosts />
       </div>
     </SectionWrapper>
   );
@@ -65,11 +66,13 @@ const cssStyles = {
     color: ${theme.colors.grey.light};
     font-weight: ${theme.text.weight.regular};
     font-size: ${theme.text.size.tiny};
+    line-height: ${convertPxToRem(26)};
 
     ${theme.media.tabletLandscape} {
       margin-bottom: ${convertPxToRem(80)};
       font-weight: ${theme.text.weight.medium};
       font-size: ${theme.text.size.subtitle};
+      line-height: ${theme.text.size.subtitle};
     }
   `,
   card: css`

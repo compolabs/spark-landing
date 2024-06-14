@@ -6,7 +6,7 @@ export interface SelectOption<THref = string> {
 export enum SourceNames {
   Landing = "landing",
   WhySpark = "whySpark",
-  TradeSmart = "tradeSmart",
+  TradingToolkit = "TradingToolkit",
   Resources = "resources",
 }
 
@@ -14,6 +14,6 @@ export const sourceLabelAnchorArray: ReadonlyArray<SelectOption<SourceNames>> =
   [
     { href: SourceNames.Landing, label: "Spark landing" },
     { href: SourceNames.WhySpark, label: "Why spark" },
-    { href: SourceNames.TradeSmart, label: "Trade smart" },
-    { href: SourceNames.Resources, label: "Resources" },
+    { href: SourceNames.TradingToolkit, label: "Trading Toolkit" },
+    { href: SourceNames.Resources, label: "Resource Library" },
   ];

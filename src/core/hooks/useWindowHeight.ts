@@ -1,11 +1,11 @@
 import { debounce } from "lodash";
 import { useLayoutEffect, useState } from "react";
 
-export default function useWindowWidth(
+export default function useWindowHeight(
   delay = 5,
   onWidthChanged?: (windowWidth: number) => void
 ) {
-  const [width, setWidth] = useState<null | number>(null);
+  const [height, setHeight] = useState<null | number>(null);
   const hasWindow = typeof window !== "undefined";
 
   useLayoutEffect(() => {
@@ -13,7 +13,7 @@ export default function useWindowWidth(
       if (onWidthChanged) {
         onWidthChanged(window.innerWidth);
       } else {
-        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
       }
     };
     handleResize();
@@ -24,5 +24,5 @@ export default function useWindowWidth(
     return () => window.removeEventListener("resize", debouncedHandleResize);
   }, [delay, hasWindow, onWidthChanged]);
 
-  return width;
+  return height ?? 0;
 }

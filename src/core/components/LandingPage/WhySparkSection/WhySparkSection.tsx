@@ -1,21 +1,17 @@
 import { css, keyframes } from "@emotion/react";
 import Image from "next/image";
 
-import { getIdAnchor } from "@/core/utils/getidAnchor";
-import { SourceNames } from "@/core/utils/pageSources";
 import { useMobileWindowWidth } from "@/core/hooks/useMobileWindowWidth";
 import theme from "@/core/styles/theme";
 import SectionWrapper from "@/core/components/common/SectionWrapper";
 import ProductDigits from "@/core/components/LandingPage/WhySparkSection/ProductDigits";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 const WhySparkSection = () => {
   const isMobile = useMobileWindowWidth();
   return (
     <SectionWrapper>
-      <div
-        id={getIdAnchor(SourceNames.WhySpark)}
-        css={cssStyle.container}
-      >
+      <div css={cssStyle.container}>
         <Image
           src="./images/bg.png"
           alt="bg"
@@ -26,9 +22,13 @@ const WhySparkSection = () => {
 
         <ProductDigits />
 
-        <div css={cssStyle.imageContainer}>
+        <div css={cssStyle.imageContainer(isMobile)}>
           <Image
-            src={isMobile ? "./images/trade-platform_mobile.png" : "./images/main_screen.png"}
+            src={
+              isMobile
+                ? "./images/trade-platform_mobile.png"
+                : "./images/main_screen.png"
+            }
             alt="product"
             fill
           />
@@ -58,11 +58,12 @@ const cssStyle = {
     padding: ${theme.spacing.custom[20]} ${theme.spacing.custom[20]} 0;
     border-radius: ${theme.borderRadius.default};
     width: 100%;
-    
+
     ${theme.media.tabletBreakPoint} {
-      padding: ${theme.spacing.normal} ${theme.spacing.normal} ${theme.spacing.custom[40]};
+      padding: ${theme.spacing.normal} ${theme.spacing.normal}
+        ${theme.spacing.custom[40]};
     }
-    
+
     ${theme.media.tabletLandscape} {
       padding-left: ${theme.spacing.custom[40]};
       padding-right: ${theme.spacing.custom[40]};
@@ -72,16 +73,18 @@ const cssStyle = {
     border-radius: ${theme.borderRadius.default};
     z-index: -1;
   `,
-  imageContainer: css`
+  imageContainer: (isMobile: boolean) => css`
     margin-top: 1.25rem;
     position: relative;
     width: 20.5rem;
     height: 20.5rem;
-    
+
     ${theme.media.tabletBreakPoint} {
-      width: 33.5rem;
-      height: 18.75rem;
-      
+      border-radius: ${theme.borderRadius.large};
+      box-shadow: ${theme.shadow.app};
+      width: 100%;
+      height: 50vw;
+
       &:before {
         content: "";
         display: block;
@@ -89,38 +92,48 @@ const cssStyle = {
         z-index: 0;
         background: ${theme.colors.purpleShadow};
         border-radius: ${theme.borderRadius.default};
-        width: calc(33.5rem - 3.5rem);
+        width: calc(100% - 3.5rem);
         height: 2.5rem;
         top: -1rem;
         left: 1.75rem;
         right: 0;
-        animation: ${fadeIn} .2s;
+        animation: ${fadeIn} 0.2s;
       }
     }
-    
+
     ${theme.media.tabletLandscape} {
-      width: 54rem;
-      height: 30.5rem;
+      border-radius: ${theme.borderRadius.large};
+      box-shadow: ${theme.shadow.app};
+      width: 100%;
+      height: 50vw;
+
       &:before {
-        width: calc(54rem - 3.5rem);
+        width: calc(100%w - 3.5rem);
         height: 3rem;
         top: -1.25rem;
       }
     }
-    
+
     ${theme.media.tablet} {
-      width: 70rem;
-      height: 39.5rem;
+      border-radius: ${theme.borderRadius.large};
+      box-shadow: ${theme.shadow.app};
+      width: 100%;
+      height: 50vw;
+      max-height: ${convertPxToRem(814.54)};
+
       &:before {
-        width: calc(70rem - 3.5rem);
+        width: calc(100% - 3.5rem);
       }
     }
-    
+
     ${theme.media.desktop} {
+      border-radius: ${theme.borderRadius.large};
+      box-shadow: ${theme.shadow.app};
+      max-height: ${convertPxToRem(814.54)};
       width: 90rem;
       height: 51rem;
       &:before {
-        width: calc(90rem - 3.5rem);
+        width: calc(100% - 3.5rem);
       }
     }
   `,

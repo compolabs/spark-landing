@@ -32,14 +32,13 @@ const FeatureSubCard = ({ card }: { card: FeatureCardType }) => {
   );
 };
 
-//TODO: Technical Debt - rewrite styles for FeatureSubCard and FeatureCard to exclude style duplicates for
 const cssStyles = {
   card: css`
     position: relative;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: ${theme.spacing.huge};
+    padding: ${theme.spacing.large};
     margin-bottom: ${theme.spacing.custom[10]};
     border-radius: ${theme.borderRadius.default};
     background-color: ${theme.colors.grey.dark};
@@ -68,11 +67,11 @@ const cssStyles = {
     }
 
     ${theme.media.tabletLandscape} {
-      margin-bottom: ${theme.spacing.huge};
+      margin-bottom: calc(${theme.spacing.huge} + ${theme.spacing.large});
       margin-right: 0;
     }
 
-    &  img {
+    & img {
       width: auto;
       height: 100%;
       object-fit: cover;
@@ -119,19 +118,25 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.normal};
 
     ${theme.media.tabletLandscape} {
+      white-space: wrap;
+      margin-bottom: ${theme.spacing.medium};
+    }
+
+    ${theme.media.tablet} {
+      white-space: nowrap;
       margin-bottom: ${theme.spacing.medium};
     }
   `,
   paragraph: css`
+    line-height: ${convertPxToRem(26)};
     word-wrap: break-word;
     color: ${theme.colors.white.default};
     font-size: ${theme.text.size.extraTiny};
-    margin-bottom: ${theme.spacing.medium};
     width: 90%;
 
     ${theme.media.tabletBreakPoint} {
       font-size: ${theme.text.size.small};
-      width: 65%;
+      width: 70%;
     }
   `,
 };
