@@ -70,12 +70,13 @@ const cssStyle = {
     max-width: 8.5rem;
     width: 100%;
     order: ${order};
+    max-width: 8.5rem;
 
     ${theme.media.tabletBreakPoint} {
       border-left: ${order === 1
         ? "none"
         : `${convertPxToRem(1)} solid ${theme.colors.white[13]}`};
-      max-width: ${convertPxToRem(200)};
+      max-width: unset;
       padding-left: ${theme.spacing.normal};
 
       &:nth-child(2) {
