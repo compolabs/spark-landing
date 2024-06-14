@@ -48,13 +48,13 @@ const cssStyles = {
     ${theme.media.tabletBreakPoint}{
       max
     }
-    
+
     &:hover {
       background: ${theme.colors.purple.hover};
     }
 
     &:active {
-      background: ${theme.colors.purple.fucus};
+      background: ${theme.colors.purple.focus};
     }
 
     &:focus {
