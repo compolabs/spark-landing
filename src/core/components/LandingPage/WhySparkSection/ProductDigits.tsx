@@ -56,7 +56,7 @@ const cssStyle = {
     ${theme.media.tablet} {
       flex-wrap: nowrap;
       padding-top: 0;
-      gap: ${theme.spacing.large} 10%;
+      gap: ${theme.spacing.large} 0%;
     }
   `,
   desktopDigitsWrapper: css`
@@ -67,7 +67,6 @@ const cssStyle = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 8.5rem;
     width: 100%;
     order: ${order};
     max-width: 8.5rem;
