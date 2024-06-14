@@ -56,7 +56,11 @@ const cssStyle = {
     ${theme.media.tablet} {
       flex-wrap: nowrap;
       padding-top: 0;
+<<<<<<< HEAD
       gap: ${theme.spacing.large} 10%;
+=======
+      gap: ${theme.spacing.large} 0%;
+>>>>>>> 4530fd7 (Feet/revert (#29))
     }
   `,
   desktopDigitsWrapper: css`
@@ -67,18 +71,17 @@ const cssStyle = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 8.5rem;
     width: 100%;
     order: ${order};
     max-width: 8.5rem;
-
+    
     ${theme.media.tabletBreakPoint} {
       border-left: ${order === 1
         ? "none"
         : `${convertPxToRem(1)} solid ${theme.colors.white[13]}`};
       max-width: unset;
       padding-left: ${theme.spacing.normal};
-
+      max-width: unset;
       &:nth-child(2) {
         padding-left: 0;
       }
