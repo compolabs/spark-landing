@@ -60,7 +60,7 @@ const cssStyles = {
     ${theme.media.tabletBreakPoint} {
       max-width: 90%;
     }
-    
+
     @media (min-width: 800px) {
       max-width: 100%;
     }
@@ -71,8 +71,9 @@ const cssStyles = {
 
     ${theme.media.tablet} {
       max-width: ${convertPxToRem(1280)};
+
     }
-    
+
     ${theme.media.desktop} {
       max-width: ${convertPxToRem(1450)};
     }
@@ -84,8 +85,7 @@ const cssStyles = {
     align-items: flex-start;
     flex-direction: column;
     border-radius: ${theme.borderRadius.default};
-    max-width: ${convertPxToRem(214)};
-
+    max-width:fit-content;
   `,
   img: css`
     position: relative;
