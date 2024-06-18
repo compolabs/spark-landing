@@ -78,7 +78,7 @@ const cssStyles = {
     align-items: flex-start;
     flex-direction: column;
     border-radius: ${theme.borderRadius.default};
-    max-width: 214px;
+    max-width: ${convertPxToRem(214)};
 
   `,
   img: css`

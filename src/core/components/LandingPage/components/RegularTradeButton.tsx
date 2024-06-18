@@ -41,7 +41,7 @@ const cssStyles = {
     border-radius: ${theme.borderRadius.default};
     border: none;
     width: 100%;
-    height: 56px;
+    height: ${convertPxToRem(56)};
     color: white;
     cursor: pointer;
    

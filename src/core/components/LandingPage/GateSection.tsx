@@ -54,7 +54,7 @@ const cssStyles = {
 
     ${theme.media.tabletBreakPoint} {
       width: auto;
-      margin-bottom: 40px;
+      margin-bottom: ${convertPxToRem(40)};
     }
 
     ${theme.media.tabletLandscape} {

@@ -72,7 +72,7 @@ const cssStyles = {
     }
 
     & img {
-      width: 120px;
+      width: ${convertPxToRem(120)};
       height: auto;
       object-fit: cover;
     }
