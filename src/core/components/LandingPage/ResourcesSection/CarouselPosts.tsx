@@ -68,9 +68,11 @@ const cssStyles = {
     ${theme.media.tabletLandscape} {
       max-width: 100%;
     }
+
     ${theme.media.tablet} {
       max-width: ${convertPxToRem(1280)};
     }
+    
     ${theme.media.desktop} {
       max-width: ${convertPxToRem(1450)};
     }
