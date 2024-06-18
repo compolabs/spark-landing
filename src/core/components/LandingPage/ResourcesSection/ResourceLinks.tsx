@@ -42,7 +42,7 @@ const cssStyles = {
     font-size: ${theme.text.size.body};
     border-radius: ${theme.borderRadius.default};
     max-width: ${convertPxToRem(320)};
-    width: 100%;
+    width: 90%;
     height: ${convertPxToRem(56)};
 
     & > img {
@@ -51,6 +51,7 @@ const cssStyles = {
 
     ${theme.media.tabletBreakPoint} {
       max-width: ${convertPxToRem(230)};
+      width: 100%;
     }
   `,
 };
