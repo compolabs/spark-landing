@@ -5,6 +5,7 @@ import { CommonEntity } from "core/types";
 import { externalLinks } from "@/core/constants/externalLinks";
 import LinkButton from "@/core/components/common/LinkButton";
 import theme from "@/core/styles/theme";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 interface PropTypes extends CommonEntity {
   label?: string | null;

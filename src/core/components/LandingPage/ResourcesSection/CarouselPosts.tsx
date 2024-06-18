@@ -58,11 +58,15 @@ const cssStyles = {
     margin: 0 auto;
 
     ${theme.media.tabletBreakPoint} {
-      max-width: ${convertPxToRem(690)};
+      max-width: 90%;
+    }
+    
+    @media (min-width: 800px) {
+      max-width: 100%;
     }
 
     ${theme.media.tabletLandscape} {
-      max-width: 97%;
+      max-width: 100%;
     }
     ${theme.media.tablet} {
       max-width: ${convertPxToRem(1280)};
