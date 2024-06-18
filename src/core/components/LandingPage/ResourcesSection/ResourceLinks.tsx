@@ -10,7 +10,7 @@ const ResourceLinks = () => {
     <div css={cssStyles.wrapper}>
       {resourceLinks.map(({ label, href, svgIcon }) => (
         <ExternalLinkButton key={label} href={href} styles={cssStyles.link}>
-          <span>{label}</span>
+          {label}
           {svgIcon}
         </ExternalLinkButton>
       ))}

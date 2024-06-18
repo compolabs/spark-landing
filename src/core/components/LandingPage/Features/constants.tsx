@@ -40,10 +40,10 @@ export const featureCards = [
   {
     type: FeatureCardShapeTypes.SubCard,
     badge: null,
-    imageSrc: "./images/svg/feature_small_1.svg",
+    imageSrc: "./images/svg/feature_small_1.png",
     imageLabel: null,
     article: {
-      header: "Fast data: 2500tps",
+      header: "Fast data",
       title: {
         highlightedText: "with quick settlements and minimal fees.",
         text: "Trade fast with quick settlements and minimal fees.",
@@ -53,10 +53,10 @@ export const featureCards = [
   {
     type: FeatureCardShapeTypes.SubCard,
     badge: null,
-    imageSrc: "./images/svg/feature_small_2.svg",
+    imageSrc: "./images/svg/feature_small_2.png",
     imageLabel: null,
     article: {
-      header: "Low fees: $0.00000001.",
+      header: "Low fees",
       title: {
         highlightedText: "No lag, no downtime.",
         text: "Instant order execution. No lag, no downtime.",
@@ -66,7 +66,7 @@ export const featureCards = [
   {
     type: FeatureCardShapeTypes.SubCard,
     badge: null,
-    imageSrc: "./images/svg/feature_small_3.svg",
+    imageSrc: "./images/svg/feature_small_3.png",
     imageLabel: null,
     article: {
       header: "Best setup to trade crypto",
@@ -78,4 +78,3 @@ export const featureCards = [
     },
   },
 ];
-

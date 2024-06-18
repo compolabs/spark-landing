@@ -72,8 +72,8 @@ const cssStyles = {
     }
 
     & img {
-      width: auto;
-      height: 100%;
+      width: 120px;
+      height: auto;
       object-fit: cover;
     }
   `,

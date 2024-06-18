@@ -5,22 +5,20 @@ import "swiper/css";
 import { css } from "@emotion/react";
 
 import "swiper/css/free-mode";
-import { useMobileWindowWidth } from "@/core/hooks/useMobileWindowWidth";
 import useWindowWidth from "@/core/hooks/useWindowWidth";
 import theme from "@/core/styles/theme";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
-import { getSlideNumber, sliderCards } from "./constants";
+import { getSlideNumber, getSliderMargin, sliderCards } from "./constants";
 import LinkButton from "../../common/LinkButton";
 
 export const CarouselPosts = () => {
-  const isMobile = useMobileWindowWidth();
   const currentWindowWidth = useWindowWidth();
 
   return (
     <div css={cssStyles.swiperWrapper}>
       <Swiper
-        spaceBetween={isMobile ? 10 : 20}
+        spaceBetween={getSliderMargin(currentWindowWidth ?? 0)}
         slidesPerView={getSlideNumber(currentWindowWidth ?? 0)}
         scrollbar={{ draggable: true }}
       >
@@ -55,10 +53,9 @@ export const CarouselPosts = () => {
 
 const cssStyles = {
   swiperWrapper: css`
-    min-width: ${convertPxToRem(330)};
+    min-width: ${convertPxToRem(320)};
     padding: 0 0 0 ${theme.spacing.medium};
     margin: 0 auto;
-    max-width: ${convertPxToRem(930)};
 
     ${theme.media.tabletBreakPoint} {
       max-width: ${convertPxToRem(690)};
@@ -81,6 +78,8 @@ const cssStyles = {
     align-items: flex-start;
     flex-direction: column;
     border-radius: ${theme.borderRadius.default};
+    max-width: 214px;
+
   `,
   img: css`
     position: relative;

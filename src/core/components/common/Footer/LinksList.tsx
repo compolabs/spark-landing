@@ -1,23 +1,28 @@
-import React from 'react';
+import React from "react";
 import { css } from "@emotion/react";
 
-import { Styles } from 'core/types';
+import { Styles } from "core/types";
 
 import theme from "@/core/styles/theme";
 import LinkButton from "@/core/components/common/LinkButton";
 
 interface PropTypes {
   links: {
-    href: string,
-    label?: string,
-    icon?: React.ReactNode,
+    href: string;
+    label?: string;
+    icon?: React.ReactNode;
   }[];
-  listHeader?: string,
-  type?: "vertical" | "horizontal",
-  listStyles?: Styles,
+  listHeader?: string;
+  type?: "vertical" | "horizontal";
+  listStyles?: Styles;
 }
 
-export const LinksList = ({ links, listHeader = "", type = "vertical", listStyles }: PropTypes) => {
+export const LinksList = ({
+  links,
+  listHeader = "",
+  type = "vertical",
+  listStyles,
+}: PropTypes) => {
   const isVerticalList = type === "vertical";
 
   return (
@@ -27,12 +32,17 @@ export const LinksList = ({ links, listHeader = "", type = "vertical", listStyle
       {links.map(({ label, href = "", icon }) => (
         <li
           key={href + label}
-          css={cssStyles.listItem(isVerticalList
-            ? { marginBottom: theme.spacing.large }
-            : { marginRight: theme.spacing.medium }
+          css={cssStyles.listItem(
+            isVerticalList
+              ? { marginBottom: theme.spacing.large }
+              : { marginRight: theme.spacing.medium }
           )}
         >
-          <LinkButton type="external" data={{ href, label: label ?? "" }} >
+          <LinkButton
+            type="external"
+            data={{ href, label: label ?? "" }}
+            styles={cssStyles.link}
+          >
             {icon && icon}
           </LinkButton>
         </li>
@@ -42,7 +52,16 @@ export const LinksList = ({ links, listHeader = "", type = "vertical", listStyle
 };
 
 const cssStyles = {
-  list: (flexDirection: string)=> css `
+  link: css`
+    &:hover {
+      color: ${theme.colors.green[25]};
+    }
+
+    &:active {
+      color: ${theme.colors.green[50]};
+    }
+  `,
+  list: (flexDirection: string) => css`
     display: flex;
     flex-direction: ${flexDirection};
     list-style: none;
@@ -58,7 +77,7 @@ const cssStyles = {
     margin-bottom: ${marginBottom};
     margin-right: ${marginRight};
     max-height: 2rem;
-    
+
     &:last-child {
       margin-bottom: 0;
       margin-right: 0;

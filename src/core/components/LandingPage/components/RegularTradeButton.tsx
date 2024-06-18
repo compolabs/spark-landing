@@ -43,7 +43,8 @@ const cssStyles = {
     width: 100%;
     height: 56px;
     color: white;
-    box-shadow: ${theme.shadow.inset};
+    cursor: pointer;
+   
  
     ${theme.media.tabletBreakPoint}{
       max
@@ -55,9 +56,11 @@ const cssStyles = {
 
     &:active {
       background: ${theme.colors.purple.focus};
+      box-shadow: ${theme.shadow.inset};
     }
 
-    &:focus {
+    &:focus:not(:active){
+      outline: none;
       border: 0.1rem solid ${theme.colors.white.default}18;
       padding: calc(${theme.spacing.normal} - 0.1rem);
     }
