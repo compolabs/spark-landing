@@ -62,7 +62,6 @@ const landingTheme = {
     },
     purple: {
       hover: "linear-gradient(0deg, #8E70FF, #8E70FF)",
-      // hover: "linear-gradient(148deg, #8160fc 23.16%, #704fea 63.65%)",
       focus: "linear-gradient(148deg, #6d47fa 23.16%, #5f39ec 63.65%)",
     },
     black: {

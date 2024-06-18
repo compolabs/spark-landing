@@ -102,12 +102,15 @@ export const getSliderMargin = (width: number) => {
   if (width <= 470) {
     return -10;
   }
+
   if (width <= 550) {
     return -20;
   }
+
   if (width <= 670) {
     return -10;
   }
+  
   if (width <= 700) {
     return 0;
   }
@@ -115,8 +118,6 @@ export const getSliderMargin = (width: number) => {
   if (width <= 800) {
     return 20;
   }
-
-  
 
   return 0;
 };
