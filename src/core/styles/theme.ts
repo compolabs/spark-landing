@@ -61,7 +61,7 @@ const landingTheme = {
       33: "#99939347",
     },
     purple: {
-      hover: "linear-gradient(148deg, #8160fc 23.16%, #704fea 63.65%)",
+      hover: "linear-gradient(0deg, #8E70FF, #8E70FF)",
       focus: "linear-gradient(148deg, #6d47fa 23.16%, #5f39ec 63.65%)",
     },
     black: {
@@ -80,6 +80,7 @@ const landingTheme = {
       100: "#149667",
       75: "#55BB94",
       50: "#00E388",
+      25: "#7DFFCB",
       20: "#54BB9433",
     },
     pink: "#E395FF",
@@ -92,7 +93,7 @@ const landingTheme = {
   },
 
   shadow: {
-    inset: `0 0.06rem 0.06rem 0 #FFFFFF54 inset`, // button inner shadow
+    inset: `0px -1px 1px 0px #FFFFFF2E inset, 0px 2px 12px 0px #00000075 inset`, // button inner shadow
     default: "0 1rem 0.9rem -0.37rem #15141540, 0 0.12rem 0.3rem 0 #00000038)", // button outer shadow
     green: "0px -2px 20px #149667b8", // green button shadow
     app: `0px 1.85px 1.66px 0px #00000015,

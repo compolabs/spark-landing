@@ -5,6 +5,7 @@ import { CommonEntity } from "core/types";
 import { externalLinks } from "@/core/constants/externalLinks";
 import LinkButton from "@/core/components/common/LinkButton";
 import theme from "@/core/styles/theme";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 interface PropTypes extends CommonEntity {
   label?: string | null;
@@ -41,9 +42,10 @@ const cssStyles = {
     border-radius: ${theme.borderRadius.default};
     border: none;
     width: 100%;
-    height: 56px;
+    height: ${convertPxToRem(56)};
     color: white;
-    box-shadow: ${theme.shadow.inset};
+    cursor: pointer;
+   
  
     ${theme.media.tabletBreakPoint}{
       max
@@ -55,9 +57,11 @@ const cssStyles = {
 
     &:active {
       background: ${theme.colors.purple.focus};
+      box-shadow: ${theme.shadow.inset};
     }
 
-    &:focus {
+    &:focus:not(:active){
+      outline: none;
       border: 0.1rem solid ${theme.colors.white.default}18;
       padding: calc(${theme.spacing.normal} - 0.1rem);
     }

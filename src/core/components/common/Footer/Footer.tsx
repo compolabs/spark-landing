@@ -105,6 +105,14 @@ const cssStyles = {
     left: 0;
     font-size: ${theme.text.size.extraTiny};
 
+    &:hover {
+      color: ${theme.colors.green[25]};
+    }
+
+    &:active {
+      color: ${theme.colors.green[50]};
+    }
+    
     ${theme.media.tablet} {
       right: 0;
       left: auto;

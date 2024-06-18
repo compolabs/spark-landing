@@ -16,8 +16,8 @@ const SoonBadge = () => (
 const cssStyles = {
   badge: css`
     border: ${convertPxToRem(1)} solid ${theme.colors.grey[45]};
-    height: 30px;
-    width: 56px;
+    height: ${convertPxToRem(30)};
+    width: ${convertPxToRem(56)};
     padding: ${convertPxToRem(2)};
     text-align: center;
     ${theme.media.tabletBreakPoint} {

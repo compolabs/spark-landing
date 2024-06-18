@@ -44,7 +44,7 @@ const TradingKeyAttributes = () => {
 
 const cssStyles = {
   container: css`
-    margin: 0 auto ${theme.spacing.extraHuge};
+    margin: 0 auto ${theme.spacing.custom[20]};
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,12 +61,14 @@ const cssStyles = {
       gap: ${theme.spacing.normal} ${theme.spacing.default};
       max-width: 36rem;
       font-size: ${theme.text.size.tiny};
+      margin: 0 auto ${theme.spacing.extraHuge};
     }
 
     ${theme.media.desktop} {
       gap: ${theme.spacing.normal} ${theme.spacing.default};
       max-width: 50.5rem;
       font-size: ${theme.text.size.tiny};
+      margin: 0 auto ${theme.spacing.extraHuge};
     }
   `,
   active: css`

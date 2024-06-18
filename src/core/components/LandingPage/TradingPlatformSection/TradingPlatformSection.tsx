@@ -15,6 +15,7 @@ import {
 } from "./constants";
 import TradingKeyAttributes from "./TradingKeyAttributes";
 import TradingFeatures from "./TradingFeatures";
+import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 const TradingPlatformSection = () => {
   const isMobile = useMobileWindowWidth();
@@ -56,12 +57,12 @@ const TradingPlatformSection = () => {
 const cssStyles = {
   section: (isMobile: boolean) => css`
     flex-direction: column;
-    padding-top: ${theme.spacing.section};
-    padding-bottom: ${theme.spacing.section};
+    padding-top: ${theme.spacing.custom[60]};
+    padding-bottom: ${theme.spacing.custom[20]};
 
-    ${theme.media.tabletBreakPoint} {
-      padding-top: ${theme.spacing.custom[40]};
-      padding-bottom: ${theme.spacing.custom[20]};
+    ${theme.media.tablet} {
+      padding-top: ${convertPxToRem(130)};
+      padding-bottom: ${theme.spacing.section};
     }
   `,
   titleWrapper: css`
@@ -90,12 +91,13 @@ const cssStyles = {
     }
   `,
   imageContainer: css`
-    margin: ${theme.spacing.extraHuge} auto;
+    margin: ${theme.spacing.normal} auto;
     position: relative;
     width: 20rem;
     height: 12.5rem;
 
     ${theme.media.tablet} {
+      margin: ${theme.spacing.extraHuge} auto;
       width: 31.5rem;
       height: 21.5rem;
     }

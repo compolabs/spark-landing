@@ -71,19 +71,53 @@ export const sliderCards = [
 ];
 
 export const getSlideNumber = (width: number) => {
-  if (width <= 500) {
+  if (width <= 450) {
     return 1.4;
+  }
+
+  if (width <= 550) {
+    return 1.6;
   }
 
   if (width <= 800) {
     return 2;
   }
+
   if (width <= 1090) {
     return 3;
   }
+
   if (width <= theme.media.breakpoints.tablet) {
     return 4;
   }
 
   return 4;
+};
+
+export const getSliderMargin = (width: number) => {
+  if (width <= 385) {
+    return 10;
+  }
+
+  if (width <= 470) {
+    return -10;
+  }
+
+  if (width <= 550) {
+    return -20;
+  }
+
+  if (width <= 670) {
+    return -10;
+  }
+  
+  if (width <= 700) {
+    return 0;
+  }
+
+  if (width <= 800) {
+    return 20;
+  }
+
+  return 0;
 };
