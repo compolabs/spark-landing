@@ -15,7 +15,7 @@ const GetStartedSection = () => {
             Begin with a bespoke onboarding session to align our platform
             capabilities with your trading methodologies.
           </p>
-          <RegularTradeButton styles={cssStyles.linkButton} label="Launch trading" />
+          <RegularTradeButton styles={cssStyles.linkButton} label="Start trading" />
         </main>
 
         <div css={cssStyles.imageContainer}>

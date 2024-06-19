@@ -13,7 +13,7 @@ export enum SourceNames {
 export const sourceLabelAnchorArray: ReadonlyArray<SelectOption<SourceNames>> =
   [
     { href: SourceNames.Landing, label: "Spark landing" },
-    { href: SourceNames.WhySpark, label: "Why spark" },
+    { href: SourceNames.WhySpark, label: "Why Spark" },
     { href: SourceNames.TradingToolkit, label: "Trading Toolkit" },
     { href: SourceNames.Resources, label: "Resource Library" },
   ];

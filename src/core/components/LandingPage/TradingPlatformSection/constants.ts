@@ -12,7 +12,7 @@ export const algorithmsAndAutomationHighlight =
 export const tradingKeyAttributes = [
   "Rich API",
   "Simple onboarding",
-  "A reward system",
+  "Reward Program",
   "Low / No fees",
   "Native Assets",
   "Native account abstraction",

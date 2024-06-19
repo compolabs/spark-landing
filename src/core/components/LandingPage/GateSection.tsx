@@ -12,7 +12,7 @@ const GateSection = () => {
     <SectionWrapper>
       <div css={cssStyles.container}>
         <Badge
-          content="Introducing Spark.fi"
+          content="Introducing Sprk.fi"
           borderStyles={cssStyles.badge}
           bgColor="transparent"
         />

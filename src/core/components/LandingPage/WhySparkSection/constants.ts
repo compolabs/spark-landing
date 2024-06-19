@@ -1,7 +1,7 @@
 export const productDigits = [
   {
-    title: "Deals / day",
-    numbers: "34",
+    title: "Trades",
+    numbers: "34,000,000",
     mobileOrder: 1,
     desktopOrder: 3,
   },
@@ -12,7 +12,7 @@ export const productDigits = [
     desktopOrder: 1,
   },
   {
-    title: "Volume / day",
+    title: "24h Volume",
     numbers: "$30,983,728",
     mobileOrder: 1,
     desktopOrder: 2,
