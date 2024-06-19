@@ -27,6 +27,7 @@ export const featureCards = [
     type: FeatureCardShapeTypes.Card,
     badge: "Familiar tools",
     imageSrc: "./images/img_feature_big_1.png",
+    imageLabel: null,
     article: {
       header: "Leverage & Margin:",
       title: {
