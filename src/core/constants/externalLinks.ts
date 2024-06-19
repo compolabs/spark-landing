@@ -6,7 +6,7 @@ export const externalLinks = {
   discord: "https://discord.com/invite/rsZnUY3kgm",
   medium: "https://medium.com/@compolabs",
   bridgeTechnology: "https://app.fuel.network/bridge",
-  liquidityMiningProgramTechnology: "",
+  liquidityMiningProgramTechnology: "https://docs.sprk.fi/spark-dex/market-makers/market-making-on-spark",
   faucetDevelopers: "https://app.sprk.fi/#/faucet",
   termsOfUse: "https://drive.google.com/file/d/1VEWD0WIO1BqnFoP6O9sa2ILRKX_pvFbv/view",
   sequencers:
