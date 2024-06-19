@@ -8,7 +8,7 @@ export const externalLinks = {
   bridgeTechnology: "https://app.fuel.network/bridge",
   liquidityMiningProgramTechnology: "",
   faucetDevelopers: "https://app.sprk.fi/#/faucet",
-  termsOfUse: "",
+  termsOfUse: "https://drive.google.com/file/d/1VEWD0WIO1BqnFoP6O9sa2ILRKX_pvFbv/view",
   sequencers:
     "https://medium.com/@compolabs/sequencers-blockchains-air-traffic-controllers-c5ad7fc8d5eb",
   fuelVM:
