@@ -104,13 +104,14 @@ const cssStyles = {
 
     ${theme.media.tabletBreakPoint} {
       width: ${convertPxToRem(377)};
-      height: ${convertPxToRem(140)};
+      height: ${convertPxToRem(120)};
       margin-bottom: ${theme.spacing.extraHuge};
     }
 
     & > img {
       width: 100%;
       height: 100%;
+      object-fit: contain;  
     }
   `,
 
@@ -129,7 +130,7 @@ const cssStyles = {
     & > img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   `,
 
