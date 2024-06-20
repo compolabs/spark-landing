@@ -104,7 +104,7 @@ const cssStyles = {
 
     ${theme.media.tabletBreakPoint} {
       width: ${convertPxToRem(377)};
-      height: ${convertPxToRem(120)};
+      height: ${convertPxToRem(140)};
       margin-bottom: ${theme.spacing.extraHuge};
     }
 

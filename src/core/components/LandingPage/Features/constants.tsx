@@ -43,10 +43,10 @@ export const featureCards = [
     imageSrc: "./images/svg/feature_small_1.png",
     imageLabel: null,
     article: {
-      header: "Fast data",
+      header: "Atomic Settlement",
       title: {
-        highlightedText: "with quick settlements and minimal fees.",
-        text: "Trade fast with quick settlements and minimal fees.",
+        highlightedText: "",
+        text: "Efficient Onchain trading.",
       },
     },
   },
