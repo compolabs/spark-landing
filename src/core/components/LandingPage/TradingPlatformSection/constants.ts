@@ -9,28 +9,6 @@ export const algorithmsAndAutomationText = `Deploy complex trading strategies wi
 export const algorithmsAndAutomationHighlight =
   "advanced algorithmic trading capabilities.";
 
-export const tradingKeyAttributes = [
-  "Rich API",
-  "Simple onboarding",
-  "Reward Program",
-  "Low / No fees",
-  "Native Assets",
-  "Native account abstraction",
-];
-
-export const tradingFeatures = [
-  {
-    title: "Seamless Order Execution:",
-    paragraph: optimisedExecutionText,
-    highlight: optimisedExecutionHighlight,
-  },
-  {
-    title: "Algorithms & Automation",
-    paragraph: algorithmsAndAutomationText,
-    highlight: algorithmsAndAutomationHighlight,
-  },
-];
-
 export const activeIndex = 2;
 export const preActiveIndex = activeIndex - 1;
 export const postActiveIndex = activeIndex + 1;

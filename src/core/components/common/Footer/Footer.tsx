@@ -16,108 +16,105 @@ import {
 
 const Footer = () => {
   const syne = useMainFont();
+
   return (
-    <SectionWrapper disableMaxWidth>
+    <SectionWrapper disableMaxWidth styles={cssStyles.footerContainer}>
       <footer css={cssStyles.footer} className={syne}>
         <main css={cssStyles.footerContent}>
-          <div css={cssStyles.listsWrapper}>
-            <LinksList
-              listHeader="Technology"
-              links={technologyLinks}
-              listStyles={cssStyles.listTech}
-            />
-            <LinksList
-              listHeader="Developers"
-              links={developersLinks}
-              listStyles={cssStyles.listDevs}
-            />
-          </div>
-
-          <div css={cssStyles.iconsWrapper}>
+          <div css={cssStyles.svg}>
             <SVGIcon size={[82, 25]} iconName="LogoMini" />
-            <LinksList type="horizontal" links={socialMediaLinks} />
           </div>
+          <LinksList
+            listHeader="Technology"
+            links={technologyLinks}
+            listStyles={cssStyles.listTech}
+          />
+          <LinksList
+            listHeader="Developers"
+            links={developersLinks}
+            listStyles={cssStyles.listDevs}
+          />
+          <LinksList
+            listHeader="Socials"
+            listStyles={cssStyles.listDevs}
+            links={socialMediaLinks}
+          />
+          <LinksList
+            listHeader="Work with us 🤟"
+            listStyles={cssStyles.listDevs}
+            links={developersLinks}
+          />
         </main>
-
-        <ExternalLinkButton
-          label="Terms of use"
-          href={externalLinks.termsOfUse}
-          styles={cssStyles.termsOfUse}
-        />
+        <div css={cssStyles.description}>
+          <span>Built by Composability Labs</span>
+          <div css={cssStyles.rights}>
+            <ExternalLinkButton
+              label="Terms of use"
+              href={externalLinks.termsOfUse}
+              styles={cssStyles.termsOfUse}
+            />
+            <span>All rights reserved  © 2023-2024</span>
+          </div>
+        </div>
       </footer>
     </SectionWrapper>
   );
 };
 
 const cssStyles = {
+  footerContainer: css`
+    background-image: url("./images/footer.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 382px;
+  `,
   footer: css`
     margin: ${theme.spacing.huge} 0;
     position: relative;
     width: 100%;
-
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     ${theme.media.tablet} {
       margin: ${theme.spacing.custom[40]} 0;
     }
+    gap: 48px
   `,
   footerContent: css`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 48px;
+    ${theme.media.tablet} {
+      justify-content: space-between;
+      flex-direction: row;
+    }
   `,
-  listsWrapper: css`
+  description: css`
     display: flex;
+    gap: 16px;
     flex-direction: column;
 
+    ${theme.media.tablet} {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  `,
+  rights: css`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     ${theme.media.tablet} {
       flex-direction: row;
-      justify-content: space-between;
-      width: 50%;
+      gap: 32px;
     }
   `,
-  listTech: css`
-    margin-bottom: ${theme.spacing.extra};
-
-    ${theme.media.tablet} {
-      width: 50%;
-    }
-  `,
-  listDevs: css`
-    margin-bottom: 4.3rem;
-    ${theme.media.tablet} {
-      width: 50%;
-    }
-  `,
-  iconsWrapper: css`
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    justify-content: space-between;
-    height: inherit;
-
-    ${theme.media.tablet} {
-      flex-direction: row-reverse;
-      align-items: flex-start;
-      width: 50%;
-    }
-  `,
-  termsOfUse: css`
+  svg: css`
     position: absolute;
-    bottom: ${theme.spacing.default};
-    left: 0;
-    font-size: ${theme.text.size.extraTiny};
-
-    &:hover {
-      color: ${theme.colors.green[25]};
-    }
-
-    &:active {
-      color: ${theme.colors.green[50]};
-    }
-    
+    right: 0;
     ${theme.media.tablet} {
-      right: 0;
-      left: auto;
+      position: unset;
     }
-  `,
+  `
 };
 
 export default Footer;

@@ -59,6 +59,7 @@ const landingTheme = {
       medium: "#999393",
       45: "#A3A3A373",
       33: "#99939347",
+      borderPrimary: '#4B4B4B'
     },
     purple: {
       hover: "linear-gradient(0deg, #8E70FF, #8E70FF)",

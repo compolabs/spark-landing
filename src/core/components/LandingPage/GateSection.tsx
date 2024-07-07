@@ -6,6 +6,7 @@ import theme from "@/core/styles/theme";
 import Badge from "@/core/components/common/Badge";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 import RegularTradeButton from "@/core/components/LandingPage/components/RegularTradeButton";
+import OptimizedMobileButton from "@/core/components/LandingPage/components/OptimizedMobileButton";
 
 const GateSection = () => {
   return (
@@ -18,25 +19,46 @@ const GateSection = () => {
         />
 
         <h1 css={cssStyles.title}>
-          World's fastest <br /> on-chain order book
+          Onchain Trading <br />
+          <span css={cssStyles.scaled}>[Scaled]</span>
         </h1>
 
         <p css={cssStyles.tagline}>
-          {`Trade spot crypto with low fees & fast `}
+          {`Spark is your all-in-one DeFi hub on the Fuel`}
           <br />
-          {`transactions. Build your
-          strategies.`}
+          {`Network, with an integrated order book for `}
+          <br />
+          {`seamless trading of your favorite assets.`}
         </p>
 
-        <RegularTradeButton styles={cssStyles.appBtn}>
-          <span css={cssStyles.appBtnText}>Launch app</span>
-          <Image
-            src="./images/svg/fuel.svg"
-            alt="fuel-logo"
-            width={72}
-            height={17}
-          />
-        </RegularTradeButton>
+        <div css={cssStyles.buttons}>
+          <RegularTradeButton styles={cssStyles.appBtn}>
+            <span css={cssStyles.appBtnText}>Trade now</span>
+            <Image
+              src="./images/svg/fuel.svg"
+              alt="fuel-logo"
+              width={72}
+              height={17}
+            />
+          </RegularTradeButton>
+          <OptimizedMobileButton styles={cssStyles.mobileBtn} >
+            <div css={cssStyles.mobileBtn_icons}>
+            <Image
+              src="./images/svg/apple.svg"
+              alt="fuel-logo"
+              width={19}
+              height={24}
+            />
+            <Image
+              src="./images/svg/android.svg"
+              alt="fuel-logo"
+              width={19}
+              height={24}
+            />
+            </div>
+            <span>Optimized for mobile</span>
+          </OptimizedMobileButton>
+        </div>
       </div>
     </SectionWrapper>
   );
@@ -88,6 +110,11 @@ const cssStyles = {
       margin-bottom: ${theme.spacing.large};
     }
   `,
+  scaled: css`
+    background-image: ${theme.colors.gradients.text};
+    color: transparent;
+    background-clip: text;
+  `,
   tagline: css`
     margin-bottom: ${theme.spacing.huge};
     max-width: ${convertPxToRem(328)};
@@ -110,6 +137,25 @@ const cssStyles = {
   `,
   appBtnText: css`
     margin-right: ${theme.spacing.custom[20]};
+  `,
+  buttons: css`
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    flex-direction: column;
+
+    ${theme.media.tabletLandscape} {
+      flex-direction: row;
+      width: ${convertPxToRem(641)};
+    }
+  `,
+  mobileBtn: css`
+   pointer-events: none;
+    gap: 20px;
+  `,
+  mobileBtn_icons: css`
+    display:flex;
+    gap: 11px;
   `,
 };
 

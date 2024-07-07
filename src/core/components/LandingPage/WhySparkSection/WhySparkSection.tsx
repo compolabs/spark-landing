@@ -27,7 +27,7 @@ const WhySparkSection = () => {
             src={
               isMobile
                 ? "./images/trade-platform_mobile.png"
-                : "./images/main_screen.png"
+                : "./images/main-screen.png"
             }
             alt="product"
             fill
@@ -80,61 +80,25 @@ const cssStyle = {
     height: 20.5rem;
 
     ${theme.media.tabletBreakPoint} {
-      border-radius: ${theme.borderRadius.large};
-      box-shadow: ${theme.shadow.app};
       width: 100%;
       height: 50vw;
-
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 0;
-        background: ${theme.colors.purpleShadow};
-        border-radius: ${theme.borderRadius.default};
-        width: calc(100% - 3.5rem);
-        height: 2.5rem;
-        top: -1rem;
-        left: 1.75rem;
-        right: 0;
-        animation: ${fadeIn} 0.2s;
-      }
     }
 
     ${theme.media.tabletLandscape} {
-      border-radius: ${theme.borderRadius.large};
-      box-shadow: ${theme.shadow.app};
       width: 100%;
       height: 50vw;
-
-      &:before {
-        width: calc(100%w - 3.5rem);
-        height: 3rem;
-        top: -1.25rem;
-      }
     }
 
     ${theme.media.tablet} {
-      border-radius: ${theme.borderRadius.large};
-      box-shadow: ${theme.shadow.app};
       width: 100%;
       height: 50vw;
       max-height: ${convertPxToRem(814.54)};
-
-      &:before {
-        width: calc(100% - 3.5rem);
-      }
     }
 
     ${theme.media.desktop} {
-      border-radius: ${theme.borderRadius.large};
-      box-shadow: ${theme.shadow.app};
       max-height: ${convertPxToRem(814.54)};
       width: 90rem;
       height: 51rem;
-      &:before {
-        width: calc(100% - 3.5rem);
-      }
     }
   `,
 };

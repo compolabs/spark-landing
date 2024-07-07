@@ -13,8 +13,6 @@ import {
   tradingDescriptionHighlight,
   tradingToolkitDescription,
 } from "./constants";
-import TradingKeyAttributes from "./TradingKeyAttributes";
-import TradingFeatures from "./TradingFeatures";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 const TradingPlatformSection = () => {
@@ -26,7 +24,6 @@ const TradingPlatformSection = () => {
       styles={cssStyles.section(isMobile)}
     >
       <div css={cssStyles.titleWrapper}>
-        <h2 css={cssStyles.title}>Trading Toolkit: </h2>
         <TextHighlighter
           text={tradingToolkitDescription}
           highlight={tradingDescriptionHighlight}
@@ -34,9 +31,10 @@ const TradingPlatformSection = () => {
           styles={cssStyles.subtitle}
           isGradient
         />
+        {!isMobile && (
+          <RegularTradeButton label="Trade now" styles={cssStyles.tryBtn} />
+        )}
       </div>
-
-      <TradingKeyAttributes />
 
       <div css={cssStyles.imageContainer}>
         <Image
@@ -46,17 +44,16 @@ const TradingPlatformSection = () => {
           priority
         />
       </div>
-
-      <TradingFeatures />
-
-      <RegularTradeButton label="Try it" styles={cssStyles.tryBtn} />
+      {isMobile && (
+        <RegularTradeButton label="Try it!" styles={cssStyles.tryBtn} />
+      )}
     </SectionWrapper>
   );
 };
 
 const cssStyles = {
   section: (isMobile: boolean) => css`
-    flex-direction: column;
+    ${isMobile ? "flex-direction: column;" : "align-items: center;"}
     padding-top: ${theme.spacing.custom[60]};
     padding-bottom: ${theme.spacing.custom[20]};
 
@@ -69,6 +66,9 @@ const cssStyles = {
     margin: 0 auto ${theme.spacing.huge};
     max-width: 30rem;
     text-align: center;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
 
     ${theme.media.tablet} {
       max-width: 43rem;
