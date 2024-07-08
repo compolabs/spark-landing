@@ -73,7 +73,7 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.large};
   `,
   listItem: ({ marginBottom = "0", marginRight = "0" }) => css`
-    color: ${theme.colors.white[100]};
+    color: ${theme.colors.white.default};
     margin-bottom: ${marginBottom};
     margin-right: ${marginRight};
     max-height: 2rem;

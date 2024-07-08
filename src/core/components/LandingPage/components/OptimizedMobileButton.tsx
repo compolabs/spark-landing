@@ -22,9 +22,11 @@ const OptimizedMobileButton = ({
       data={{
         label,
       }}
-      styles={[cssStyles.mobileBtn, styles]}
+      styles={styles}
     >
-      {label ?? <button css={[cssStyles.mobileBtn, styles]}> {children}</button>}
+      {label ?? (
+        <button css={[cssStyles.mobileBtn, styles]}> {children}</button>
+      )}
     </LinkButton>
   );
 };
@@ -38,10 +40,11 @@ const cssStyles = {
     font-size: ${theme.text.size.body};
     border-radius: ${theme.borderRadius.default};
     border: 2px dashed ${theme.colors.grey.lightDark};
-    width: 100%;
-    height: ${convertPxToRem(56)};
     color: white;
     cursor: pointer;
+    width: 100%;
+    height: ${convertPxToRem(56)};
+    padding: ${convertPxToRem(16)} ${convertPxToRem(20)};
   `,
 };
 

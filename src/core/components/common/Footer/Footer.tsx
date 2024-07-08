@@ -1,21 +1,26 @@
 import { css } from "@emotion/react";
+import Image from "next/image";
 
 import SectionWrapper from "@/core/components/common/SectionWrapper";
 import theme from "@/core/styles/theme";
 import { LinksList } from "@/core/components/common/Footer/LinksList";
 import { externalLinks } from "@/core/constants/externalLinks";
+import { useMobileWindowWidth } from "@/core/hooks/useMobileWindowWidth";
 import SVGIcon from "@/core/components/common/SVGIcon";
 import ExternalLinkButton from "@/core/components/common/ExternalLinkWrapper";
 import useMainFont from "@/core/hooks/useMainFont";
+
 
 import {
   developersLinks,
   socialMediaLinks,
   technologyLinks,
+  workWithUsLinks,
 } from "./constants";
 
 const Footer = () => {
   const syne = useMainFont();
+  const isMobile = useMobileWindowWidth();
 
   return (
     <SectionWrapper disableMaxWidth styles={cssStyles.footerContainer}>
@@ -24,49 +29,53 @@ const Footer = () => {
           <div css={cssStyles.svg}>
             <SVGIcon size={[82, 25]} iconName="LogoMini" />
           </div>
-          <LinksList
-            listHeader="Technology"
-            links={technologyLinks}
-            listStyles={cssStyles.listTech}
-          />
-          <LinksList
-            listHeader="Developers"
-            links={developersLinks}
-            listStyles={cssStyles.listDevs}
-          />
-          <LinksList
-            listHeader="Socials"
-            listStyles={cssStyles.listDevs}
-            links={socialMediaLinks}
-          />
-          <LinksList
-            listHeader="Work with us 🤟"
-            listStyles={cssStyles.listDevs}
-            links={developersLinks}
-          />
+          <LinksList listHeader="Technology" links={technologyLinks} />
+          <LinksList listHeader="Developers" links={developersLinks} />
+          <LinksList listHeader="Socials" links={socialMediaLinks} />
+          <LinksList listHeader="Work with us 🤟" links={workWithUsLinks} />
         </main>
         <div css={cssStyles.description}>
-          <span>Built by Composability Labs</span>
+          <span css={cssStyles.descriptionText}>Built by Composability Labs</span>
           <div css={cssStyles.rights}>
             <ExternalLinkButton
               label="Terms of use"
               href={externalLinks.termsOfUse}
-              styles={cssStyles.termsOfUse}
+              styles={cssStyles.descriptionText}
             />
-            <span>All rights reserved  © 2023-2024</span>
+            <span css={cssStyles.descriptionText}>All rights reserved  © 2023-2024</span>
           </div>
         </div>
       </footer>
+      {isMobile && (
+        <div css={cssStyles.bg}>
+          <Image src="./images/footer.png" alt="bg" fill />
+        </div>
+      )}
     </SectionWrapper>
   );
 };
 
 const cssStyles = {
-  footerContainer: css`
-    background-image: url("./images/footer.png");
-    background-size: cover;
-    background-position: center;
+  bg: css`
+    z-index: -1;
+    min-height: 215px;
+    object-fit: contain;
+    position: absolute;
+    left: -100%;
+    bottom: 0%;
+    overflow:hidden;
+    min-width: 1280px;
     min-height: 382px;
+  }
+  `,
+  footerContainer: css`
+    position: relative;
+    ${theme.media.tabletBreakPoint} {
+      background-image: url("./images/footer.png");
+      background-size: cover;
+      background-position: center;
+      min-height: 382px;
+    }
   `,
   footer: css`
     margin: ${theme.spacing.huge} 0;
@@ -75,10 +84,10 @@ const cssStyles = {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    gap: 48px;
     ${theme.media.tablet} {
       margin: ${theme.spacing.custom[40]} 0;
     }
-    gap: 48px
   `,
   footerContent: css`
     display: flex;
@@ -99,6 +108,9 @@ const cssStyles = {
       flex-direction: row;
     }
   `,
+  descriptionText: css`
+    font-size: ${theme.text.size.extraTiny}  
+  `,
   rights: css`
     display: flex;
     flex-direction: column;
@@ -114,7 +126,7 @@ const cssStyles = {
     ${theme.media.tablet} {
       position: unset;
     }
-  `
+  `,
 };
 
 export default Footer;

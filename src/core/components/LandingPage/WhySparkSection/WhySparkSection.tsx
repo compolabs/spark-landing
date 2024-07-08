@@ -32,6 +32,12 @@ const WhySparkSection = () => {
             alt="product"
             fill
           />
+
+          {!isMobile && (
+            <div css={cssStyle.shadow}>
+              <Image src="./images/shadow.png" alt="shadow" fill />
+            </div>
+          )}
         </div>
       </div>
     </SectionWrapper>
@@ -82,7 +88,7 @@ const cssStyle = {
     ${theme.media.tabletBreakPoint} {
       width: 100%;
       height: 50vw;
-    }
+      position: relative;
 
     ${theme.media.tabletLandscape} {
       width: 100%;
@@ -101,6 +107,14 @@ const cssStyle = {
       height: 51rem;
     }
   `,
+  shadow: css`
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -12%;
+        left: 4%;
+        z-index: -1;
+  `
 };
 
 export default WhySparkSection;

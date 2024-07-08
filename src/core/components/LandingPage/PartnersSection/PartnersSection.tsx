@@ -6,10 +6,9 @@ import theme from "@/core/styles/theme";
 import Image from "next/image";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
-import {items, text } from './constants'
- 
+import { items, text } from "./constants";
+
 const PartnersSection = () => {
-  
   return (
     <SectionWrapper styles={cssStyles.container}>
       <div css={cssStyles.titleWrapper}>
@@ -27,7 +26,7 @@ const PartnersSection = () => {
           </div>
         ))}
         {text.map((item) => (
-          <div css={cssStyles.partners}>{item.title}</div>
+          <div css={[cssStyles.partners, cssStyles.text]}>{item.title}</div>
         ))}
       </div>
     </SectionWrapper>
@@ -39,6 +38,7 @@ const cssStyles = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0
   `,
   titleWrapper: css`
     margin: 0 auto ${theme.spacing.small};
@@ -52,12 +52,18 @@ const cssStyles = {
   title: css`
     margin-bottom: ${theme.spacing.normal};
     font-size: ${theme.text.size.small};
+    font-weight: ${theme.text.weight.bold};
     color: ${theme.colors.white.default};
 
     ${theme.media.tablet} {
       margin-bottom: ${theme.spacing.medium};
     }
   }`,
+  text: css`
+    font-weight: ${theme.text.weight.extraBold};
+    font-size: ${theme.text.size.body};
+    text-align: center;
+  `,
   items: css`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -66,6 +72,7 @@ const cssStyles = {
     ${theme.media.tablet} {
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(2, 1fr);
+      width: 100%;
     }
   `,
   partners: css`
@@ -84,7 +91,6 @@ const cssStyles = {
 
     &:not(:nth-last-of-type(-n + 2))::before {
       bottom: ${convertPxToRem(-10)};
-      left: 0;
       width: 155px;
       height: 1px;
       transform: translateY(-50%);
@@ -92,31 +98,36 @@ const cssStyles = {
 
     &:nth-of-type(2n)::after {
       top: 0;
-      left: ${convertPxToRem(-17)};
+      left: ${convertPxToRem(-10)};
       width: 1px;
       height: 80px;
       transform: translateX(-50%);
     }
 
     ${theme.media.tablet} {
-      &:nth-last-child(-n + 5)::before {
-        bottom: ${convertPxToRem(-10)};
-        left: 0;
-        width: 155px;
+      &:not(:nth-last-of-type(-n + 2))::before {
+        left: unset;
+        width: 224px;
         height: 1px;
-        transform: translateY(-50%);
       }
 
       :nth-last-child(-n + 5)::before {
         content: none;
       }
-      
+
       ::after {
         top: 0;
-        left: ${convertPxToRem(-17)};
+        left: unset;
+        right: 103%;
         width: 1px;
         height: 80px;
         transform: translateX(-50%);
+        margin: auto;
+      }
+
+      &:nth-of-type(2n)::after {
+        left: unset;
+        right: 103%;
       }
 
       &:first-child::after,

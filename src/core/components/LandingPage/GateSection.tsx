@@ -143,14 +143,16 @@ const cssStyles = {
     width: 100%;
     gap: 24px;
     flex-direction: column;
+    margin: 0 0 ${convertPxToRem(50)} 0;
 
     ${theme.media.tabletLandscape} {
       flex-direction: row;
       width: ${convertPxToRem(641)};
+      margin: unset;
     }
   `,
   mobileBtn: css`
-   pointer-events: none;
+    pointer-events: none;
     gap: 20px;
   `,
   mobileBtn_icons: css`

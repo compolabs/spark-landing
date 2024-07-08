@@ -15,4 +15,5 @@ export const externalLinks = {
     "https://medium.com/@compolabs/predicates-on-fuelvm-enabling-a-new-dex-paradigm-fa013baed9f7",
   defi: "https://medium.com/@compolabs/defi-in-2024-no-free-lunch-e86d335cae01",
   modular: "https://medium.com/@compolabs/introduction-a91ce34d269e",
+  careers: "https://compo-labs.notion.site/93d1f8917cb64f88a222fe24e0df8a9e?v=503fafab97464f049e79bc66ca09afa9&pvs=4"
 };
