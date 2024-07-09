@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
+import Image from "next/image";
 
 import SectionWrapper from "@/core/components/common/SectionWrapper";
 import theme from "@/core/styles/theme";
-import Image from "next/image";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 import { items, text } from "./constants";
@@ -26,7 +26,9 @@ const PartnersSection = () => {
           </div>
         ))}
         {text.map((item) => (
-          <div css={[cssStyles.partners, cssStyles.text]}>{item.title}</div>
+          <div key={`${item}`} css={[cssStyles.partners, cssStyles.text]}>
+            {item.title}
+          </div>
         ))}
       </div>
     </SectionWrapper>
@@ -38,7 +40,7 @@ const cssStyles = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0
+    padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0;
   `,
   titleWrapper: css`
     margin: 0 auto ${theme.spacing.small};
