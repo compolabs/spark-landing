@@ -6,6 +6,7 @@ import { WhySparkSection } from "./WhySparkSection";
 import Features from "./Features/Features";
 import { TradingPlatformSection } from "./TradingPlatformSection";
 import { ResourcesSection } from "./ResourcesSection";
+import { PartnersSection } from "./PartnersSection";
 import GetStartedSection from "./GetStartedSection";
 import Background from "./Background";
 import GateSection from "./GateSection";
@@ -19,6 +20,7 @@ const LandingPage = () => {
       <WhySparkSection />
       <Features />
       <TradingPlatformSection />
+      <PartnersSection />
       <ResourcesSection />
       <GetStartedSection />
     </main>

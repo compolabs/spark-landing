@@ -15,6 +15,10 @@ export const developersLinks = [
   { label: "Faucet", href: externalLinks.faucetDevelopers },
 ];
 
+export const workWithUsLinks = [
+  { label: "Careers", href: externalLinks.careers}
+]
+
 export const socialMediaLinks = [
   {
     icon: <SVGIcon iconName="Twitter" />,

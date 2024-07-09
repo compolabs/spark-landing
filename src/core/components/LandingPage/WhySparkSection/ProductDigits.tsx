@@ -109,7 +109,7 @@ const cssStyle = {
     }
   `,
   cardNumbers: css`
-    text-shadow: 0 0 ${convertPxToRem(4)} ${theme.colors.orange};
+    text-shadow: 0 0 ${convertPxToRem(15)} ${theme.colors.orange};
     font-family: sans-serif;
     color: transparent;
     font-size: ${theme.text.size.medium};

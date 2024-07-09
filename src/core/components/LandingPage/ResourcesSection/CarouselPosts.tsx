@@ -32,7 +32,7 @@ export const CarouselPosts = () => {
               }}
             >
               <div css={cssStyles.wrapper}>
-                <div css={card.isSquare ? cssStyles.imgSquare : cssStyles.img}>
+                <div css={cssStyles.img}>
                   <Image
                     src={card.imgSource}
                     alt="bg"
@@ -107,29 +107,6 @@ const cssStyles = {
     ${theme.media.desktop} {
       width: ${convertPxToRem(344)};
       height: ${convertPxToRem(176)};
-      margin-bottom: ${theme.spacing.medium};
-    }
-  `,
-  imgSquare: css`
-    position: relative;
-    width: ${convertPxToRem(214)};
-    height: ${convertPxToRem(214)};
-    margin-bottom: ${theme.spacing.normal};
-
-    ${theme.media.tabletLandscape} {
-      width: ${convertPxToRem(235)};
-      height: ${convertPxToRem(235)};
-      margin-bottom: ${theme.spacing.medium};
-    }
-    ${theme.media.tablet} {
-      width: ${convertPxToRem(265)};
-      height: ${convertPxToRem(265)};
-      margin-bottom: ${theme.spacing.medium};
-    }
-
-    ${theme.media.desktop} {
-      width: ${convertPxToRem(345)};
-      height: ${convertPxToRem(345)};
       margin-bottom: ${theme.spacing.medium};
     }
   `,

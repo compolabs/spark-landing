@@ -43,10 +43,10 @@ export const featureCards = [
     imageSrc: "./images/svg/feature_small_1.png",
     imageLabel: null,
     article: {
-      header: "Atomic Settlement",
+      header: "Fast data",
       title: {
-        highlightedText: "",
-        text: "Efficient Onchain trading.",
+        highlightedText: "with quick settlements and minimal fees.",
+        text: "Trade fast with quick settlements and minimal fees.",
       },
     },
   },
@@ -58,8 +58,8 @@ export const featureCards = [
     article: {
       header: "Low fees",
       title: {
-        highlightedText: "No lag, no downtime.",
-        text: "Instant order execution. No lag, no downtime.",
+        highlightedText: "The lowest transaction costs in DeFi with",
+        text: "The lowest transaction costs in DeFi with near-zero gas fees",
       },
     },
   },
@@ -69,11 +69,11 @@ export const featureCards = [
     imageSrc: "./images/svg/feature_small_3.png",
     imageLabel: null,
     article: {
-      header: "Best setup to trade crypto",
+      header: "Self Custody and Secure",
       title: {
         highlightedText:
-          "Trade with solid tech in a user-friendly environment.",
-        text: "Trade with solid tech in a user-friendly environment.",
+          "of your funds while trading.",
+        text: "You maintain self custody of your funds while trading.",
       },
     },
   },
