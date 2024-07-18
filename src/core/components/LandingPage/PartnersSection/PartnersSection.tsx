@@ -11,23 +11,34 @@ import { items, text } from "./constants";
 const PartnersSection = () => {
   return (
     <SectionWrapper styles={cssStyles.container}>
-      <div css={cssStyles.titleWrapper}>
-        <h2 css={cssStyles.title}>Backers and Partners</h2>
+      <div>
+        <div css={cssStyles.titleWrapper}>
+          <h2 css={cssStyles.title}>Investors</h2>
+        </div>
+        <div css={cssStyles.items}>
+          {items.map((item, id) => (
+            <div key={id} css={cssStyles.item}>
+              <Image
+                src={item.url}
+                alt="trade-platform"
+                width={120}
+                height={40}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div css={cssStyles.items}>
-        {items.map((item, id) => (
-          <div key={id} css={cssStyles.partners}>
-            <Image
-              src={item.url}
-              alt="trade-platform"
-              width={120}
-              height={40}
-            />
-          </div>
-        ))}
-        {text.map((item) => (
-          <div css={[cssStyles.partners, cssStyles.text]}>{item.title}</div>
-        ))}
+      <div>
+        <div css={cssStyles.titleWrapper}>
+          <h2 css={cssStyles.title}>Angels</h2>
+        </div>
+        <div css={cssStyles.items}>
+          {text.map((item) => (
+            <div key={`${item}`} css={[cssStyles.item, cssStyles.text]}>
+              {item.title}
+            </div>
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   );
@@ -39,6 +50,8 @@ const cssStyles = {
     flex-direction: column;
     align-items: center;
     padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0
+    padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0;
+    gap: 100px;
   `,
   titleWrapper: css`
     margin: 0 auto ${theme.spacing.small};
@@ -53,7 +66,7 @@ const cssStyles = {
     margin-bottom: ${theme.spacing.normal};
     font-size: ${theme.text.size.small};
     font-weight: ${theme.text.weight.bold};
-    color: ${theme.colors.white.default};
+    color: ${theme.colors.grey.light};
 
     ${theme.media.tablet} {
       margin-bottom: ${theme.spacing.medium};
@@ -65,75 +78,27 @@ const cssStyles = {
     text-align: center;
   `,
   items: css`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: ${convertPxToRem(20)};
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: ${convertPxToRem(320)};
+    gap: 10px;
     ${theme.media.tablet} {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(2, 1fr);
       width: 100%;
+      gap: 20px;
     }
   `,
-  partners: css`
+  item: css`
+    width: ${convertPxToRem(155)};
+    height: ${convertPxToRem(56)};
+    flex: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: ${convertPxToRem(20)};
-    position: relative;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: ${theme.colors.grey.borderPrimary};
-    }
-
-    &:not(:nth-last-of-type(-n + 2))::before {
-      bottom: ${convertPxToRem(-10)};
-      width: 155px;
-      height: 1px;
-      transform: translateY(-50%);
-    }
-
-    &:nth-of-type(2n)::after {
-      top: 0;
-      left: ${convertPxToRem(-10)};
-      width: 1px;
-      height: 80px;
-      transform: translateX(-50%);
-    }
 
     ${theme.media.tablet} {
-      &:not(:nth-last-of-type(-n + 2))::before {
-        left: unset;
-        width: 224px;
-        height: 1px;
-      }
-
-      :nth-last-child(-n + 5)::before {
-        content: none;
-      }
-
-      ::after {
-        top: 0;
-        left: unset;
-        right: 103%;
-        width: 1px;
-        height: 80px;
-        transform: translateX(-50%);
-        margin: auto;
-      }
-
-      &:nth-of-type(2n)::after {
-        left: unset;
-        right: 103%;
-      }
-
-      &:first-child::after,
-      &:nth-child(6)::after {
-        content: none;
-      }
+      width: ${convertPxToRem(224)};
+      height: ${convertPxToRem(80)};
     }
   `,
 };
