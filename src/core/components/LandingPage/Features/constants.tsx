@@ -10,43 +10,56 @@ export const isFeature = {
 
 export const featureCards = [
   {
-    type: FeatureCardShapeTypes.Card,
-    badge: "Top feature",
-    imageSrc: "./images/img_feature_big_2.png",
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_1.png",
     imageLabel: null,
     article: {
-      header: "On-chain Orderbook:",
+      header: "Fast execution",
       title: {
-        highlightedText:
-          "Our on-chain CLOB provides unmatched speed and accuracy, ensuring",
-        text: "Our on-chain CLOB provides unmatched speed and accuracy, ensuring high-volume trade execution without compromise.",
-      },
-    },
-  },
-  {
-    type: FeatureCardShapeTypes.Card,
-    badge: "Familiar tools",
-    imageSrc: "./images/img_feature_big_1.png",
-    imageLabel: null,
-    article: {
-      header: "Leverage & Margin:",
-      title: {
-        highlightedText:
-          "Access dynamic leverage options and sophisticated risk management tools",
-        text: "Access dynamic leverage options and sophisticated risk management tools designed for strategic trade optimization.",
+        highlightedText: "with quick settlements and minimal fees.",
+        text: "Trade fast with quick settlements and minimal fees.",
       },
     },
   },
   {
     type: FeatureCardShapeTypes.SubCard,
     badge: null,
-    imageSrc: "./images/svg/feature_small_1.png",
+    imageSrc: "./images/svg/feature_small_1.svg",
     imageLabel: null,
     article: {
-      header: "Fast data",
+      header: "Market Liquidity",
       title: {
-        highlightedText: "with quick settlements and minimal fees.",
-        text: "Trade fast with quick settlements and minimal fees.",
+        highlightedText:
+          "on Fuel for optimal pricing",
+        text: "Access unparalleled liquidity on Fuel for optimal pricing",
+      },
+    },
+  },
+  {
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_3.png",
+    imageLabel: null,
+    article: {
+      header: "Self Custody and Secure",
+      title: {
+        highlightedText: "of your funds while trading.",
+        text: "You maintain self custody of your funds while trading.",
+      },
+    },
+  },
+  {
+    type: FeatureCardShapeTypes.SubCard,
+    badge: null,
+    imageSrc: "./images/svg/feature_small_3.svg",
+    imageLabel: null,
+    article: {
+      header: "Governed by the Community",
+      title: {
+        highlightedText:
+          "Spark traders will shape the future, with DAO treasury on the way.",
+        text: "Spark traders will shape the future, with DAO treasury on the way.",
       },
     },
   },
@@ -66,14 +79,14 @@ export const featureCards = [
   {
     type: FeatureCardShapeTypes.SubCard,
     badge: null,
-    imageSrc: "./images/svg/feature_small_3.png",
+    imageSrc: "./images/svg/feature_small_2.svg",
     imageLabel: null,
     article: {
-      header: "Self Custody and Secure",
+      header: "Personalized Trading Tools ",
       title: {
         highlightedText:
-          "of your funds while trading.",
-        text: "You maintain self custody of your funds while trading.",
+          "An intuitive interface designed to streamline your trading activities.",
+        text: "An intuitive interface designed to streamline your trading activities.",
       },
     },
   },

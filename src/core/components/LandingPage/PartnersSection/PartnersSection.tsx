@@ -21,8 +21,9 @@ const PartnersSection = () => {
               <Image
                 src={item.url}
                 alt="trade-platform"
-                width={120}
+                width={100}
                 height={40}
+                css
               />
             </div>
           ))}
@@ -32,7 +33,7 @@ const PartnersSection = () => {
         <div css={cssStyles.titleWrapper}>
           <h2 css={cssStyles.title}>Angels</h2>
         </div>
-        <div css={cssStyles.items}>
+        <div css={[cssStyles.items, cssStyles.angels]}>
           {text.map((item) => (
             <div key={`${item}`} css={[cssStyles.item, cssStyles.text]}>
               {item.title}
@@ -52,6 +53,7 @@ const cssStyles = {
     padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0
     padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0;
     gap: 100px;
+    padding-bottom: ${convertPxToRem(100)}
   `,
   titleWrapper: css`
     margin: 0 auto ${theme.spacing.small};
@@ -99,6 +101,14 @@ const cssStyles = {
     ${theme.media.tablet} {
       width: ${convertPxToRem(224)};
       height: ${convertPxToRem(80)};
+    }
+  `,
+  angels: css`
+    flex-direction: column;
+    align-items: center;
+    ${theme.media.tablet} {
+      flex-direction: unset;
+      align-items: unset;
     }
   `,
 };

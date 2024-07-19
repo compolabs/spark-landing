@@ -24,7 +24,9 @@ const cssStyles = {
     flex-direction: column-reverse;
 
     ${theme.media.tabletLandscape} {
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
   `,
 };

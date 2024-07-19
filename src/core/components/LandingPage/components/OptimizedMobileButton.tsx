@@ -45,6 +45,10 @@ const cssStyles = {
     width: 100%;
     height: ${convertPxToRem(56)};
     padding: ${convertPxToRem(16)} ${convertPxToRem(20)};
+
+    ${theme.media.tablet} {
+      padding: ${convertPxToRem(16)} ${convertPxToRem(32)};
+    }
   `,
 };
 

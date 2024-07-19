@@ -25,9 +25,9 @@ const RegularTradeButton = ({
         label,
         href,
       }}
-      styles={[cssStyles.tradeBtn, styles]}
+      styles={[styles]}
     >
-      {label ?? <button css={[cssStyles.tradeBtn, styles]}> {children}</button>}
+      {label ?? <button css={[cssStyles.tradeBtn]}> {children}</button>}
     </LinkButton>
   );
 };
@@ -42,15 +42,11 @@ const cssStyles = {
     border-radius: ${theme.borderRadius.default};
     border: none;
     width: 100%;
+    padding: ${convertPxToRem(16)} ${convertPxToRem(32)};
     height: ${convertPxToRem(56)};
     color: white;
     cursor: pointer;
    
- 
-    ${theme.media.tabletBreakPoint}{
-      max
-    }
-
     &:hover {
       background: ${theme.colors.purple.hover};
     }

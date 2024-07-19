@@ -32,7 +32,7 @@ const TradingPlatformSection = () => {
           isGradient
         />
         {!isMobile && (
-          <RegularTradeButton label="Trade now" styles={cssStyles.tryBtn(isMobile)} />
+          <RegularTradeButton styles={cssStyles.tryBtn}>Trade now!</RegularTradeButton>
         )}
       </div>
 
@@ -45,7 +45,7 @@ const TradingPlatformSection = () => {
         />
       </div>
       {isMobile && (
-        <RegularTradeButton label="Try it!" styles={cssStyles.tryBtn(isMobile)} />
+        <RegularTradeButton styles={cssStyles.tryBtn}>Try it!</RegularTradeButton>
       )}
     </SectionWrapper>
   );
@@ -98,11 +98,13 @@ const cssStyles = {
       height: 21.5rem;
     }
   `,
-  tryBtn: (isMobile: boolean) => css`
-      margin: 50px auto;
+  tryBtn: css`
+      margin: 50px 0;
+      width: 100%;
 
     ${theme.media.tabletBreakPoint} {
       max-width: 14.5rem;
+      margin: 50px auto;
     }
   `,
 };
