@@ -10,7 +10,6 @@ import SVGIcon from "@/core/components/common/SVGIcon";
 import ExternalLinkButton from "@/core/components/common/ExternalLinkWrapper";
 import useMainFont from "@/core/hooks/useMainFont";
 
-
 import {
   developersLinks,
   socialMediaLinks,
@@ -30,19 +29,48 @@ const Footer = () => {
             <SVGIcon size={[82, 25]} iconName="LogoMini" />
           </div>
           <LinksList listHeader="Technology" links={technologyLinks} />
-          <LinksList listHeader="Developers" links={developersLinks} />
-          <LinksList listHeader="Socials" links={socialMediaLinks} />
-          <LinksList listHeader="Work with us 🤟" links={workWithUsLinks} />
+          {isMobile ? (
+            <div css={cssStyles.links}>
+              <LinksList listHeader="Developers" links={developersLinks} />
+
+              <div css={cssStyles.socials}>
+                <LinksList
+                  listHeader="Socials"
+                  links={socialMediaLinks}
+                  type="horizontal"
+                />
+                <LinksList
+                  listHeader="Work with us 🤟"
+                  links={workWithUsLinks}
+                />
+              </div>
+            </div>
+          ) : (
+            <>
+              <LinksList listHeader="Developers" links={developersLinks} />
+
+              <LinksList
+                listHeader="Socials"
+                links={socialMediaLinks}
+                type="horizontal"
+              />
+              <LinksList listHeader="Work with us 🤟" links={workWithUsLinks} />
+            </>
+          )}
         </main>
         <div css={cssStyles.description}>
-          <span css={cssStyles.descriptionText}>Built by Composability Labs</span>
+          <span css={cssStyles.descriptionText}>
+            Built by Composability Labs
+          </span>
           <div css={cssStyles.rights}>
             <ExternalLinkButton
               label="Terms of use"
               href={externalLinks.termsOfUse}
               styles={cssStyles.descriptionText}
             />
-            <span css={cssStyles.descriptionText}>All rights reserved  © 2023-2024</span>
+            <span css={cssStyles.descriptionText}>
+              All rights reserved  © 2023-2024
+            </span>
           </div>
         </div>
       </footer>
@@ -84,7 +112,7 @@ const cssStyles = {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap: 48px;
+    gap: 80px;
     ${theme.media.tablet} {
       margin: ${theme.spacing.custom[40]} 0;
     }
@@ -92,7 +120,7 @@ const cssStyles = {
   footerContent: css`
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 50px;
     ${theme.media.tablet} {
       justify-content: space-between;
       flex-direction: row;
@@ -109,7 +137,7 @@ const cssStyles = {
     }
   `,
   descriptionText: css`
-    font-size: ${theme.text.size.extraTiny}  
+    font-size: ${theme.text.size.extraTiny};
   `,
   rights: css`
     display: flex;
@@ -125,6 +153,24 @@ const cssStyles = {
     right: 0;
     ${theme.media.tablet} {
       position: unset;
+    }
+  `,
+  links: css`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    ${theme.media.tablet} {
+      display: flex;
+      gap: 10px;
+    }
+  `,
+  socials: css`
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    ${theme.media.tablet} {
+      display: unset;
     }
   `,
 };

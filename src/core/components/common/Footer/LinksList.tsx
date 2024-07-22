@@ -26,9 +26,9 @@ export const LinksList = ({
   const isVerticalList = type === "vertical";
 
   return (
-    <ul css={[cssStyles.list(isVerticalList ? "column" : "row"), listStyles]}>
+    <ul css={[cssStyles.list, listStyles]}>
       {listHeader && <div css={cssStyles.listHeader}>{listHeader}</div>}
-
+      <div css={isVerticalList ? '' : cssStyles.links}>
       {links.map(({ label, href = "", icon }) => (
         <li
           key={href + label}
@@ -47,6 +47,7 @@ export const LinksList = ({
           </LinkButton>
         </li>
       ))}
+      </div>
     </ul>
   );
 };
@@ -61,12 +62,15 @@ const cssStyles = {
       color: ${theme.colors.green[50]};
     }
   `,
-  list: (flexDirection: string) => css`
+  list: css`
     display: flex;
-    flex-direction: ${flexDirection};
+    flex-direction: column;
     list-style: none;
     font-size: ${theme.text.size.extraTiny};
     padding: 0;
+  `,
+  links: css`
+    display: flex;
   `,
   listHeader: css`
     color: ${theme.colors.white[37]};
@@ -77,7 +81,7 @@ const cssStyles = {
     margin-bottom: ${marginBottom};
     margin-right: ${marginRight};
     max-height: 2rem;
-
+    
     &:last-child {
       margin-bottom: 0;
       margin-right: 0;

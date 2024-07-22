@@ -50,11 +50,8 @@ const cssStyles = {
 
     ${theme.media.tabletLandscape} {
       flex-direction: column;
-      width: calc((100% - (${theme.spacing.custom[10]} * 2)) / 3);
-      margin-right: ${theme.spacing.custom[10]};
-      &:last-child {
-        margin-right: 0;
-      }
+      width: 100%;
+      margin-bottom: 0;
     }
   `,
   imageContainer: css`

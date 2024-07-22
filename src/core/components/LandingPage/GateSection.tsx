@@ -13,7 +13,7 @@ const GateSection = () => {
     <SectionWrapper>
       <div css={cssStyles.container}>
         <Badge
-          content="Introducing Sprk.fi"
+          content="Introducing Spark"
           borderStyles={cssStyles.badge}
           bgColor="transparent"
         />
@@ -24,7 +24,7 @@ const GateSection = () => {
         </h1>
 
         <p css={cssStyles.tagline}>
-          {`Spark is your all-in-one DeFi hub on the Fuel`}
+          {`Spark is your all-in-one DeFi hub on Fuel`}
           <br />
           {`Network, with an integrated order book for `}
           <br />
@@ -56,7 +56,7 @@ const GateSection = () => {
               height={24}
             />
             </div>
-            <span>Optimized for mobile</span>
+            <span>Mobile optimized</span>
           </OptimizedMobileButton>
         </div>
       </div>
