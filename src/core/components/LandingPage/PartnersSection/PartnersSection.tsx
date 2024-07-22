@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/react";
+import Image from "next/image";
 
 import SectionWrapper from "@/core/components/common/SectionWrapper";
 import theme from "@/core/styles/theme";
-import Image from "next/image";
 import { convertPxToRem } from "@/core/utils/convertPxToRem";
 
 import { items, text } from "./constants";
@@ -50,7 +50,6 @@ const cssStyles = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0
     padding: ${convertPxToRem(15)} 0 ${convertPxToRem(70)} 0;
     gap: 100px;
     padding-bottom: ${convertPxToRem(100)}
