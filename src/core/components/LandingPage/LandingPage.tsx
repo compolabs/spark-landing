@@ -10,6 +10,7 @@ import { PartnersSection } from "./PartnersSection";
 import GetStartedSection from "./GetStartedSection";
 import Background from "./Background";
 import GateSection from "./GateSection";
+import CookiesPolicy from "@/core/components/LandingPage/components/CookiesPolicy";
 
 const LandingPage = () => {
   const syne = useMainFont();
@@ -23,6 +24,7 @@ const LandingPage = () => {
       <PartnersSection />
       <ResourcesSection />
       <GetStartedSection />
+      <CookiesPolicy />
     </main>
   );
 };

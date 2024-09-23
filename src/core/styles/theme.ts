@@ -59,7 +59,8 @@ const landingTheme = {
       medium: "#999393",
       45: "#A3A3A373",
       33: "#99939347",
-      borderPrimary: '#4B4B4B'
+      borderPrimary: '#4B4B4B',
+      borderAccent: "#969696"
     },
     purple: {
       hover: "linear-gradient(0deg, #8E70FF, #8E70FF)",
@@ -83,6 +84,8 @@ const landingTheme = {
       50: "#00E388",
       25: "#7DFFCB",
       20: "#54BB9433",
+      10: "#004C2D",
+      5: "#007E4C"
     },
     pink: "#E395FF",
     purpleShadow: "#1D1927",
