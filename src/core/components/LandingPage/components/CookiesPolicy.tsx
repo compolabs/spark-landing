@@ -30,7 +30,7 @@ const CookiesPolicy = () => {
                     iconName="Cookie"
                 />
                 <TextStyled style={{width: "220px"}}>
-                    If you continue browsing, we consider that you have accepted the <LinkStyled>Cookies policy</LinkStyled>
+                    If you continue browsing, we consider that you have accepted the <LinkStyled href="https://www.termsfeed.com/live/9a0e477c-43c7-4d98-98e9-6695b8076149" target="_blank">Cookies policy</LinkStyled>
                 </TextStyled>
             </FlexBlock>
             <FlexBlock>
