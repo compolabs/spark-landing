@@ -1,1 +1,0 @@
-export { TradingSection } from "./TradingSection";
