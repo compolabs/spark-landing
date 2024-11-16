@@ -24,7 +24,7 @@ import {
 
 const featureCards: FeatureCardProps[] = [
   {
-    title: "On-Chain trading with NO LIMITS.",
+    title: "On-Chain trading with NO LIMITS",
     buttonText: "Trade Now",
     icon: IconChartCandle,
     imageSrc: "/images/permissionless-v2.png",
@@ -37,7 +37,7 @@ const featureCards: FeatureCardProps[] = [
     href: "https://app.sprk.fi/",
   },
   {
-    title: "Earn rewards with Spark incentives.",
+    title: "Earn rewards with Spark incentives",
     buttonText: "Provide Liquidity",
     icon: IconCoins,
     imageSrc: "/images/incentives-v2.png",
@@ -50,7 +50,7 @@ const featureCards: FeatureCardProps[] = [
     href: "https://docs.sprk.fi/provide-liquidity/getting-started-as-a-market-maker",
   },
   {
-    title: "Build the Future of DeFi dApps.",
+    title: "Build the Future of DeFi dApps",
     buttonText: "Build Now",
     icon: IconTerminal2,
     imageSrc: "/images/build-v2.png",
@@ -63,7 +63,7 @@ const featureCards: FeatureCardProps[] = [
     href: "https://docs.sprk.fi/",
   },
   {
-    title: "List any token, even meme coins.",
+    title: "List any token, even meme coins",
     buttonText: "Coming Soon",
     icon: IconCheckupList,
     imageSrc: "/images/list.png",
@@ -82,7 +82,7 @@ const additionalFeatures = [
     title: (
       <>
         Composable
-        <br /> Ecosystem.
+        <br /> Ecosystem
       </>
     ),
     description: "Shared liquidity with other protocols",
@@ -92,7 +92,7 @@ const additionalFeatures = [
     title: (
       <>
         Bulletproof
-        <br /> Infrastructure.
+        <br /> Infrastructure
       </>
     ),
     description: "Top indexers, market makers, and Spark data relayers",
