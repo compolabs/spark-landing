@@ -155,6 +155,11 @@ const FuelLogo = styled.div`
   }
 `;
 
+const IconFuelStyled = styled(IconFuel)`
+  width: 182px;
+  height: 58px
+`
+
 const FuelDescription = styled.p`
   margin-left: 12px;
   font-size: 16px;
@@ -278,7 +283,7 @@ export const TradingSection: React.FC = () => {
         <Subtitle>
           Centralised trading has held crypto back for too long.
           <br />
-          Onchain trading gives individuals full control of their assets.
+          Onchain trading gives individuals full control of their assets
         </Subtitle>
       </Header>
       <Content>
@@ -294,7 +299,7 @@ export const TradingSection: React.FC = () => {
           </ImageContainer>
           <InfoBox isDark={isDark}>
             <FuelLogo>
-              <IconFuel />
+              <IconFuelStyled />
             </FuelLogo>
             <FuelDescription>
               Fuel&apos;s cutting-edge execution layer transforms Ethereum

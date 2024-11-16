@@ -41,7 +41,7 @@ export const SecureTrading: React.FC = () => {
         <TradingInfo>
           <TradingTitle>Self Custody and Secure Trading</TradingTitle>
           <TradingDescription>
-            Trade securely with full control over your assets. No compromises.
+            Trade securely with full control over your assets. No compromises
           </TradingDescription>
           <ActionArea>
             <TradeButton buttonText="Trade Now" size="small" />
