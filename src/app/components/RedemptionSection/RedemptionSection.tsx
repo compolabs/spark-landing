@@ -47,7 +47,7 @@ const featureCards: FeatureCardProps[] = [
     borderColorDark: "rgba(0, 47, 56, 1)",
     buttonColor: "var(--blue-600, #002f38)",
     buttonColorDark: "rgba(191, 242, 252, 1)",
-    href: "https://docs.sprk.fi/provide-liquidity/getting-started-as-a-market-maker",
+    href: "https://app.fuel.network/earn-points/",
   },
   {
     title: "Build the Future of DeFi dApps",
