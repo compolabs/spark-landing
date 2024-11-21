@@ -15,6 +15,7 @@ interface ButtonWithIconProps {
   borderColor?: string;
   width?: string;
   href: string;
+  onClick?: () => void;
 }
 
 export const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
@@ -25,6 +26,7 @@ export const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
   borderColor,
   width,
   href,
+  onClick,
 }) => {
   const { theme } = useTheme();
   const isDark = useMemo(() => theme !== "light", [theme]);
@@ -38,6 +40,7 @@ export const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({
       width={width}
       href={href}
       target="_blank"
+      onClick={onClick}
     >
       <BtnsContentWrapper id="btns-content-wrapper">
         <BtnsContentWrapper>

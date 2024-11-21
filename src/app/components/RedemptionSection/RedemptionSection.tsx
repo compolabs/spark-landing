@@ -21,6 +21,7 @@ import {
   FeatureDescription,
   StyledImage,
 } from "./RedemptionSection.styles";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 const featureCards: FeatureCardProps[] = [
   {
@@ -35,6 +36,9 @@ const featureCards: FeatureCardProps[] = [
     buttonColor: "var(--copper-600, #2a1000)",
     buttonColorDark: "rgba(255, 225, 206, 1)",
     href: "https://app.sprk.fi/",
+    onClick: () => {
+      trackEvent(MIXPANEL_EVENTS.CARD_CLICK_TRADE_NOW);
+    },
   },
   {
     title: "Earn rewards with Spark incentives",
@@ -48,6 +52,9 @@ const featureCards: FeatureCardProps[] = [
     buttonColor: "var(--blue-600, #002f38)",
     buttonColorDark: "rgba(191, 242, 252, 1)",
     href: "https://app.fuel.network/earn-points/",
+    onClick: () => {
+      trackEvent(MIXPANEL_EVENTS.CARD_CLICK_LIQUIDITY);
+    },
   },
   {
     title: "Build the Future of DeFi dApps",
@@ -61,6 +68,9 @@ const featureCards: FeatureCardProps[] = [
     buttonColor: "var(--green-600, #002700)",
     buttonColorDark: "rgba(196, 255, 196, 1)",
     href: "https://docs.sprk.fi/",
+    onClick: () => {
+      trackEvent(MIXPANEL_EVENTS.CARD_CLICK_BUILD);
+    },
   },
   {
     title: "List any token, even meme coins",

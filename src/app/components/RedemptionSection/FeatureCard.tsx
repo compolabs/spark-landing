@@ -24,6 +24,7 @@ export interface FeatureCardProps {
   buttonColor: string;
   buttonColorDark: string;
   href: string;
+  onClick?: () => void;
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -38,6 +39,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   buttonColor,
   buttonColorDark,
   href,
+  onClick,
 }) => {
   const { theme } = useTheme();
   const isDark = useMemo(() => theme !== "light", [theme]);
@@ -51,6 +53,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       borderColor={borderColor}
       borderColorDark={borderColorDark}
       isDisabled={isDisabled}
+      onClick={onClick}
     >
       <FeatureImage src={imageSrc} alt="" />
       <CardContent>

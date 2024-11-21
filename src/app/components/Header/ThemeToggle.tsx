@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { useTheme } from "next-themes";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 const ToggleContainer = styled.div<{ isActive: boolean; isDark: boolean }>`
   width: 64px;
@@ -54,6 +55,12 @@ export const ThemeToggle: React.FC = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
+
+    if (newTheme === "dark") {
+      trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_DARK);
+    } else {
+      trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_LIGHT);
+    }
   };
 
   return (

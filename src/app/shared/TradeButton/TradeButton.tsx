@@ -10,11 +10,13 @@ import { IconSparkSmallLogo } from "../icons/IconSparkSmallLogo";
 interface TradeButtonProps {
   buttonText: string;
   size?: "large" | "small";
+  onClick?: () => void;
 }
 
 export const TradeButton: React.FC<TradeButtonProps> = ({
   buttonText,
   size = "large",
+  onClick
 }) => {
   const { theme } = useTheme();
   const isDark = useMemo(() => theme !== "light", [theme]);
@@ -25,6 +27,7 @@ export const TradeButton: React.FC<TradeButtonProps> = ({
       size={size}
       href="https://app.sprk.fi/"
       target="_blank"
+      onClick={onClick}
     >
       <BtnsContentWrapper id="btns-content-wrapper">
         <BtnsContentWrapper>
