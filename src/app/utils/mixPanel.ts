@@ -5,9 +5,9 @@ import { v4 as uuidv4 } from "uuid";
 
 import { detect } from "detect-browser";
 
-// const MAINNET_KEY = "1753ab2fe514a08e22df236ff4095905";
+const MAINNET_KEY = "2d5bfa2ab7c166e208bce5091c1b8b86";
 
-// mixpanel.init(MAINNET_KEY, { debug: true });
+mixpanel.init(MAINNET_KEY, { debug: true });
 
 interface GeneralTrackingParams {
   userId: string;
@@ -28,14 +28,16 @@ export function trackEvent(
 ) {
   const generalParams = getGeneralTrackingParams();
 
-  console.log(event, generalParams);
-
   const eventParams = {
     ...generalParams,
     ...specificParams,
   };
 
-  // mixpanel.track(event, eventParams);
+  const isDevelopment = process.env.NODE_ENV === "development";
+
+  if (isDevelopment) return;
+
+  mixpanel.track(event, eventParams);
 }
 
 function getGeneralTrackingParams(): GeneralTrackingParams {
