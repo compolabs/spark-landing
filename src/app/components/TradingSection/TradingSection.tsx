@@ -9,6 +9,7 @@ import { ButtonWithIcon } from "@/app/shared/ButtonWithIcon/ButtonWithIcon";
 import { IconBrandGithubFilled } from "@/app/shared/icons/IconBrandGithubFilled";
 import { IconHashcloack } from "@/app/shared/icons/IconHashcloack";
 import { IconFuel } from "@/app/shared/icons/IconFuel";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 const Section = styled.section`
   display: flex;
@@ -157,8 +158,8 @@ const FuelLogo = styled.div`
 
 const IconFuelStyled = styled(IconFuel)`
   width: 182px;
-  height: 58px
-`
+  height: 58px;
+`;
 
 const FuelDescription = styled.p`
   margin-left: 12px;
@@ -328,6 +329,9 @@ export const TradingSection: React.FC = () => {
                 buttonText="View code"
                 size="large"
                 href={"https://github.com/compolabs/"}
+                onClick={() => {
+                  trackEvent(MIXPANEL_EVENTS.CARD_CLICK_VIEW_CODE);
+                }}
               />
               <ButtonWithIcon
                 LeftIcon={IconHashcloack}
@@ -336,6 +340,9 @@ export const TradingSection: React.FC = () => {
                 borderColor={isDark ? "white" : "black"}
                 size="large"
                 href={"https://docs.sprk.fi/security/audits"}
+                onClick={() => {
+                  trackEvent(MIXPANEL_EVENTS.CARD_CLICK_VIEW_AUDIT);
+                }}
               />
             </ButtonContainer>
           </CardContent>

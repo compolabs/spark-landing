@@ -21,6 +21,7 @@ import {
   IconArrow,
   MainIcon,
 } from "./Subscriptions.styles";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 export const Subscriptions: React.FC = () => {
   const { theme } = useTheme();
@@ -52,11 +53,14 @@ export const Subscriptions: React.FC = () => {
             LeftIcon={IconShieldHalfFilled}
             backgroundColor={isDark ? "#171717" : "#FFFFFF"}
             href={"https://docs.sprk.fi/security/audits"}
+            onClick={() => {
+              trackEvent(MIXPANEL_EVENTS.LAST_VIEW_AUDIT);
+            }}
           />
         </ButtonWrapper>
       </AuditBlock>
       <List>
-        {socialList.map(({ title, icon, href }, index) => {
+        {socialList.map(({ title, icon, href, event }, index) => {
           const SocialComponent: React.FC<TIconProps> = icon;
           return (
             <Item
@@ -66,6 +70,9 @@ export const Subscriptions: React.FC = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               target="_blank"
+              onClick={() => {
+                trackEvent(event);
+              }}
             >
               <IconArrow
                 isDark={isDark}

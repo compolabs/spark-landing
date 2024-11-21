@@ -10,7 +10,9 @@ interface SubmenuProps {
     text: string;
     href: string;
     badge?: string;
+    onClick?: () => void;
   }>;
+  onClick?: () => void;
 }
 
 const SubMenuContainer = styled.div<{ isDark: boolean; isOpen: boolean }>`
@@ -22,9 +24,7 @@ const SubMenuContainer = styled.div<{ isDark: boolean; isOpen: boolean }>`
   background-color: ${({ isDark }) =>
     isDark ? "rgba(20, 20, 20, 0.2)" : "rgba(255, 255, 255, 0.2)"};
   transform-origin: top;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   z-index: 1000;
   border-radius: 8px;
   overflow: hidden;
@@ -98,6 +98,7 @@ const DesktopSubmenu: React.FC<SubmenuProps> = ({ isDark, isOpen, items }) => {
                 e.stopPropagation();
                 e.preventDefault();
               }
+              item.onClick?.();
             }}
             key={index}
           >

@@ -16,6 +16,7 @@ import { useTheme } from "next-themes";
 import { TradeButton } from "@/app/shared/TradeButton/TradeButton";
 import { IconApple } from "@/app/shared/icons/IconApple";
 import { IconAndroid } from "@/app/shared/icons/IconAndroid";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 export const SecureTrading: React.FC = () => {
   const { theme } = useTheme();
@@ -44,7 +45,13 @@ export const SecureTrading: React.FC = () => {
             Trade securely with full control over your assets. No compromises
           </TradingDescription>
           <ActionArea>
-            <TradeButton buttonText="Trade Now" size="small" />
+            <TradeButton
+              buttonText="Trade Now"
+              size="small"
+              onClick={() => {
+                trackEvent(MIXPANEL_EVENTS.BANNER_CLICK_TRADE_NOW);
+              }}
+            />
             <MobileOptimized isDark={isDark}>
               <IconApple />
               <IconAndroid />

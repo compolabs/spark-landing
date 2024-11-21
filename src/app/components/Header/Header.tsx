@@ -30,6 +30,7 @@ import {
   IconFireHydrant,
   IconMenu2,
 } from "@/app/shared/icons";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 const navItems = {
   learn: {
@@ -39,6 +40,9 @@ const navItems = {
         icon: <IconSpark />,
         text: "What is Spark?",
         href: "https://docs.sprk.fi/more/spark-architecture-overview",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_WHAT_IS_SPARK);
+        },
       },
       {
         icon: <IconTransitionTop />,
@@ -50,6 +54,9 @@ const navItems = {
         icon: <IconArticle />,
         text: "Blog",
         href: "https://mirror.xyz/sprkfi.eth",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_BLOG);
+        },
       },
     ],
   },
@@ -60,6 +67,9 @@ const navItems = {
         icon: <IconTransitionTop />,
         text: "Limit",
         href: "https://app.sprk.fi/#/spot/BTC-USDC",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_LIMIT);
+        },
       },
       {
         icon: <IconInfinity />,
@@ -82,16 +92,25 @@ const navItems = {
         icon: <IconBook2 />,
         text: "Docs",
         href: "https://docs.sprk.fi/",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_DOCS);
+        },
       },
       {
         icon: <IconBrandGithubFilled />,
         text: "GitHub",
         href: "https://github.com/compolabs/",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_GITHUB);
+        },
       },
       {
         icon: <IconFireHydrant />,
         text: "Faucet",
         href: "https://app.sprk.fi/#/faucet",
+        onClick: () => {
+          trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_FAUCET);
+        },
       },
     ],
   },
@@ -150,6 +169,9 @@ export const Header = () => {
             <NavLink
               href="https://docs.sprk.fi/provide-liquidity/getting-started-as-a-market-maker/market-maker-incentive-program"
               target="_blank"
+              onClick={() => {
+                trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_LIQUIDITY);
+              }}
             >
               Liquidity
             </NavLink>
@@ -160,7 +182,13 @@ export const Header = () => {
           <div className="theme-toggle">
             <ThemeToggle />
           </div>
-          <TradeButton buttonText="Trade Now" size="small" />
+          <TradeButton
+            buttonText="Trade Now"
+            size="small"
+            onClick={() => {
+              trackEvent(MIXPANEL_EVENTS.HEADER_CLICK_TRADE_NOW);
+            }}
+          />
           <BurgerButton
             className="burger-button"
             onClick={handleBurgerClick}

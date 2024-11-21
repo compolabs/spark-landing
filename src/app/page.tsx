@@ -11,8 +11,9 @@ import {
   Footer,
 } from "./components";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { CookieNotification } from "./components/CookieNotification/CookieNotification";
+import { MIXPANEL_EVENTS, trackEvent } from "./utils/mixPanel";
 
 const RootWrapper = styled.div`
   width: 100%;
@@ -56,7 +57,20 @@ export default function HomePage() {
       localStorage.setItem("theme", "dark");
       setTheme("dark");
     }
+
   }, [setTheme]);
+  
+  useLayoutEffect(() => {
+    trackEvent(MIXPANEL_EVENTS.PAGE_LOADED);
+  }, [])
+
+  useEffect(() => {
+    trackEvent(MIXPANEL_EVENTS.SESSION_START);
+
+    return () => {
+      trackEvent(MIXPANEL_EVENTS.SESSION_END);
+    }
+  }, [])
 
   if (!mounted) {
     return null;

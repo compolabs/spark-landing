@@ -17,6 +17,7 @@ import {
 } from "@/app/components/TradeAsset/TradeAsset.styled";
 import { TradeButton } from "@/app/shared/TradeButton/TradeButton";
 import { useMemo, useState, useEffect } from "react";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 export const TradeAsset = () => {
   const { theme } = useTheme();
@@ -54,9 +55,15 @@ export const TradeAsset = () => {
           <Title2>ONCHAIN</Title2>
         </Wrapper>
         <Subtitle>
-          The first onchain orderbook exchange powered by the high performance FuelVM
+          The first onchain orderbook exchange powered by the high performance
+          FuelVM
         </Subtitle>
-        <TradeButton buttonText="Trade Now" />
+        <TradeButton
+          buttonText="Trade Now"
+          onClick={() => {
+            trackEvent(MIXPANEL_EVENTS.HERO_CLICK_TRADE_NOW);
+          }}
+        />
       </ContentWrapper>
       <ImagesContainer>
         <Image

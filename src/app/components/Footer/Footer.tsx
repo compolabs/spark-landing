@@ -16,6 +16,7 @@ import {
   SocialItemWrapper,
 } from "./Footer.styles";
 import { SparkLogotype } from "@/app/shared/icons/SparkLogotype";
+import { MIXPANEL_EVENTS, trackEvent } from "@/app/utils/mixPanel";
 
 export const Footer = () => {
   const { theme } = useTheme();
@@ -38,6 +39,9 @@ export const Footer = () => {
               href="https://docs.sprk.fi/"
               isDark={isDark}
               target="_blank"
+              onClick={() => {
+                trackEvent(MIXPANEL_EVENTS.FOOTER_CLICK_DOCS);
+              }}
             >
               Docs
             </ListItem>
@@ -45,6 +49,9 @@ export const Footer = () => {
               href="https://t.co/EfXHTEhXHc"
               isDark={isDark}
               target="_blank"
+              onClick={() => {
+                trackEvent(MIXPANEL_EVENTS.FOOTER_CLICK_SUPPORT);
+              }}
             >
               Support
             </ListItem>
@@ -52,12 +59,15 @@ export const Footer = () => {
               href="https://compo-labs.notion.site/93d1f8917cb64f88a222fe24e0df8a9e?v=503fafab97464f049e79bc66ca09afa9"
               isDark={isDark}
               target="_blank"
+              onClick={() => {
+                trackEvent(MIXPANEL_EVENTS.FOOTER_CLICK_CAREERS);
+              }}
             >
               Careers
             </ListItem>
           </List>
           <Social>
-            {socialListFooter.map(({ icon, title, href }, index) => {
+            {socialListFooter.map(({ icon, title, href, event }, index) => {
               const SocialComponent: React.FC<TIconProps> = icon;
               return (
                 <SocialItemWrapper
@@ -67,6 +77,9 @@ export const Footer = () => {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   target="_blank"
+                  onClick={() => {
+                    trackEvent(event);
+                  }}
                 >
                   <SocialItem
                     isDark={isDark}
@@ -80,10 +93,10 @@ export const Footer = () => {
                         index === 2
                           ? "#1C012A"
                           : hoveredIndex === index
-                            ? isDark
-                              ? "#FFFFFF"
-                              : "#1C012A"
+                          ? isDark
+                            ? "#FFFFFF"
                             : "#1C012A"
+                          : "#1C012A"
                       }
                       isDark={isDark}
                     />
